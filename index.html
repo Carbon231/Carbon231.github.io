@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="碳罐堆积处">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">碳罐堆积处</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/15/%E3%80%90DM%E3%80%91set,%20relation,%20function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/15/%E3%80%90DM%E3%80%91set,%20relation,%20function/" class="post-title-link" itemprop="url">【DM】set, relation, function</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-15 16:09:21" itemprop="dateCreated datePublished" datetime="2023-12-15T16:09:21+08:00">2023-12-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-17 21:31:13" itemprop="dateModified" datetime="2023-12-17T21:31:13+08:00">2023-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/DM/" itemprop="url" rel="index"><span itemprop="name">DM</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><ul>
+<li>集合表示方法：列举、部分列举、命题、归纳定义</li>
+<li>子集：集合A的每一个元素都是集合B的元素，则称A是B的子集<ul>
+<li>空集是任意集合的子集</li>
+</ul>
+</li>
+<li>幂集：集合A全部子集构成的集合</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231215164017983.png" alt="image-20231215164017983" style="zoom:50%;"></p>
+<ul>
+<li>基数：有穷集合A中所含元素个数，记作#A（或|A|或n(A)）</li>
+<li>集类：所有元素都是集合的集合</li>
+<li>集类上的运算（广义交、广义并）</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231215165207633.png" alt="image-20231215165207633"></p>
+<p><img src="/images/【DM】set, relation, function/image-20231215172151426.png" alt="image-20231215172151426" style="zoom:50%;"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231215172639474.png" alt="image-20231215172639474"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231215172724527.png" alt="image-20231215172724527"></p>
+<hr>
+<ul>
+<li>有穷集的计数原理</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231215174909510.png" alt="image-20231215174909510" style="zoom:50%;"></p>
+<p><img src="/images/【DM】set, relation, function/image-20231215174831959.png" alt="image-20231215174831959" style="zoom:50%;"></p>
+<ul>
+<li>二元序偶</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231217001700609.png" alt="image-20231217001700609"></p>
+<ul>
+<li>n元序偶</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231217001750707.png" alt="image-20231217001750707"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217001820091.png" alt="image-20231217001820091" style="zoom:50%;"></p>
+<p>证集合属于A的幂集-&gt;证集合中的每个元素属于A</p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217002441028.png" alt="image-20231217002441028"></p>
+<ul>
+<li>字符串</li>
+</ul>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="2.389ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1056 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2211" d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z"></path></g></g></g></svg></mjx-container>：字母（或符号）的非空有限集合</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217003112966.png" alt="image-20231217003112966" style="zoom:50%;"></p>
+<p>语言：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.377ex" height="2.389ex" role="img" focusable="false" viewBox="0 -805.9 1492.6 1055.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="mo"><path data-c="2211" d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z"></path></g><g data-mml-node="mo" transform="translate(1089,477.1) scale(0.707)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g></g></g></g></svg></mjx-container>的子集</p>
+<h1 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h1><h2 id="关系-1"><a href="#关系-1" class="headerlink" title="关系"></a>关系</h2><p><img src="/images/【DM】set, relation, function/image-20231217003740162.png" alt="image-20231217003740162"></p>
+<hr>
+<h3 id="关系相等"><a href="#关系相等" class="headerlink" title="关系相等"></a>关系相等</h3><p><img src="/images/【DM】set, relation, function/image-20231217003823013.png" alt="image-20231217003823013"></p>
+<p><img src="/images/【DM】set, relation, function/image-20231217003833340.png" alt="image-20231217003833340"></p>
+<p>即：维度相等、所属集合相等、所取元素相等</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217004035445.png" alt="image-20231217004035445"></p>
+<h3 id="关系的定义域、值域"><a href="#关系的定义域、值域" class="headerlink" title="关系的定义域、值域"></a>关系的定义域、值域</h3><p><img src="/images/【DM】set, relation, function/image-20231217004150297.png" alt="image-20231217004150297"></p>
+<h3 id="自反、传递、对称"><a href="#自反、传递、对称" class="headerlink" title="自反、传递、对称"></a>自反、传递、对称</h3><p><img src="/images/【DM】set, relation, function/image-20231217004305019.png" alt="image-20231217004305019"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217004419834.png" alt="image-20231217004419834"></p>
+<p>对空集，前提不成立（没有a），故均为真</p>
+<p>对非空集上的空关系，除开自反，前提不成立（没有关系），故均为真。</p>
+<p>补充：</p>
+<p>既对称又反对称：R为A上二元关系，R中<strong>只包含</strong>序偶<a, a="">（a属于A）</a,></p>
+<p>注：举例的时候一定要声明是在什么集合上的关系</p>
+<ul>
+<li>压缩、延拓</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231217004744511.png" alt="image-20231217004744511"></p>
+<h2 id="关系的表示法"><a href="#关系的表示法" class="headerlink" title="关系的表示法"></a>关系的表示法</h2><p><img src="/images/【DM】set, relation, function/image-20231217004907562.png" alt="image-20231217004907562"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217004915365.png" alt="image-20231217004915365"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217004957479.png" alt="image-20231217004957479"></p>
+<blockquote>
+<p>ppt中有这样一句：</p>
+<p>“在R的关系图中，若顶点x到顶点y有一条路径，则必有从x到y的一条边”</p>
+<p>然而图论那一章对于路径定义如下</p>
+</blockquote>
+<p><img src="/images/【DM】set, relation, function/image-20231217005552800.png" alt="image-20231217005552800"></p>
+<h2 id="逆关系"><a href="#逆关系" class="headerlink" title="逆关系"></a>逆关系</h2><h3 id="补关系"><a href="#补关系" class="headerlink" title="补关系"></a>补关系</h3><p><img src="/images/【DM】set, relation, function/image-20231217200311974.png" alt="image-20231217200311974"></p>
+<h3 id="逆关系-1"><a href="#逆关系-1" class="headerlink" title="逆关系"></a>逆关系</h3><p><img src="/images/【DM】set, relation, function/image-20231217200328064.png" alt="image-20231217200328064"></p>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p><img src="/images/【DM】set, relation, function/image-20231217200351413.png" alt="image-20231217200351413"></p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><img src="/images/【DM】set, relation, function/image-20231217201125600.png" alt="image-20231217201125600" style="zoom:50%;"></p>
+<p>证明最小：</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217201237534.png" alt="image-20231217201237534" style="zoom:50%;"></p>
+<h2 id="关系的合成"><a href="#关系的合成" class="headerlink" title="关系的合成"></a>关系的合成</h2><p><img src="/images/【DM】set, relation, function/image-20231217201322421.png" alt="image-20231217201322421"></p>
+<p>关系的合成不具有交换律</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p><img src="/images/【DM】set, relation, function/image-20231217201501943.png" alt="image-20231217201501943"></p>
+<p><img src="/images/【DM】set, relation, function/image-20231217201515156.png" alt="image-20231217201515156"></p>
+<h3 id="0-1矩阵运算（乘）"><a href="#0-1矩阵运算（乘）" class="headerlink" title="0-1矩阵运算（乘）"></a>0-1矩阵运算（乘）</h3><p><img src="/images/【DM】set, relation, function/image-20231217201915026.png" alt="image-20231217201915026"></p>
+<h3 id="幂运算"><a href="#幂运算" class="headerlink" title="幂运算"></a>幂运算</h3><p><img src="/images/【DM】set, relation, function/image-20231217202023767.png" alt="image-20231217202023767"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217202114027.png" alt="image-20231217202114027"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217202145683.png" alt="image-20231217202145683"></p>
+<p>上标<strong>从0</strong>开始取</p>
+<h2 id="关系的闭包"><a href="#关系的闭包" class="headerlink" title="关系的闭包"></a>关系的闭包</h2><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p><img src="/images/【DM】set, relation, function/image-20231217202335985.png" alt="image-20231217202335985"></p>
+<p>第五条证明：</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217210005816.png" alt="image-20231217210005816" style="zoom:50%;"></p>
+<p>R为A上二元关系。A上二元关系R‘满足：</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217202410428.png" alt="image-20231217202410428"></p>
+<h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h3><p><img src="/images/【DM】set, relation, function/image-20231217202625801.png" alt="image-20231217202625801"></p>
+<ul>
+<li>直接计算</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231217202707455.png" alt="image-20231217202707455"></p>
+<p><img src="/images/【DM】set, relation, function/image-20231217202726401.png" alt="image-20231217202726401"></p>
+<p>1和2证明：</p>
+<p>必要性：证右边满足1、2，再由定义可得</p>
+<p>充分性：证明分别属于左，故取并集也属于左</p>
+<p>3证明：</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217203303211.png" alt="image-20231217203303211"></p>
+<p>一个是由传递性得到中间值，一个是由关系的合成得到中间值</p>
+<p>注：传递的计算是<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.048ex;" xmlns="http://www.w3.org/2000/svg" width="3.15ex" height="1.801ex" role="img" focusable="false" viewBox="0 -775.2 1392.1 796.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D445" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path></g><g data-mml-node="mo" transform="translate(792,363) scale(0.707)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g></g></g></g></svg></mjx-container>而非<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.048ex;" xmlns="http://www.w3.org/2000/svg" width="2.705ex" height="1.613ex" role="img" focusable="false" viewBox="0 -691.8 1195.6 712.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D445" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path></g><g data-mml-node="mo" transform="translate(792,363) scale(0.707)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g></g></g></g></svg></mjx-container></p>
+<ul>
+<li>传递闭包另一种计算方法</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231217204133676.png" alt="image-20231217204133676"></p>
+<p><img src="/images/【DM】set, relation, function/image-20231217204143956.png" alt="image-20231217204143956"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217204957063.png" alt="image-20231217204957063"></p>
+<p>证闭包属于集合A：证集合A满足1、2</p>
+<p>当然也不是都要这么证，如下例</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217210244263.png" alt="image-20231217210244263" style="zoom:50%;"></p>
+<p><img src="/images/【DM】set, relation, function/image-20231217210305224.png" alt="image-20231217210305224" style="zoom:50%;"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217205131832.png" alt="image-20231217205131832"></p>
+<hr>
+<p><img src="/images/【DM】set, relation, function/image-20231217205234003.png" alt="image-20231217205234003"></p>
+<p>结合定理2.5.4</p>
+<h2 id="等价关系"><a href="#等价关系" class="headerlink" title="等价关系"></a>等价关系</h2><p>等价关系：自反、对称、传递</p>
+<h3 id="充要条件"><a href="#充要条件" class="headerlink" title="充要条件"></a>充要条件</h3><ul>
+<li>闭包</li>
+</ul>
+<p><img src="/images/【DM】set, relation, function/image-20231217210917896.png" alt="image-20231217210917896"></p>
+<ul>
+<li>关系图</li>
+</ul>
+<p>有简化关系图：自反、对称。简化时去掉所有自圈，并将每对反向的有向边改为一条无向边</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217211404947.png" alt="image-20231217211404947"></p>
+<p>分支中任取两节点，连通则必有路径，传递则必有边</p>
+<h3 id="划分"><a href="#划分" class="headerlink" title="划分"></a>划分</h3><p><img src="/images/【DM】set, relation, function/image-20231217212141404.png" alt="image-20231217212141404"></p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="2.136ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 944 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="220F" d="M158 656Q147 684 131 694Q110 707 69 710H55V750H888V710H874Q840 708 820 698T795 678T786 656V-155Q798 -206 874 -210H888V-250H570V-210H584Q618 -208 638 -197T663 -178T673 -155V710H270V277L271 -155Q283 -206 359 -210H373V-250H55V-210H69Q103 -208 123 -197T148 -178T158 -155V656Z"></path></g></g></g></svg></mjx-container>为幂集的子集，说明其也是集合的集合</p>
+<h3 id="等价类"><a href="#等价类" class="headerlink" title="等价类"></a>等价类</h3><p><img src="/images/【DM】set, relation, function/image-20231217212200238.png" alt="image-20231217212200238"></p>
+<p>例如，对于任意正整数m&gt;1，整数相等关系和模m同余关系都是<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.14ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 504 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43C" d="M43 1Q26 1 26 10Q26 12 29 24Q34 43 39 45Q42 46 54 46H60Q120 46 136 53Q137 53 138 54Q143 56 149 77T198 273Q210 318 216 344Q286 624 286 626Q284 630 284 631Q274 637 213 637H193Q184 643 189 662Q193 677 195 680T209 683H213Q285 681 359 681Q481 681 487 683H497Q504 676 504 672T501 655T494 639Q491 637 471 637Q440 637 407 634Q393 631 388 623Q381 609 337 432Q326 385 315 341Q245 65 245 59Q245 52 255 50T307 46H339Q345 38 345 37T342 19Q338 6 332 0H316Q279 2 179 2Q143 2 113 2T65 2T43 1Z"></path></g></g></g></svg></mjx-container>上的等价关系</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217212644452.png" alt="image-20231217212644452"></p>
+<h3 id="商集"><a href="#商集" class="headerlink" title="商集"></a>商集</h3><p>对每一个等价关系，都可以唯一确定A的一个划分</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217212744295.png" alt="image-20231217212744295"></p>
+<p>对每一个划分，都可以给出一个等价关系，且该划分由该等价关系确定</p>
+<p><img src="/images/【DM】set, relation, function/image-20231217212950512.png" alt="image-20231217212950512"></p>
+<h2 id="序关系"><a href="#序关系" class="headerlink" title="序关系"></a>序关系</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/29/%E3%80%90CO%E3%80%91P7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/29/%E3%80%90CO%E3%80%91P7/" class="post-title-link" itemprop="url">【CO】P7</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-29 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-29T00:00:00+08:00">2023-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-15 16:43:43" itemprop="dateModified" datetime="2023-12-15T16:43:43+08:00">2023-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><del>什么东西看不懂一点</del></p>
+<h2 id="设计草稿"><a href="#设计草稿" class="headerlink" title="设计草稿"></a>设计草稿</h2><p><strong>宏观PC</strong>：M级</p>
+<p><strong>受害PC</strong>： 发生错误的PC</p>
+<p>首先从<strong>测试</strong>出发</p>
+<ul>
+<li>没有<strong>外部中断</strong>的tb文件同p6</li>
+<li>有<strong>外部中断</strong>（中断发生器）的tb文件可以实现：在PC第一次到某个地方的时候interrupt信号置1直到宏观PC跳转到异常处理程序才置0</li>
+</ul>
+<p>我们的程序需要能够：</p>
+<ul>
+<li>通过外部端口接受外部中断信号</li>
+<li>通过访问地址 <code>0x7F20</code> 的 <code>store</code> 类指令，改变对应的微系统输出信号（<code>m_int_addr</code>，<code>m_int_byteen</code>），即系统桥实现正确。</li>
+</ul>
+<p>对于<strong>中断</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">概念</th>
+<th style="text-align:left">定义</th>
+<th style="text-align:left">举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">内部异常</td>
+<td style="text-align:left">由于指令执行错误导致的“事件”</td>
+<td style="text-align:left">加法溢出，除法除零等</td>
+</tr>
+<tr>
+<td style="text-align:left">外部中断</td>
+<td style="text-align:left">由于外部设备信号导致的“事件”</td>
+<td style="text-align:left">计时器信号，键盘输入等</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>相应异常会跳转到指定地址，进行异常处理。具体如何处理不包括MIPS微体系内。</p>
+<p>对于<strong>CP0 协处理器</strong></p>
+<p>需要完成：</p>
+<ul>
+<li>对异常进行配置</li>
+<li>记录异常的信息</li>
+</ul>
+<p>而异常信息来源：</p>
+<ul>
+<li>HWInt：外部中断请求</li>
+<li>ExcCode：异常代码</li>
+</ul>
+<p>如何判断指令异常？</p>
+<p>具体指令异常类型见教程，而检测发生在每个流水级。<strong>故最好将不同的异常按照发生级别分类</strong></p>
+<p>ExcCode也参与到流水中，直到达到<code>CP0</code>所在流水级（本设计中放在W级）</p>
+<p><strong>系统桥</strong></p>
+<p>CPU传来的地址写入相应的外设</p>
+<p><strong>mips.v</strong></p>
+<ul>
+<li><code>interrupt</code>：外部中断信号。由中断发生器产生，每次中断信号会持续到处理器响应该信号。请注意，处理该中断信号的方式应和处理 Timer 产生的中断不完全相同，具体见前面的教程。</li>
+<li><code>macroscopic_pc[31:0]</code>：详细概念见宏观 PC。我们保证评测过程中宏观 PC 仅用于定位指令，作为产生外部中断信号的条件。</li>
+<li><code>m_int_addr[31:0]</code>：中断发生器待写入地址。当该信号命中中断发生器响应地址，且字节使能信号有效时，视为响应外部中断。</li>
+<li><code>m_int_byteen[3:0]</code>：中断发生器字节使能信号，当该信号任意一位置位时视为有效。</li>
+</ul>
+<p>还有一些功能处理：</p>
+<p><code>eret</code>保证其后不实行：检测到该指令为eret后阻塞一个周期</p>
+<p>要处理的冲突：</p>
+<ul>
+<li>eret需要用cp0值但mtc0未写入</li>
+</ul>
+<p>构想一些其他情况：</p>
+<ul>
+<li>mtc0写入EPC同时有外部中断产生</li>
+<li>指令被阻塞在D级，上一条指令在W级时下中断</li>
+<li>mult beq mflo 其中mflo在延时槽里，但是实际情况会是， mult beq nop nop nop mflo,这时，在nop下中断</li>
+<li>eret返回后，会系统增加nop ，即 eret, nop, xxx， 在eret返回后的nop中下中断</li>
+</ul>
+<h2 id="中断测试"><a href="#中断测试" class="headerlink" title="中断测试"></a>中断测试</h2><h3 id="构想的中断情况"><a href="#构想的中断情况" class="headerlink" title="构想的中断情况"></a>构想的中断情况</h3><ul>
+<li>常规指令：阻塞一周期、阻塞两周期</li>
+<li>sw</li>
+<li>跳转延迟槽：跳转、未跳转</li>
+<li>eret后一条指令</li>
+<li>乘除指令</li>
+<li>乘除槽</li>
+<li>乘除槽内的延迟槽</li>
+<li>指令异常</li>
+<li>指令异常且处于延迟槽</li>
+</ul>
+<h3 id="对应的-asm"><a href="#对应的-asm" class="headerlink" title="对应的.asm"></a>对应的<code>.asm</code></h3><p><strong>注：</strong>以下测试代码仅针对本人结构编写，即乘除模块在E级，cp0在M级。例如为了测乘除指令刚到乘除模块时的情况，macroPC取乘除指令上一条。然而，如果你采用了其他的设计，还请自行调整。</p>
+<p>此代码未测试中断发生在eret后的情况，然而强烈建议自行进行测试</p>
+<p>由于水平有限，<strong>不保证对应测试代码真的起到测试的作用</strong>，还请各位大佬批评指正</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">no_jump:</span><br><span class="line">ori <span class="variable">$28</span>, <span class="variable">$28</span>, 4</span><br><span class="line">ori <span class="variable">$29</span>, <span class="variable">$29</span>, 1</span><br><span class="line"></span><br><span class="line">ori <span class="variable">$20</span>, <span class="variable">$0</span>, 0x1001</span><br><span class="line">mtc0 <span class="variable">$20</span>, <span class="variable">$12</span></span><br><span class="line"></span><br><span class="line">ori <span class="variable">$1</span>, <span class="variable">$1</span>, 246</span><br><span class="line">ori <span class="variable">$2</span>, <span class="variable">$2</span>, 135</span><br><span class="line">beq <span class="variable">$2</span>, <span class="variable">$zero</span>, no_jump</span><br><span class="line">nop</span><br><span class="line"></span><br><span class="line">sw <span class="variable">$28</span>, 0(<span class="variable">$zero</span>)</span><br><span class="line"></span><br><span class="line">lw <span class="variable">$3</span>, 0(<span class="variable">$zero</span>)</span><br><span class="line">beq <span class="variable">$3</span>, <span class="variable">$zero</span>, no_jump</span><br><span class="line">nop</span><br><span class="line"></span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$zero</span>, jump1</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$4</span>, <span class="variable">$4</span>, <span class="variable">$29</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$5</span>, <span class="variable">$5</span>, <span class="variable">$29</span></span><br><span class="line">jump1:</span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$29</span>, jump2</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$4</span>, <span class="variable">$4</span>, <span class="variable">$29</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$5</span>, <span class="variable">$5</span>, <span class="variable">$29</span></span><br><span class="line">jump2:</span><br><span class="line"></span><br><span class="line">mult <span class="variable">$1</span>, <span class="variable">$2</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line">mflo <span class="variable">$7</span></span><br><span class="line"></span><br><span class="line">mult <span class="variable">$1</span>, <span class="variable">$2</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line">mflo <span class="variable">$7</span></span><br><span class="line"></span><br><span class="line">mult <span class="variable">$7</span>, <span class="variable">$1</span></span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$29</span>, jump3</span><br><span class="line">mflo <span class="variable">$7</span></span><br><span class="line">jump3:</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line"></span><br><span class="line">lw <span class="variable">$8</span>, 1(<span class="variable">$0</span>)</span><br><span class="line"></span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$29</span>, no_jump</span><br><span class="line">lw <span class="variable">$8</span>, 1(<span class="variable">$0</span>)</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line"></span><br><span class="line">.ktext 0x4180</span><br><span class="line">mfc0 <span class="variable">$26</span>, <span class="variable">$13</span></span><br><span class="line">ori <span class="variable">$21</span>, <span class="variable">$21</span>, 0x7c</span><br><span class="line"><span class="keyword">and</span> <span class="variable">$26</span>, <span class="variable">$21</span>, <span class="variable">$26</span></span><br><span class="line">beq <span class="variable">$26</span>, <span class="variable">$zero</span>, interruption</span><br><span class="line">nop</span><br><span class="line"><span class="comment"># 对于异常程序直接忽视（未考虑pc异常）</span></span><br><span class="line">exception:</span><br><span class="line">mfc0 <span class="variable">$27</span>, <span class="variable">$14</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$27</span>, <span class="variable">$27</span>, <span class="variable">$28</span></span><br><span class="line">mtc0 <span class="variable">$27</span>, <span class="variable">$14</span></span><br><span class="line">eret</span><br><span class="line"><span class="comment"># 对于中断让30号寄存器加一</span></span><br><span class="line">interruption:</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$30</span>, <span class="variable">$30</span>, <span class="variable">$29</span></span><br><span class="line">sw <span class="variable">$30</span>, 0x7F20(<span class="variable">$zero</span>)</span><br><span class="line">eret</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$30</span>, <span class="variable">$30</span>, <span class="variable">$28</span> #eret无延迟槽</span><br></pre></td></tr></table></figure>
+<h3 id="数据导出方案"><a href="#数据导出方案" class="headerlink" title="数据导出方案"></a>数据导出方案</h3><p>在Mars所在地址打开cmd输入</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">java -jar <span class="tag">&lt;<span class="name">mars</span>&gt;</span> db nc mc CompactDataAtZero a dump 0x4180-0x6ffc HexText <span class="tag">&lt;<span class="name">xxx.txt</span>&gt;</span> <span class="tag">&lt;<span class="name">xxx.asm</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改后的tb"><a href="#修改后的tb" class="headerlink" title="修改后的tb"></a>修改后的tb</h3><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="meta">`<span class="keyword">timescale</span> 1ns/1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> mips_txt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">reg</span> clk;</span><br><span class="line">	<span class="keyword">reg</span> reset;</span><br><span class="line">	<span class="keyword">reg</span> interrupt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] macroscopic_pc;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] i_inst_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] i_inst_rdata;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_data_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_data_rdata;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_data_wdata;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">3</span> :<span class="number">0</span>] m_data_byteen;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_int_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">3</span> :<span class="number">0</span>] m_int_byteen;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_inst_addr;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span>		w_grf_we;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">4</span> :<span class="number">0</span>] w_grf_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] w_grf_wdata;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] w_inst_addr;</span><br><span class="line"></span><br><span class="line">	mips uut(</span><br><span class="line">		<span class="variable">.clk</span>(clk),</span><br><span class="line">		<span class="variable">.reset</span>(reset),</span><br><span class="line">		<span class="variable">.interrupt</span>(interrupt),</span><br><span class="line">		<span class="variable">.macroscopic_pc</span>(macroscopic_pc),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.i_inst_addr</span>(i_inst_addr),</span><br><span class="line">		<span class="variable">.i_inst_rdata</span>(i_inst_rdata),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.m_data_addr</span>(m_data_addr),</span><br><span class="line">		<span class="variable">.m_data_rdata</span>(m_data_rdata),</span><br><span class="line">		<span class="variable">.m_data_wdata</span>(m_data_wdata),</span><br><span class="line">		<span class="variable">.m_data_byteen</span>(m_data_byteen),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.m_int_addr</span>(m_int_addr),</span><br><span class="line">		<span class="variable">.m_int_byteen</span>(m_int_byteen),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.m_inst_addr</span>(m_inst_addr),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.w_grf_we</span>(w_grf_we),</span><br><span class="line">		<span class="variable">.w_grf_addr</span>(w_grf_addr),</span><br><span class="line">		<span class="variable">.w_grf_wdata</span>(w_grf_wdata),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.w_inst_addr</span>(w_inst_addr)</span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">		clk &lt;= <span class="number">0</span>;</span><br><span class="line">		reset &lt;= <span class="number">1</span>;</span><br><span class="line">		interrupt &lt;= <span class="number">0</span>;</span><br><span class="line">		#<span class="number">20</span> reset &lt;= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">integer</span> i;</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] fixed_addr;</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] fixed_wdata;</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] data[<span class="number">0</span>:<span class="number">4095</span>];</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] inst[<span class="number">0</span>:<span class="number">5119</span>];</span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Instructions -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">assign</span> m_data_rdata = data[(m_data_addr &gt;&gt; <span class="number">2</span>) % <span class="number">5120</span>];</span><br><span class="line">	<span class="keyword">assign</span> i_inst_rdata = inst[((i_inst_addr - <span class="number">32&#x27;h3000</span>) &gt;&gt; <span class="number">2</span>) % <span class="number">5120</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">	<span class="built_in">$dumpfile</span>(<span class="string">&quot;wave.vcd&quot;</span>);  <span class="comment">// 指定VCD文件的名字为wave.vcd，仿真信息将记录到此文件</span></span><br><span class="line">	<span class="built_in">$dumpvars</span>(<span class="number">0</span>, mips_txt);  <span class="comment">// 指定层次数为0，则tb_code 模块及其下面各层次的所有信号将被记录</span></span><br><span class="line">    #<span class="number">20000</span> <span class="built_in">$finish</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">		<span class="built_in">$readmemh</span>(<span class="string">&quot;code.txt&quot;</span>, inst);</span><br><span class="line">		<span class="built_in">$readmemh</span>(<span class="string">&quot;handlerCode.txt&quot;</span>, inst, (<span class="number">32&#x27;h4180</span>-<span class="number">32&#x27;h3000</span>)&gt;&gt;<span class="number">2</span>);</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">5120</span>; i = i + <span class="number">1</span>) data[i] &lt;= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Data Memory -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">		fixed_wdata = data[(m_data_addr &gt;&gt; <span class="number">2</span>) &amp; <span class="number">4095</span>];</span><br><span class="line">		fixed_addr = m_data_addr &amp; <span class="number">32&#x27;hfffffffc</span>;</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">3</span>]) fixed_wdata[<span class="number">31</span>:<span class="number">24</span>] = m_data_wdata[<span class="number">31</span>:<span class="number">24</span>];</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">2</span>]) fixed_wdata[<span class="number">23</span>:<span class="number">16</span>] = m_data_wdata[<span class="number">23</span>:<span class="number">16</span>];</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">1</span>]) fixed_wdata[<span class="number">15</span>: <span class="number">8</span>] = m_data_wdata[<span class="number">15</span>: <span class="number">8</span>];</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">0</span>]) fixed_wdata[<span class="number">7</span> : <span class="number">0</span>] = m_data_wdata[<span class="number">7</span> : <span class="number">0</span>];</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(<span class="keyword">posedge</span> clk) <span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> (reset) <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4096</span>; i = i + <span class="number">1</span>) data[i] &lt;= <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (|m_data_byteen &amp;&amp; fixed_addr &gt;&gt; <span class="number">2</span> &lt; <span class="number">4096</span>) <span class="keyword">begin</span></span><br><span class="line">			data[fixed_addr &gt;&gt; <span class="number">2</span>] &lt;= fixed_wdata;</span><br><span class="line">			<span class="built_in">$display</span>(<span class="string">&quot;%d@%h: *%h &lt;= %h&quot;</span>, <span class="built_in">$time</span>, m_inst_addr, fixed_addr, fixed_wdata);</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Registers -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(<span class="keyword">posedge</span> clk) <span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> (~reset) <span class="keyword">begin</span></span><br><span class="line">			<span class="keyword">if</span> (w_grf_we &amp;&amp; (w_grf_addr != <span class="number">0</span>)) <span class="keyword">begin</span></span><br><span class="line">				<span class="built_in">$display</span>(<span class="string">&quot;%d@%h: $%d &lt;= %h&quot;</span>, <span class="built_in">$time</span>, w_inst_addr, w_grf_addr, w_grf_wdata);</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Interrupt -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] fixed_macroscopic_pc;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">assign</span> fixed_macroscopic_pc = macroscopic_pc &amp; <span class="number">32&#x27;hfffffffc</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">integer</span> cnt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(<span class="keyword">negedge</span> clk) <span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> (reset) <span class="keyword">begin</span></span><br><span class="line">			interrupt = <span class="number">0</span>;</span><br><span class="line">			cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">			<span class="keyword">if</span> (interrupt) <span class="keyword">begin</span></span><br><span class="line">				<span class="keyword">if</span> (|m_int_byteen &amp;&amp; (m_int_addr &amp; <span class="number">32&#x27;hfffffffc</span>) == <span class="number">32&#x27;h7f20</span>) <span class="keyword">begin</span></span><br><span class="line">					interrupt = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//阻塞一个周期</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3014</span> &amp;&amp; cnt == <span class="number">0</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//sw同时中断（需停止写入）</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3020</span> &amp;&amp; cnt == <span class="number">1</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//阻塞两个周期</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3028</span> &amp;&amp; cnt == <span class="number">2</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//延迟槽</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3034</span> &amp;&amp; cnt == <span class="number">3</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3040</span> &amp;&amp; cnt == <span class="number">4</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//乘除指令</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3044</span> &amp;&amp; cnt == <span class="number">5</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3060</span> &amp;&amp; cnt == <span class="number">6</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h306c</span> &amp;&amp; cnt == <span class="number">7</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//指令异常</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3074</span> &amp;&amp; cnt == <span class="number">8</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h307c</span> &amp;&amp; cnt == <span class="number">9</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> #<span class="number">2</span> clk &lt;= ~clk;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h3 id="对应易错点"><a href="#对应易错点" class="headerlink" title="对应易错点"></a>对应易错点</h3><ul>
+<li>跳转指令无论是否跳转，接下来一条指令都应视为延迟槽</li>
+<li>cp0设计在w级则需要检查<code>store</code>类指令在w时被下中断写使能信号是否关闭</li>
+<li>如果设计eret后清空延迟槽则需要考虑优先级问题（阻塞&gt;清空）</li>
+<li>更进一步，如果设计了清空延迟槽需要考虑<strong>在<code>eret</code>后的<code>nop</code>下中断</strong>的情况</li>
+</ul>
+<h2 id="注意要点"><a href="#注意要点" class="headerlink" title="注意要点"></a>注意要点</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/12/%E3%80%90CO%E3%80%91P5&P6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/12/%E3%80%90CO%E3%80%91P5&P6/" class="post-title-link" itemprop="url">【CO】P5&P6</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-12 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-12T00:00:00+08:00">2023-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-15 17:03:50" itemprop="dateModified" datetime="2023-12-15T17:03:50+08:00">2023-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>WARNING:</strong>本博客内容大多为考前猜测而<strong>非</strong>考后总结，未经实践验证，或许会存在错误。</p>
+<h2 id="课上"><a href="#课上" class="headerlink" title="课上"></a>课上</h2><p><em>如果急着考试建议好好研读<a target="_blank" rel="noopener" href="http://hyggge.github.io/2021/12/06/co/co-p5-p6-ke-shang-ce-shi-zong-jie/">Hyggge</a>学长的博客</em></p>
+<p>三条指令：计算+跳转+存储</p>
+<ul>
+<li>计算指令应该不会出的很难</li>
+<li>跳转指令提前到D级的<code>Bjudge</code>处理，但如果同时需要写入一个<strong>新的值</strong>（指非来源<code>ExtRes</code>或寄存器的值）可能会需要在流水线寄存器中多传递一个值，并且转发出去的数据中也要多一个选项（或者在ALU中再算一次从<code>ALUres</code>传出）。另外跳转指令要确认是否跳对了位置，如判断放在D级，而PC取的为F，其实已经在<strong>当前</strong>基础上PC+4了。</li>
+<li>条件存储关键在于写入值生成的位置和写入判断生成的位置。<strong>可能写入</strong>是一个相对讨厌的事情，让我们假设他一定会写入，计算Tnew。如果写入值和写入判断在同一级流水线得到，只需要对于<code>RegWrite_W</code>新增一个MUX即可。</li>
+<li>一般存储也有相对讨厌的事情：如果写入的值即为GPR值，但写入的<strong>地址</strong>需要到M级才知道。那么此时Tnew应该取2，要让<strong>地址和值</strong>都确定了才可以。</li>
+</ul>
+<p>按照<a target="_blank" rel="noopener" href="https://hyggge.github.io/2021/12/06/co/co-p5-p6-ke-shang-ce-shi-zong-jie/#%E6%98%8E%E7%A1%AE%E6%96%B0%E6%8C%87%E4%BB%A4%E7%9A%84tuse_rstuse_rt%E4%BB%A5%E5%8F%8A%E5%9C%A8%E5%90%84%E7%BA%A7%E6%B5%81%E6%B0%B4%E7%9A%84tnew%E7%9B%B4%E6%8E%A5%E5%9C%A8%E4%B8%BB%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E4%BF%AE%E6%94%B9%E5%8D%B3%E5%8F%AF%E5%8D%83%E4%B8%87%E4%B8%8D%E8%A6%81%E5%BF%98%E8%AE%B0">Hyggge</a>的方法，可以考虑多流水一个信号<code>check</code>表示是否为新增指令，再在相应需要更改的位置。</p>
+<p>如果是条件链接，则需要在完成判断后将<code>RegWrite</code>更改（即流水<code>RegWrite_new</code>）。为了保证数据正确，默认<code>RegWrite</code>应该设为1。一般跳转判断在D级即可完成，故不需要考虑其他。如果还有可能需要也可能不用使用Rs或Rt的值，可以考虑修改传入<code>HJ</code>模块的<code>Tuse_new</code>。</p>
+<p>以<code>lwmx</code>为例，该指令将内存值和寄存器值对比，如果内存值大写入5号，否则写入4号。默认A3可以设为0，在W级A3才会更改成非0值。按照本人的设计，如果写入为0号寄存器则无视转发内容，故可减少错误信息转发问题。但需要考虑阻塞，应该将<code>check</code>也传给<code>HJ</code>模块，如果<code>check</code>信号为1，则在Tuse比较的来自转发的地址值不是A3而是4和5。</p>
+<p>对于写入地址在M级才知道的情况，以<code>lwm</code>为例，该指令计算内存地址并访存，读取结果减去rt后低五位作为写入寄存器的编号，写入值为<code>memReadData</code>。只要此时对应的check为1，则在HJ中比较地址直接置1。在确认写入地址之前依旧将A3设为默认的0值，确认写入地址后（在W级）再更改。</p>
+<p>稍微有点奇怪的是<code>jap</code>指令，本身是j指令，而需要读写29号寄存器的值。</p>
+<p>在<code>controller</code>中需要将<code>rs_addr</code>手动设为29，更改<code>GRF_addr_sel</code>的值（增加一个串口），而写入的值（也就是各级<code>Fout</code>）也需要增加串口。<code>DM</code>模块控制信号按照<code>sw</code>写。由于<code>DM</code>写入默认是<code>sw</code>，需要在这个口再加一个<code>mux</code>（即将<code>check</code>和<code>PCnext</code>加入<code>FMUX</code>中）</p>
+<p><strong>搓数据在精不在多！</strong></p>
+<h3 id="清空延迟槽"><a href="#清空延迟槽" class="headerlink" title="清空延迟槽"></a>清空延迟槽</h3><p>RTL描述的I+1即下一指令。对于跳转指令，可能会要求：下一条要么跳转（更改PC），要么清空延迟槽。具体实现可考虑当该指令处于D级时将<code>Bjump</code>传给<code>FDreg</code>。注意<strong>在STALL的时候不应该清空流水线（</strong>优先级问题，reset&gt;stall&gt;Bjump）</p>
+<h3 id="不定态"><a href="#不定态" class="headerlink" title="不定态"></a>不定态</h3><ul>
+<li>如果<code>nPC</code>连加四都放在D级处理会导致卡在第一个指令</li>
+<li>如果未<strong>初始化</strong>后面流水寄存器的值会导致值判断出现不定项而卡住。似乎对于相等判断可以有<code>===</code>排除<code>x</code></li>
+</ul>
+<h3 id="转发逻辑"><a href="#转发逻辑" class="headerlink" title="转发逻辑"></a>转发逻辑</h3><ul>
+<li><code>HJ.v</code>根据地址判断需要用到什么值</li>
+<li>每个可能产生值的流水级数据通过一个<code>Fout_MUX</code>生成对应Data</li>
+<li>在需求端通过<code>FMUX</code>选择正确的值</li>
+</ul>
+<h3 id="循环移位"><a href="#循环移位" class="headerlink" title="循环移位"></a>循环移位</h3><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//以循环左移为例</span></span><br><span class="line"><span class="keyword">if</span>(B[<span class="number">4</span>:<span class="number">0</span>] == <span class="number">5&#x27;d0</span>) out = A;</span><br><span class="line"><span class="keyword">else</span> out = A &lt;&lt; B[<span class="number">4</span>:<span class="number">0</span>] | A &gt;&gt; (<span class="number">5&#x27;d31</span> - B[<span class="number">4</span>:<span class="number">0</span>] + <span class="number">5&#x27;d1</span>);</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://hyggge.github.io/2021/12/06/co/co-p5-p6-ke-shang-ce-shi-zong-jie/">参考链接</a></p>
+<h3 id="符号运算"><a href="#符号运算" class="headerlink" title="符号运算"></a>符号运算</h3><p>按照<a target="_blank" rel="noopener" href="https://roife.github.io/posts/buaa-co-lab-p6/">Roife学长</a>所说，在<code>madd</code>中，将输入的两个值作为有符号数相乘</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(rs) * <span class="built_in">$signed</span>(rt);</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(<span class="built_in">$signed</span>(rs) * <span class="built_in">$signed</span>(rt));</span><br></pre></td></tr></table></figure>
+<p>以上两种写法都是错误的</p>
+<p>（第二种是因为外面嵌套的<code>$signed()</code>将位宽信息也屏蔽了，进而导致高32位被截去）</p>
+<p>正确应该为</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(<span class="built_in">$signed</span>(<span class="number">64&#x27;d0</span>) + <span class="built_in">$signed</span>(rs) * <span class="built_in">$signed</span>(rt));</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(<span class="built_in">$signed</span>(&#123;&#123;<span class="number">32</span>&#123;rs[<span class="number">31</span>]&#125;&#125;, rs[<span class="number">31</span>:<span class="number">0</span>]&#125;) * <span class="built_in">$signed</span>(&#123;&#123;<span class="number">32</span>&#123;rt[<span class="number">31</span>]&#125;&#125;, rt[<span class="number">31</span>:<span class="number">0</span>]&#125;)); <span class="comment">// 手动进行符号位扩展</span></span><br></pre></td></tr></table></figure>
+<h2 id="VScode配置"><a href="#VScode配置" class="headerlink" title="VScode配置"></a>VScode配置</h2><p><del>ISE太难用啦</del></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338497672?utm_id=0">参考链接</a></p>
+<p>tb文件中添加</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 生成vcd波形文件，用iverilog+GTKwave进行仿真所需的临时的vcd波形文件 */</span></span><br><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">	<span class="built_in">$dumpfile</span>(<span class="string">&quot;wave.vcd&quot;</span>);  <span class="comment">// 指定VCD文件的名字为wave.vcd，仿真信息将记录到此文件</span></span><br><span class="line">	<span class="built_in">$dumpvars</span>(<span class="number">0</span>, tb_code );  <span class="comment">// 指定层次数为0，则tb_code 模块及其下面各层次的所有信号将被记录</span></span><br><span class="line">	#<span class="number">10000</span> <span class="built_in">$finish</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>在cmd中输入</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">iverilog -o ./a.out ./ALU.v ./ALU_In2.v ./Controller.v ./DM.v ./EXT.v ./GRF.v ./GRF_A3.v ./GRF_WD.v ./IFU.v ./mips.v ./nPC.v ./Splitter.v ./tb_mips.v</span><br><span class="line">vvp -n ./a.out &gt;ans.txt</span><br><span class="line">gtkwave ./wave.vcd</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/18/%E3%80%90CO%E3%80%91P2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/18/%E3%80%90CO%E3%80%91P2/" class="post-title-link" itemprop="url">【CO】P2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-18 00:00:00" itemprop="dateCreated datePublished" datetime="2023-10-18T00:00:00+08:00">2023-10-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-23 15:51:40" itemprop="dateModified" datetime="2023-10-23T15:51:40+08:00">2023-10-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CO/" itemprop="url" rel="index"><span itemprop="name">CO</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="课上"><a href="#课上" class="headerlink" title="课上"></a>课上</h2><h3 id="评测"><a href="#评测" class="headerlink" title="评测"></a>评测</h3><ul>
+<li>程序的初始地址设置都是 <strong>Compact,Data at Address 0</strong></li>
+<li>程序结束后需要<strong>使用 syscall 结束程序</strong>，否则评测机可能会误认为程序运行时间超出限制从而报错</li>
+</ul>
+<h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><p><code>.space</code> 申请n个<strong>字节</strong>的空间</p>
+<p><code>.word</code>以字为单位存储数据，写成<code>.word 0:n</code>，n为实际字节数</p>
+<p>MIPS存储器是字节寻址，每一个字地址都是4的倍数。<code>lw</code>和<code>sw</code>的字地址必须字对齐，诸如<code>lw $s0, 7($0)</code>是非法指令</p>
+<h3 id="有符号指令和无符号指令"><a href="#有符号指令和无符号指令" class="headerlink" title="有符号指令和无符号指令"></a>有符号指令和无符号指令</h3><p>大多数指令对立即数符号扩展，如<code>addi</code>、<code>ls</code>、<code>sw</code>。但是逻辑操作<code>andi</code>、<code>ori</code>、<code>xori</code>零扩展</p>
+<p>加减法算数溢出时，有符号指令会发出异常，而无符号指令不会发出异常</p>
+<p><code>sltiu</code>会把立即数先符号拓展，再当成无符号数操作</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><h4 id="读入"><a href="#读入" class="headerlink" title="读入"></a>读入</h4><figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">.macro read_int(%dest)</span><br><span class="line">  li $v0, <span class="number">5</span></span><br><span class="line">  syscall</span><br><span class="line">  <span class="keyword">move</span> %dest, $v0</span><br><span class="line">.end_macro</span><br></pre></td></tr></table></figure>
+<p><code>char</code>:12</p>
+<h4 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.data</span></span><br><span class="line">space: <span class="selector-class">.asciiz</span> <span class="string">&quot; &quot;</span></span><br><span class="line">br: <span class="selector-class">.asciiz</span> <span class="string">&quot;\n&quot;</span></span><br><span class="line">  </span><br><span class="line"><span class="selector-class">.macro</span> print_space</span><br><span class="line">  la <span class="variable">$a0</span>, space</span><br><span class="line">  <span class="selector-tag">li</span> <span class="variable">$v0</span>, <span class="number">4</span></span><br><span class="line">  syscall</span><br><span class="line"><span class="selector-class">.end_macro</span> </span><br><span class="line">  </span><br><span class="line"><span class="selector-class">.macro</span> print_br</span><br><span class="line">  la <span class="variable">$a0</span>, br</span><br><span class="line">  <span class="selector-tag">li</span> <span class="variable">$v0</span>, <span class="number">4</span></span><br><span class="line">  syscall</span><br><span class="line"><span class="selector-class">.end_macro</span> </span><br></pre></td></tr></table></figure>
+<figure class="highlight mel"><table><tr><td class="code"><pre><span class="line">.macro print_int(%val)</span><br><span class="line">  <span class="keyword">move</span> $a0, %val</span><br><span class="line">  li $v0, <span class="number">1</span></span><br><span class="line">  syscall</span><br><span class="line">.end_macro</span><br></pre></td></tr></table></figure>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">li</span> <span class="variable">$t0</span>, <span class="number">0</span>  <span class="selector-id">#t0</span>:<span class="selector-tag">i</span></span><br><span class="line">la <span class="variable">$t1</span>, n  <span class="selector-id">#t1</span>:n</span><br><span class="line">for_begin:</span><br><span class="line">bge <span class="variable">$t0</span>, <span class="variable">$t1</span>, for_end</span><br><span class="line"><span class="comment">//do something</span></span><br><span class="line">addi <span class="variable">$t0</span>, <span class="variable">$t0</span>, <span class="number">1</span></span><br><span class="line">j for_begin</span><br><span class="line">for_end:</span><br></pre></td></tr></table></figure>
+<p>其他指令</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">bge </span>$<span class="built_in">t0</span>,$<span class="built_in">t1</span>,label    <span class="comment">#if t0 &gt;= t1</span></span><br><span class="line"><span class="keyword">bgt </span>$<span class="built_in">t0</span>,$<span class="built_in">t1</span>,label    <span class="comment">#if t0 &gt; t1</span></span><br><span class="line"><span class="keyword">ble </span>$<span class="built_in">t0</span>,$<span class="built_in">t1</span>,label    <span class="comment">#if t0 &lt;= t1</span></span><br><span class="line"><span class="keyword">blt </span>$<span class="built_in">t0</span>,$<span class="built_in">t1</span>,label    <span class="comment">#if t0 &lt; t1</span></span><br><span class="line"><span class="keyword">beqz </span>$<span class="built_in">t0</span>,label       <span class="comment">#if t0 == 0</span></span><br><span class="line"><span class="keyword">bnez </span>$<span class="built_in">t0</span>,label       <span class="comment">#if t0 != 0 </span></span><br></pre></td></tr></table></figure>
+<h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h4><figure class="highlight llvm"><table><tr><td class="code"><pre><span class="line">.macro getOff(<span class="variable">%dest</span><span class="punctuation">,</span> <span class="variable">%row</span><span class="punctuation">,</span> <span class="variable">%col</span><span class="punctuation">,</span> <span class="variable">%n</span>)</span><br><span class="line">mult <span class="variable">%row</span><span class="punctuation">,</span> <span class="variable">%n</span></span><br><span class="line">mflo <span class="variable">%dest</span></span><br><span class="line"><span class="keyword">add</span> <span class="variable">%dest</span><span class="punctuation">,</span> <span class="variable">%dest</span><span class="punctuation">,</span> <span class="variable">%col</span></span><br><span class="line">sll <span class="variable">%dest</span><span class="punctuation">,</span> <span class="variable">%dest</span><span class="punctuation">,</span> <span class="number">2</span></span><br><span class="line">.end_macro </span><br></pre></td></tr></table></figure>
+<p>存的时候诸如：<code>lw $t3, array1($t3)</code></p>
+<ul>
+<li>注意在敲计算较多的板子时不要引入其他寄存器（如本例中全在利用%dest变化）</li>
+</ul>
+<h4 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="meta">.macro</span> end_pro</span><br><span class="line">li $<span class="built_in">v0</span>,<span class="number">10</span></span><br><span class="line"><span class="keyword">syscall</span></span><br><span class="line"><span class="keyword"></span>.end_macro</span><br></pre></td></tr></table></figure>
+<h4 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="meta">.data</span> </span><br><span class="line"><span class="symbol">debug:</span> .asciiz <span class="string">&quot;OK!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">.macro</span> print_ok</span><br><span class="line">la $<span class="built_in">a0</span>, <span class="built_in">debug</span></span><br><span class="line">li $<span class="built_in">v0</span>, <span class="number">4</span></span><br><span class="line"><span class="keyword">syscall</span></span><br><span class="line"><span class="keyword"></span>.end_macro</span><br></pre></td></tr></table></figure>
+<h4 id="factorial"><a href="#factorial" class="headerlink" title="factorial"></a>factorial</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">factorial</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n&lt;=<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> (n*factorial(n<span class="number">-1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">factorial:</span></span><br><span class="line">  <span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, -<span class="number">8</span>  <span class="comment"># make room on stack</span></span><br><span class="line">  <span class="keyword">sw </span>$<span class="built_in">a0</span>, <span class="number">4</span>($<span class="built_in">sp</span>)</span><br><span class="line">  <span class="keyword">sw </span>$<span class="built_in">ra</span>, <span class="number">0</span>($<span class="built_in">sp</span>)  <span class="comment"># store</span></span><br><span class="line">  <span class="keyword">addi </span>$<span class="built_in">t0</span>, $<span class="number">0</span>, <span class="number">2</span></span><br><span class="line">  <span class="keyword">slt </span>$<span class="built_in">t0</span>, $<span class="built_in">a0</span>, $<span class="built_in">t0</span>  <span class="comment"># n&lt;=1?</span></span><br><span class="line">  <span class="keyword">beq </span>$<span class="built_in">t0</span>, $<span class="number">0</span>, else</span><br><span class="line">  <span class="keyword">addi </span>$<span class="built_in">v0</span>, $<span class="number">0</span>, <span class="number">1</span></span><br><span class="line">  <span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, <span class="number">8</span></span><br><span class="line">  <span class="keyword">jr </span>$<span class="built_in">ra</span></span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">  <span class="keyword">addi </span>$<span class="built_in">a0</span>, $<span class="built_in">a0</span>, -<span class="number">1</span></span><br><span class="line">  <span class="keyword">jal </span>factorial  <span class="comment"># recursive call</span></span><br><span class="line">  <span class="keyword">lw </span>$<span class="built_in">ra</span>, <span class="number">0</span>($<span class="built_in">sp</span>)</span><br><span class="line">  <span class="keyword">lw </span>$<span class="built_in">a0</span>, <span class="number">4</span>($<span class="built_in">sp</span>)  <span class="comment"># restore</span></span><br><span class="line">  <span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, <span class="number">8</span>  <span class="comment"># restore $sp</span></span><br><span class="line">  <span class="keyword">mul </span>$<span class="built_in">v0</span>, $<span class="built_in">a0</span>, $<span class="built_in">v0</span></span><br><span class="line">  <span class="keyword">jr </span>$<span class="built_in">ra</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>程序使用<code>$a0-$a3</code>保存输入参数，用<code>$v0-$v1</code>保存返回值</li>
+<li><code>$sp</code>初始处于栈顶，保存地址值<code>0x7ffffffc</code></li>
+</ul>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><p>乘法：hi 保存高32位，lo 保存低32位；除法：hi 保存余数，lo 保存余商。</p>
+<h3 id="矩阵卷积运算"><a href="#矩阵卷积运算" class="headerlink" title="矩阵卷积运算"></a>矩阵卷积运算</h3><p>常用于图像处理。一个较为直观的说法是，把模板b放在图像a上（按照某种公式将b与a待处理的元素对齐），用b的每个元素乘a中被覆盖的对应元素，累加和等于卷积后该位置的值。</p>
+<p>P2.Q3给出的定义是</p>
+<p>$g(i, j) = \sum_{k,l}f(i+k,j+l)h(k,l)$</p>
+<p>其中f为待卷积矩阵，h为卷积核，g即为输出矩阵，k与l的终值分别为卷积核h的行大小、列大小。计算中不考虑边缘效应。</p>
+<h3 id="递归拆解"><a href="#递归拆解" class="headerlink" title="递归拆解"></a>递归拆解</h3><p>factorial:</p>
+<ul>
+<li>开辟栈空间</li>
+<li>存储保护变量<code>$a0</code>，<code>$ra</code></li>
+<li>判断是否进入基本情况</li>
+<li>基本情况</li>
+<li>返回</li>
+</ul>
+<p>else:</p>
+<ul>
+<li>递归调用</li>
+<li>读取栈空间变量</li>
+<li>恢复栈空间</li>
+<li>返回</li>
+</ul>
+<p>在未到达基本情况的时候，函数其实一直在深入，也就是一直重复<strong>开辟空间、存、递归</strong>的操作。在到达基本情况后，函数<strong>一层层</strong>返回，也就是一层层取出<code>$a0</code>，<code>$ra</code>的值</p>
+<p>这里似乎可以有两种设计方法，一个是利用<strong>返回</strong>的过程，对每次得到的<code>$a0</code>进行操作（如阶乘）；另一种是利用<strong>深入</strong>的过程，依赖外部数组进行操作（如全排序）</p>
+<p>再次注意一下对<code>$sp</code>指针的操作！</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, -<span class="number">8</span>  <span class="comment"># make room on stack</span></span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">a0</span>, <span class="number">4</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">ra</span>, <span class="number">0</span>($<span class="built_in">sp</span>)  <span class="comment"># store</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">ra</span>, <span class="number">0</span>($<span class="built_in">sp</span>)</span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">a0</span>, <span class="number">4</span>($<span class="built_in">sp</span>)  <span class="comment"># restore</span></span><br><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, <span class="number">8</span>  <span class="comment"># restore $sp</span></span><br></pre></td></tr></table></figure>
+<h3 id="高精度阶乘"><a href="#高精度阶乘" class="headerlink" title="高精度阶乘"></a>高精度阶乘</h3><p>第一版的写法，照着翻译后最后一个点TLE</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> a[<span class="number">1005</span>];</span><br><span class="line"><span class="type">int</span> len = <span class="number">0</span>; <span class="comment">//real len - 1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	a[<span class="number">0</span>]=<span class="number">1</span>; </span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;=len; j++)&#123;</span><br><span class="line">			a[j] = a[j] * i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;=len; j++)&#123;</span><br><span class="line">			<span class="type">int</span> tem = a[j]/<span class="number">10</span>;</span><br><span class="line">			a[j] = a[j]%<span class="number">10</span>;</span><br><span class="line">			<span class="keyword">if</span>(tem != <span class="number">0</span>)&#123;</span><br><span class="line">				a[j+<span class="number">1</span>] = a[j+<span class="number">1</span>] + tem;</span><br><span class="line">				<span class="keyword">if</span>(len == j) &#123;</span><br><span class="line">					len = j + <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>本来是为了安全，全部乘完后再一起进位，看来不得不带上脑子了</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> a[<span class="number">1005</span>];</span><br><span class="line"><span class="type">int</span> len = <span class="number">0</span>; <span class="comment">//real len - 1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	a[<span class="number">0</span>]=<span class="number">1</span>; </span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		<span class="type">int</span> in = <span class="number">0</span>; </span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;=len; j++)&#123;</span><br><span class="line">			a[j] = a[j] * i + in;</span><br><span class="line">			in = a[j]/<span class="number">10</span>;</span><br><span class="line">			a[j] = a[j]%<span class="number">10</span>;	</span><br><span class="line">			<span class="keyword">if</span>(in != <span class="number">0</span> &amp;&amp; j == len)&#123;</span><br><span class="line">				len = j + <span class="number">1</span>;</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = len; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>然后就能ac了</p>
+<h3 id="C译MIPS注意事项"><a href="#C译MIPS注意事项" class="headerlink" title="C译MIPS注意事项"></a>C译MIPS注意事项</h3><ul>
+<li>可以考虑调整<strong>判断语句</strong>顺序</li>
+<li><code>lw</code>和<code>sw</code>注意别写串了</li>
+<li>程序结尾注意<strong>结束程序</strong></li>
+<li>随时记录用到的寄存器代表的值（尤其是s0-s7）</li>
+</ul>
+<hr>
+<p><del>算法学的不扎实上机慌得一批</del></p>
+<h3 id="素数判断"><a href="#素数判断" class="headerlink" title="素数判断"></a>素数判断</h3><ul>
+<li>1不是素数</li>
+<li>从2开始遍历，如果能被除1和其本身的数整除，那么说明不是素数</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/17/aboutBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/17/aboutBlog/" class="post-title-link" itemprop="url">aboutBlog</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-17 00:00:00" itemprop="dateCreated datePublished" datetime="2023-10-17T00:00:00+08:00">2023-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-15 17:38:30" itemprop="dateModified" datetime="2023-12-15T17:38:30+08:00">2023-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="10-17"><a href="#10-17" class="headerlink" title="10.17"></a>10.17</h2><h3 id="数学公式渲染"><a href="#数学公式渲染" class="headerlink" title="数学公式渲染"></a>数学公式渲染</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45511189/article/details/115798563">参考链接</a> </p>
+<p>主题：<a target="_blank" rel="noopener" href="https://github.com/random-yang/paper">paper</a></p>
+<p>主题下给出数学公式开启方式如下：</p>
+<ul>
+<li>卸载<code>hexo-math</code></li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-<span class="keyword">math</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>卸载 <code>hexo-renderer-marked</code></li>
+</ul>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> uninstall hexo-renderer-marked</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装 <code>hexo-renderer-kramed</code></li>
+</ul>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-kramed <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新 <code>_config.yml</code></li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加</span></span><br><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">engine:</span> <span class="string">&#x27;mathjax&#x27;</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">cdn:</span> <span class="string">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后</li>
+</ul>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p><strong>没有用。</strong></p>
+<p>缝缝补补后解决方案如下：</p>
+<ul>
+<li><p>安装<code>hexo-filter-mathjax</code></p>
+</li>
+<li><p>在<code>_config.yml</code>中添加</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">mhchem:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>更改冲突</li>
+</ul>
+<p><code>~\node_modules\kramed\lib\rules\inline.js</code>中</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>escape<span class="operator">:</span> <span class="operator">/</span><span class="operator">^</span><span class="punctuation">\</span><span class="punctuation">\</span><span class="punctuation">(</span><span class="punctuation">[</span><span class="punctuation">\</span><span class="punctuation">\</span>`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">//修改为：</span><br><span class="line">escape: /^\\([`<span class="operator">*</span><span class="punctuation">\</span><span class="punctuation">[</span><span class="punctuation">\</span><span class="punctuation">]</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="comment">#$+\-.!_&gt;])/,</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line"><span class="comment">//修改为</span></span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片 "></a><span id = "pic">插入图片 </span></h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/549145599">参考链接</a></p>
+<ul>
+<li>（不知道是否发挥了作用）在<code>_config.yml</code>设置<code>post_asset_folder</code>为<code>true</code></li>
+<li>typora中将图片复制到指定路径。</li>
+</ul>
+<p><img src="/images/aboutBlog/image-20231017183950140.png" alt="image-20231017183950140"></p>
+<p><strong>注：</strong>建议勾选“优先使用相对路径”</p>
+<ul>
+<li>设置根目录（格式-&gt;图像-&gt;设置图片根目录）</li>
+<li>在<code>front-matter</code>中添加配置（或者直接加到<code>hexo\scaffolds\post.md</code>中）</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">typora-root-url</span><span class="punctuation">: </span>../</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>手动把typora中图片前面的<code>../</code>删掉</strong>（typora中会无法显示图片）（肯定有自动化方法，再议）</li>
+</ul>
+<h3 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zemprogram/article/details/104288872">参考链接</a></p>
+<h3 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h3><p>主题更改为NexT</p>
+<h2 id="10-8"><a href="#10-8" class="headerlink" title="10.8"></a>10.8</h2><h3 id="增加分类页面"><a href="#增加分类页面" class="headerlink" title="增加分类页面"></a>增加分类页面</h3><h3 id="解决标题无法加方括号问题"><a href="#解决标题无法加方括号问题" class="headerlink" title="解决标题无法加方括号问题"></a>解决标题无法加方括号问题</h3><p>也没有解决，英文方括号不让用就用中文的</p>
+<h2 id="12-15"><a href="#12-15" class="headerlink" title="12.15"></a>12.15</h2><h3 id="增加跳转功能"><a href="#增加跳转功能" class="headerlink" title="增加跳转功能"></a>增加跳转功能</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JohnTsai/p/4027229.html">参考链接</a></p>
+<ul>
+<li>定义锚</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span> = <span class="string">&quot;jump&quot;</span>&gt;</span>文字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>跳转</li>
+</ul>
+<figure class="highlight scheme"><table><tr><td class="code"><pre><span class="line">[<span class="name">引导文字</span>](#jump)</span><br></pre></td></tr></table></figure>
+<p><a href="#pic">让我们跳到插入图片板块</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/15/debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/15/debug/" class="post-title-link" itemprop="url">【OO】 debug</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-15 00:00:00" itemprop="dateCreated datePublished" datetime="2023-10-15T00:00:00+08:00">2023-10-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-18 18:17:46" itemprop="dateModified" datetime="2023-10-18T18:17:46+08:00">2023-10-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>de到癫狂记录一下遇到的情况</p>
+<h2 id="“粗心”类"><a href="#“粗心”类" class="headerlink" title="“粗心”类"></a>“粗心”类</h2><ul>
+<li>自己搓数据对但提交不对—题目理解错了</li>
+<li>删除时是否删除所有容器中物体</li>
+<li>同名情况<ul>
+<li>删除时保证删掉的是正确的</li>
+</ul>
+</li>
+<li>检索时按照正确的属性检索</li>
+<li>arrayList删除时默认是按照<strong>索引</strong>删除</li>
+</ul>
+<h2 id="基础知识类"><a href="#基础知识类" class="headerlink" title="基础知识类"></a>基础知识类</h2><h3 id="相等"><a href="#相等" class="headerlink" title="相等"></a>相等</h3><p><code>equal</code> 对象属性相同</p>
+<p><code>==</code> （对象）指向同一个对象 （基本类型）值</p>
+<p><strong>特例：</strong>字符串常量池</p>
+<h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str1</span> <span class="operator">=</span> <span class="string">&quot;012345&quot;</span>.substring(<span class="number">1</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>输出结果<code>12</code> —[1,3)</p>
+<p>String类型的<code>substring(String str,int start,int end)</code>函数如果end大于字符串长度会报错</p>
+<p>而<code>StringUtils.substring(String str,int start,int end)</code>超出范围不会</p>
+<p>字符串<code>string</code>下标应该小于<code>string.length()</code></p>
+<h3 id="克隆、深浅拷贝"><a href="#克隆、深浅拷贝" class="headerlink" title="克隆、深浅拷贝"></a>克隆、深浅拷贝</h3><p><code>Object</code> 类中提供的 <code>clone()</code> 方法为浅拷贝</p>
+<p>在 Java 中，常见的实现深克隆的方式有：通过继承 Cloneable 接口，重写 <code>clone()</code> 方法实现深克隆；通过序列化与反序列化的方式实现深克隆；第三方工具类实现深克隆，克隆对象需继承 Serializable 接口</p>
+<h3 id="迭代器删除"><a href="#迭代器删除" class="headerlink" title="迭代器删除"></a>迭代器删除</h3><p>即使使用for循环，本质上还是用迭代器遍历</p>
+<p>错误（边遍历边删除）：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (Dog dog:arrayList)&#123;</span><br><span class="line">     arrayList.remove(dog);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等效错误：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Iterator&lt;Dog&gt;iterator= arrayList.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">    Dog dog=iterator.next();</span><br><span class="line">    arrayList.remove(dog);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码会报错：<code>ConcurrentModificationException</code></p>
+<p>正确（使用迭代器的删除）：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Iterator&lt;Dog&gt;iterator= arrayList.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">       Dog dog=iterator.next();</span><br><span class="line">       iterator.remove();</span><br><span class="line">       System.out.println(dog.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>List 的 remove 方法有两个重载，一个接收 int 型参数（通过下标删除），一个接收 Object 型参数（通过元素删除）</strong>对于 List\<Integer\>，如果传入一个整型字面值，会删除对应下标处的元素。<code>List.remove(&quot;B&quot;)</code>是合法的</p>
+<p>在IDEA中跑的时候IDEA告诉我可以把这段代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Iterator&lt;Soldier&gt; iterator = soldiers.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">            <span class="type">Soldier</span> <span class="variable">soldier</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">            <span class="keyword">if</span> (soldier.notQualifiedByStandard(standard)) &#123;</span><br><span class="line">                iterator.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>变成这样</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">soldiers.removeIf(soldier -&gt; soldier.notQualifiedByStandard(standard));</span><br></pre></td></tr></table></figure>
+<h2 id="debug一些角度"><a href="#debug一些角度" class="headerlink" title="debug一些角度"></a>debug一些角度</h2><ul>
+<li>未考虑到特殊情况，即认为能实现某种功能，在具体实现中有偏差</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/13/%E3%80%90CO%E3%80%91%20P1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/13/%E3%80%90CO%E3%80%91%20P1/" class="post-title-link" itemprop="url">【CO】P1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-13 00:00:00" itemprop="dateCreated datePublished" datetime="2023-10-13T00:00:00+08:00">2023-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-10-18 19:35:38" itemprop="dateModified" datetime="2023-10-18T19:35:38+08:00">2023-10-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CO/" itemprop="url" rel="index"><span itemprop="name">CO</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="课下"><a href="#课下" class="headerlink" title="课下"></a>课下</h2><h3 id="位拼接运算符"><a href="#位拼接运算符" class="headerlink" title="位拼接运算符"></a>位拼接运算符</h3><p>例如 <code>{a, b[3:0], w, 3'b101}</code>，<code>{4{w}}</code>，<code>{b, {3{a, b}}}</code></p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">wire</span> a[<span class="number">31</span>:<span class="number">0</span>], b[<span class="number">15</span>, <span class="number">0</span>], c[<span class="number">7</span>:<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//wrong</span></span><br><span class="line"><span class="keyword">assign</span> c = {<span class="number">7</span>{<span class="number">1</span>}};</span><br><span class="line"><span class="comment">//correct</span></span><br><span class="line"><span class="keyword">assign</span> c = {<span class="number">7</span>{<span class="number">1'b1</span>}};</span><br><span class="line"></span><br><span class="line"><span class="comment">//correct</span></span><br><span class="line"><span class="keyword">assign</span> b = {<span class="number">8</span>b'<span class="number">0</span>, c};</span><br><span class="line"></span><br><span class="line"><span class="comment">//wrong</span></span><br><span class="line"><span class="keyword">assign</span> sign = b[<span class="number">15</span>];</span><br><span class="line"><span class="keyword">assign</span> a = {<span class="number">16</span>{sign}, b};</span><br><span class="line"><span class="comment">//correct</span></span><br><span class="line"><span class="keyword">assign</span> sign = b[<span class="number">15</span>];</span><br><span class="line"><span class="keyword">assign</span> a = {{<span class="number">16</span>{sign}}, b};</span><br><span class="line"><span class="comment">//also correct</span></span><br><span class="line"><span class="keyword">assign</span> a = <span class="built_in">$signed</span>(b);</span><br></pre></td></tr></table></figure>
+<h3 id="格雷码"><a href="#格雷码" class="headerlink" title="格雷码"></a>格雷码</h3><p>特点：每次增加只需要变动一位</p>
+<h4 id="二进制转格雷码"><a href="#二进制转格雷码" class="headerlink" title="二进制转格雷码"></a>二进制转格雷码</h4><p>二进制：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.471ex;" xmlns="http://www.w3.org/2000/svg" width="22.323ex" height="2.016ex" role="img" focusable="false" viewBox="0 -683 9866.9 891"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mi" transform="translate(792,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="msub" transform="translate(1266.3,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="TeXAtom" transform="translate(792,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(1378,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="mo" transform="translate(3602.9,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mo" transform="translate(4941.5,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="msub" transform="translate(6280.2,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mn" transform="translate(792,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="msub" transform="translate(7475.8,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mn" transform="translate(792,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="msub" transform="translate(8671.3,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mn" transform="translate(792,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container></p>
+<p>格雷码：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.471ex;" xmlns="http://www.w3.org/2000/svg" width="22.629ex" height="2.066ex" role="img" focusable="false" viewBox="0 -705 10001.9 913"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mi" transform="translate(819,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="msub" transform="translate(1293.3,0)"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="TeXAtom" transform="translate(819,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(1378,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="mo" transform="translate(3656.9,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mo" transform="translate(4995.5,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="msub" transform="translate(6334.2,0)"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mn" transform="translate(819,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="msub" transform="translate(7556.8,0)"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mn" transform="translate(819,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="msub" transform="translate(8779.3,0)"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mn" transform="translate(819,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container></p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="37.017ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 16361.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mi" transform="translate(819,-150) scale(0.707)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g><g data-mml-node="mo" transform="translate(1515.2,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msub" transform="translate(2571,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mi" transform="translate(792,-150) scale(0.707)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g><g data-mml-node="mo" transform="translate(4003.6,0)"><path data-c="2295" d="M56 250Q56 394 156 488T384 583Q530 583 626 485T722 250Q722 110 625 14T390 -83Q249 -83 153 14T56 250ZM364 542Q308 539 251 509T148 418T96 278V270H369V542H364ZM681 278Q675 338 650 386T592 462T522 509T458 535T412 542H409V270H681V278ZM96 222Q104 150 139 95T219 12T302 -29T366 -42H369V230H96V222ZM681 222V230H409V-42H412Q429 -42 456 -36T521 -10T590 37T649 113T681 222Z"></path></g><g data-mml-node="msub" transform="translate(5003.8,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="TeXAtom" transform="translate(792,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g><g data-mml-node="mo" transform="translate(521,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1299,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="mo" transform="translate(7117.9,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(7506.9,0)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g><g data-mml-node="mo" transform="translate(8305.7,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(9361.4,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g><g data-mml-node="mo" transform="translate(9861.4,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mn" transform="translate(10306.1,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(10972.8,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mo" transform="translate(12311.4,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mi" transform="translate(13650.1,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(14472.3,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(15472.6,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(15972.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="12.705ex" height="1.952ex" role="img" focusable="false" viewBox="0 -705 5615.5 862.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mi" transform="translate(819,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1571,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msub" transform="translate(2626.8,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mi" transform="translate(792,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(4115.3,0)"><path data-c="2295" d="M56 250Q56 394 156 488T384 583Q530 583 626 485T722 250Q722 110 625 14T390 -83Q249 -83 153 14T56 250ZM364 542Q308 539 251 509T148 418T96 278V270H369V542H364ZM681 278Q675 338 650 386T592 462T522 509T458 535T412 542H409V270H681V278ZM96 222Q104 150 139 95T219 12T302 -29T366 -42H369V230H96V222ZM681 222V230H409V-42H412Q429 -42 456 -36T521 -10T590 37T649 113T681 222Z"></path></g><g data-mml-node="mn" transform="translate(5115.5,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></svg></mjx-container></p>
+<h4 id="格雷码转二进制"><a href="#格雷码转二进制" class="headerlink" title="格雷码转二进制"></a>格雷码转二进制</h4><p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="12.705ex" height="1.952ex" role="img" focusable="false" viewBox="0 -705 5615.5 862.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mi" transform="translate(792,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1544,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msub" transform="translate(2599.8,0)"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mi" transform="translate(819,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(4115.3,0)"><path data-c="2295" d="M56 250Q56 394 156 488T384 583Q530 583 626 485T722 250Q722 110 625 14T390 -83Q249 -83 153 14T56 250ZM364 542Q308 539 251 509T148 418T96 278V270H369V542H364ZM681 278Q675 338 650 386T592 462T522 509T458 535T412 542H409V270H681V278ZM96 222Q104 150 139 95T219 12T302 -29T366 -42H369V230H96V222ZM681 222V230H409V-42H412Q429 -42 456 -36T521 -10T590 37T649 113T681 222Z"></path></g><g data-mml-node="mn" transform="translate(5115.5,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></svg></mjx-container></p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="37.017ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 16361.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mi" transform="translate(792,-150) scale(0.707)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g><g data-mml-node="mo" transform="translate(1488.2,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msub" transform="translate(2544,0)"><g data-mml-node="mi"><path data-c="1D43A" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path></g><g data-mml-node="mi" transform="translate(819,-150) scale(0.707)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g><g data-mml-node="mo" transform="translate(4003.6,0)"><path data-c="2295" d="M56 250Q56 394 156 488T384 583Q530 583 626 485T722 250Q722 110 625 14T390 -83Q249 -83 153 14T56 250ZM364 542Q308 539 251 509T148 418T96 278V270H369V542H364ZM681 278Q675 338 650 386T592 462T522 509T458 535T412 542H409V270H681V278ZM96 222Q104 150 139 95T219 12T302 -29T366 -42H369V230H96V222ZM681 222V230H409V-42H412Q429 -42 456 -36T521 -10T590 37T649 113T681 222Z"></path></g><g data-mml-node="msub" transform="translate(5003.8,0)"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="TeXAtom" transform="translate(792,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g><g data-mml-node="mo" transform="translate(521,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1299,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="mo" transform="translate(7117.9,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(7506.9,0)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g><g data-mml-node="mo" transform="translate(8305.7,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(9361.4,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g><g data-mml-node="mo" transform="translate(9861.4,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mn" transform="translate(10306.1,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(10972.8,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mo" transform="translate(12311.4,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mi" transform="translate(13650.1,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(14472.3,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(15472.6,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(15972.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
+<p><img src="/images/【CO】P1/image-20231017183650487.png" alt="image-20231017183650487"></p>
+<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><h4 id="wire赋值"><a href="#wire赋值" class="headerlink" title="wire赋值"></a>wire赋值</h4><h4 id="reg赋值"><a href="#reg赋值" class="headerlink" title="reg赋值"></a>reg赋值</h4><p>阻塞赋值  <code>=</code>  和非阻塞赋值  <code>&lt;=</code> 用于<code>initial</code> 和 <code>always</code> 块中，为 <code>reg</code> 型变量赋值</p>
+<p>阻塞赋值属于顺序执行，即下一条语句执行前，当前语句一定会执行完毕。</p>
+<p>非阻塞赋值属于并行执行语句，即下一条语句的执行和当前语句的执行是同时进行的，它不会阻塞位于同一个语句块中后面语句的执行。</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">    i = <span class="number">1</span>;</span><br><span class="line">    j = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">assign</span> i = i + <span class="number">1</span>;  <span class="comment">//不合法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk) <span class="keyword">begin</span></span><br><span class="line">    i = i + <span class="number">1</span>;</span><br><span class="line">    a = i;  <span class="comment">//a = 2</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk)<span class="keyword">begin</span></span><br><span class="line">    j &lt;= j + <span class="number">1</span>;</span><br><span class="line">    b &lt;= j;  <span class="comment">//b = 1</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="位宽"><a href="#位宽" class="headerlink" title="位宽"></a>位宽</h4><p>在对寄存器类型变量进行过程赋值时,如果赋值符两侧的位宽不相等,则采用以下原则。</p>
+<p>（1） 如果右侧表达式的位宽较宽,则将保留从最低位开始的右侧值,把超过左侧位宽的高位丢弃;</p>
+<p>（2）如果左侧位宽大于右侧位宽,则不足的高位补0。</p>
+<h4 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h4><p>以P1.Q4为例，实现一个三位数的格雷码计数器。</p>
+<p><strong>功能描述：</strong></p>
+<p>1、 在任意一个时钟上升沿到来的时候，如果复位信号有效，则将计数器清零；</p>
+<p>2、 每个时钟上升沿到来的时候，如果使能信号有效，计数器的值+1；</p>
+<p>3、 在满足1时，即使2的条件满足，也不必执行2；</p>
+<p>4、 计数器初值为0；</p>
+<p>5、 当计数器的值在+1后出现溢出的情况时，将会回到零，同时从发生溢出的这个时钟上升沿开始，溢出标志位将会持续输出1，直到计数器被清零为止（其余情况下溢出标志位必须为0）。</p>
+<p>那么聪明的你一定能看出下面的问题：</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> Clk) <span class="keyword">begin</span> </span><br><span class="line">    <span class="keyword">if</span>(Reset) <span class="keyword">begin</span></span><br><span class="line">      Output &lt;= <span class="number">3'b000</span>;</span><br><span class="line">      Overflow &lt;= <span class="number">1'b0</span>;</span><br><span class="line">      counter &lt;= <span class="number">4'b0000</span>;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">else</span> <span class="keyword">if</span> (En) <span class="keyword">begin</span></span><br><span class="line">      counter &lt;= counter + <span class="number">1'b1</span>;</span><br><span class="line">      <span class="comment">//overflow</span></span><br><span class="line">      <span class="keyword">if</span> (counter[<span class="number">3</span>] == <span class="number">1'b1</span>) <span class="keyword">begin</span></span><br><span class="line">        counter &lt;= <span class="number">4'b0000</span>;  <span class="comment">//counter被赋值两次</span></span><br><span class="line">        Overflow &lt;= <span class="number">1'b1</span>;</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">      <span class="comment">//BtoG</span></span><br><span class="line">        Output &lt;= {{counter[<span class="number">2</span>]^<span class="number">1'b0</span>}, {counter[<span class="number">2</span>]^counter[<span class="number">1</span>]}, {counter[<span class="number">1</span>]^counter[<span class="number">0</span>]}};  <span class="comment">//输出的值实为上一个时钟上升沿到来时的期望输出值</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="always"><a href="#always" class="headerlink" title="always@(*)"></a>always@(*)</h3><blockquote>
+<p>The implicit event_expression, @*, is a convenient shorthand that eliminates these problems by adding all nets and variables which are read by the statement (which can be a statement group) of a procedural_timing_control_statement to the event_expression.</p>
+<p>All net and variable identifiers which appear in the statement will be automatically added to the event expression with these exceptions: </p>
+<p>Identifiers which only appear in wait or event expressions.<br>Identifiers which only appear as a hierarchical_reg_identifier in the reg_lvalue of the left hand side of assignments.<br>Nets and variables which appear on the right hand side of assignments, in function and task calls, or case and conditional expressions shall all be included by these rules.</p>
+</blockquote>
+<p>Examples：</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">always</span> @(*) <span class="comment">// equivalent to @(a or b or c or d or f)</span></span><br><span class="line">    y = (a &amp; b) | (c &amp; d) | myfunction(f);</span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @* <span class="keyword">begin</span> <span class="comment">// equivalent to @(a or b or c or d or tmp1 or tmp2) </span></span><br><span class="line">    tmp1 = a &amp; b; </span><br><span class="line">    tmp2 = c &amp; d; </span><br><span class="line">    y = tmp1 | tmp2; </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @* <span class="keyword">begin</span> <span class="comment">// equivalent to @(a or b or c or d) </span></span><br><span class="line">    x = a ^ b;</span><br><span class="line">    @* <span class="comment">// equivalent to @(c or d) </span></span><br><span class="line">    x = c ^ d; </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>教程推荐用于写<strong>组合电路</strong></p>
+<h3 id="signed"><a href="#signed" class="headerlink" title="$signed()"></a><code>$signed()</code></h3><h3 id="tb"><a href="#tb" class="headerlink" title="tb"></a>tb</h3><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">0</span>:<span class="number">1023</span>] S = <span class="string">"abcd"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">while</span>(!S[<span class="number">0</span>:<span class="number">7</span>]) S = S &lt;&lt; <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(; S[<span class="number">0</span>:<span class="number">7</span>]; S = S &lt;&lt; <span class="number">8</span>) <span class="keyword">begin</span></span><br><span class="line">      in = S[<span class="number">0</span>:<span class="number">7</span>];</span><br><span class="line">      #<span class="number">5</span>;</span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意是左移！！！</strong></p>
+<p>以上两个板块参考学长博客<a target="_blank" rel="noopener" href="https://roife.github.io/posts/buaa-co-lab-p1/#signedness">链接</a></p>
+<h3 id="通用模板"><a href="#通用模板" class="headerlink" title="通用模板"></a>通用模板</h3><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">assign</span> result = (Aluop == <span class="number">4'd0</span>) ? (srca + srcb) :</span><br><span class="line">                   (Aluop == <span class="number">4'd1</span>) ? (srca - srcb) :</span><br><span class="line">                   (Aluop == <span class="number">4'd2</span>) ? (srca &amp; srcb) :</span><br><span class="line">                   (Aluop == <span class="number">4'd3</span>) ? (srca | srcb) :</span><br><span class="line">                   (Aluop == <span class="number">4'd4</span>) ? (srca ^ srcb) :</span><br><span class="line">                   (Aluop == <span class="number">4'd5</span>) ? (srca &gt; srcb) :</span><br><span class="line">                   <span class="number">32'd0</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">      <span class="keyword">case</span>(Aluop)</span><br><span class="line">        <span class="number">4'd0</span>:<span class="keyword">begin</span></span><br><span class="line">            result = srca + srcb;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="number">4'd1</span>:<span class="keyword">begin</span></span><br><span class="line">            result = srca - srcb;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="number">4'd2</span>:<span class="keyword">begin</span></span><br><span class="line">            result = srca &amp; srcb;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="number">4'd3</span>:<span class="keyword">begin</span></span><br><span class="line">            result = srca | srcb;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="number">4'd4</span>:<span class="keyword">begin</span></span><br><span class="line">            result = srca ^ srcb;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="number">4'd5</span>:<span class="keyword">begin</span></span><br><span class="line">            result = srca &gt; srcb;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">endcase</span></span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="命名快"><a href="#命名快" class="headerlink" title="命名快"></a>命名快</h3><ul>
+<li>命名块中可以声明<strong>局部变量</strong>。（未命名无法通过语法检查）</li>
+<li>命名块是设计层次的一部分,命名块中声明的变量可以通过层次名引用进行访问。</li>
+<li>命名块可以被禁用,例如停止其执行。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/verilog-statements-block.html">参考链接</a></p>
+<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><ul>
+<li>都学到这里了还要强调吗？Verilog中各个执行流程并发执行，而不是顺序执行的</li>
+<li>教程提到 <code>&amp;</code> 等为缩减运算符，如 <code>&amp;a</code>。但也能作双目运算符，如 <code>a&amp;b</code></li>
+<li><code>if</code>、<code>case</code>、<code>for</code>、<code>while</code> 等语句要在 <code>always</code> 块中使用</li>
+<li>未声明的 <code>wire</code> 变量默认为1位</li>
+<li>使用always块描述组合逻辑时使用阻塞赋值（=），在使用always块描述时序逻辑时使用非阻塞赋值（&lt;=）。或者说，在电平敏感的always块内使用阻塞赋值，在边沿敏感的always块内使用非阻塞赋值。</li>
+<li><code>reg [31:0] im[1023:0]</code> 表示存储1024条指令的reg数组</li>
+<li>不要在同一个always块内同时使用阻塞赋值（=）和非阻塞赋值（&lt;=）</li>
+<li>always的敏感列表中可以同时包括多个电平敏感事件，也可以同时包括多个边沿敏感事件，但不能同时有电平和边沿敏感事件</li>
+</ul>
+<hr>
+<h3 id="做题记录（P1-L1-BlockChecker）"><a href="#做题记录（P1-L1-BlockChecker）" class="headerlink" title="做题记录（P1_L1_BlockChecker）"></a>做题记录（P1_L1_BlockChecker）</h3><p>首先第一版中尝试了教程里的<strong>多段式状态机</strong>，但由于看的不仔细，写出了<code>always （*）</code>的用法。但这样的用法很危险，尤其是在过程本身比较复杂的情况下，写出了少见的<code>TLE</code>……</p>
+<p>然后修改了敏感列表，继续尝试用多段式状态机，但写得很乱。显然，并没有能明白分段写的意义。</p>
+<p>第三版按照建议，将组合逻辑拎出来，仅有一个时序逻辑部分进行状态转移。确实比我之前那版清晰多了。但是这一版有一个问题，即由于<code>findBegin</code>和<code>findEnd</code>用的是组合逻辑，如果<code>result</code>也是组合逻辑，就不方便把前两个加进判断中。</p>
+<p>第四版重新整理了思路，选择<strong>按照结果设计状态</strong></p>
+<hr>
+<h2 id="课上"><a href="#课上" class="headerlink" title="课上"></a>课上</h2><p>第一题always块中用for循环</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">always</span> @(*)<span class="keyword">begin</span> : cob</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] i;</span><br><span class="line">	 tem = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i = i + <span class="number">1</span>) <span class="keyword">begin</span></span><br><span class="line">      ...</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    result = tem;</span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>用<code>tem</code>存中间结果，记得<strong>初始化</strong></li>
+<li>命名代码块才能设局部变量</li>
+</ul>
+<p>第二题关键在于低电平有效</p>
+<p>如果使用VCS就有自动生成的模板</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span> : proc_</span><br><span class="line">  <span class="keyword">if</span>(~rst_n) <span class="keyword">begin</span></span><br><span class="line">     &lt;= <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">end</span> <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">     &lt;= ;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>常规状态机做也不复杂，讨论区大佬给出另一个思路<a target="_blank" rel="noopener" href="http://cscore.buaa.edu.cn/#/discussion_area/1016/1276/posts">参考链接</a></p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="keyword">if</span>(status==`Red) <span class="function">begin</span></span><br><span class="line"><span class="function">    <span class="title">if</span><span class="params">(in==`red)</span> begin</span></span><br><span class="line"><span class="function">        <span class="title">if</span><span class="params">(count==<span class="number">2</span>)</span>  Is_Error</span>;</span><br><span class="line">        <span class="keyword">else</span>  Is_good;</span><br><span class="line">    <span class="function">end</span></span><br><span class="line"><span class="function">    <span class="keyword">else</span> <span class="title">if</span><span class="params">(in==`green)</span> Is_error</span>;</span><br><span class="line">    <span class="keyword">else</span> begin</span><br><span class="line">       count=<span class="number">1</span>;</span><br><span class="line">       <span class="comment">//balabala</span></span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>没有用到状态转移，而是用寄存器技术</p>
+<p>第三道题没有de出bug。</p>
+<p>做题中最大的障碍来源题意理解，<del>可以看得出来学过离散但不多</del>。</p>
+<p>如果按常规状态机太多了，当时设计了两种状态：</p>
+<p><strong>S1</strong>：合法</p>
+<p><strong>S2</strong>：不合法且再不可能合法</p>
+<p>然后用<code>lastNum</code>，<code>Num[6]</code>辅助，总之相对麻烦</p>
+<p>最后能过自己的数据，但是交上去只能过俩点。猜测是题目理解问题或者复位问题。</p>
+<p><a target="_blank" rel="noopener" href="http://cscore.buaa.edu.cn/#/discussion_area/1015/1296/posts">参考链接1</a> 结合这位大佬的分享，发现确实是题目理解问题。俩数字之间只能出现比首位大，说明形如<code>12333321</code>的数据是<strong>3</strong>33<strong>3</strong>的匹配，而不是<strong>33</strong>33的匹配。而<code>1233443321</code>的数据就不合法。</p>
+<p><a target="_blank" rel="noopener" href="http://cscore.buaa.edu.cn/#/discussion_area/1013/1361/posts">参考链接2</a> 讨论区中这位大佬给出了很简洁优雅的方法，直接抛弃了状态机：</p>
+<p><strong>设计</strong></p>
+<p>123的state为3，122的state为1，空串的state为0</p>
+<ul>
+<li>in = state + 1</li>
+</ul>
+<p>序列开始了下一个匹配，需要将state加一</p>
+<ul>
+<li>in = state</li>
+</ul>
+<p>序列结束了当前匹配，需要将state减一</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">reg</span> [<span class="number">2</span>:<span class="number">0</span>] state;</span><br><span class="line"><span class="keyword">always</span> @ (<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span> (!rst_n) <span class="keyword">begin</span></span><br><span class="line">        check &lt;= <span class="number">0</span>;</span><br><span class="line">        state &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">if</span> (in == state + <span class="number">1</span>) <span class="keyword">begin</span></span><br><span class="line">            check &lt;= <span class="number">0</span>;</span><br><span class="line">            state &lt;= state + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (in == state) <span class="keyword">begin</span></span><br><span class="line">            check &lt;= <span class="number">0</span>;</span><br><span class="line">            state &lt;= state - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">       	<span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">           	check &lt;= <span class="number">1</span>;</span><br><span class="line">            state &lt;= <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>（好像不能维持非法状态）</p>
+<p><strong>可以看得出来大佬们优雅的解法都是把状态机写成<code>if-else</code></strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-11 19:18:27" itemprop="dateCreated datePublished" datetime="2023-10-11T19:18:27+08:00">2023-10-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

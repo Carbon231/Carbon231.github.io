@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="什么东西看不懂一点 设计草稿宏观PC：M级 受害PC： 发生错误的PC 首先从测试出发  没有外部中断的tb文件同p6 有外部中断（中断发生器）的tb文件可以实现：在PC第一次到某个地方的时候interrupt信号置1直到宏观PC跳转到异常处理程序才置0  我们的程序需要能够：  通过外部端口接受外部中断信号 通过访问地址 0x7F20 的 store 类指令，改变对应的微系统输出信号（m_int">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【CO】P7">
+<meta property="og:url" content="http://example.com/2023/11/29/%E3%80%90CO%E3%80%91P7/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="什么东西看不懂一点 设计草稿宏观PC：M级 受害PC： 发生错误的PC 首先从测试出发  没有外部中断的tb文件同p6 有外部中断（中断发生器）的tb文件可以实现：在PC第一次到某个地方的时候interrupt信号置1直到宏观PC跳转到异常处理程序才置0  我们的程序需要能够：  通过外部端口接受外部中断信号 通过访问地址 0x7F20 的 store 类指令，改变对应的微系统输出信号（m_int">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-15T08:43:43.743Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/11/29/%E3%80%90CO%E3%80%91P7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/11/29/%E3%80%90CO%E3%80%91P7/","path":"2023/11/29/【CO】P7/","title":"【CO】P7"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【CO】P7 | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E8%8D%89%E7%A8%BF"><span class="nav-number">1.</span> <span class="nav-text">设计草稿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">中断测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E6%83%B3%E7%9A%84%E4%B8%AD%E6%96%AD%E6%83%85%E5%86%B5"><span class="nav-number">2.1.</span> <span class="nav-text">构想的中断情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%BA%94%E7%9A%84-asm"><span class="nav-number">2.2.</span> <span class="nav-text">对应的.asm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%87%BA%E6%96%B9%E6%A1%88"><span class="nav-number">2.3.</span> <span class="nav-text">数据导出方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84tb"><span class="nav-number">2.4.</span> <span class="nav-text">修改后的tb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%BA%94%E6%98%93%E9%94%99%E7%82%B9"><span class="nav-number">2.5.</span> <span class="nav-text">对应易错点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E8%A6%81%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">注意要点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/29/%E3%80%90CO%E3%80%91P7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【CO】P7 | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【CO】P7
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-29 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-29T00:00:00+08:00">2023-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-15 16:43:43" itemprop="dateModified" datetime="2023-12-15T16:43:43+08:00">2023-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><del>什么东西看不懂一点</del></p>
+<h2 id="设计草稿"><a href="#设计草稿" class="headerlink" title="设计草稿"></a>设计草稿</h2><p><strong>宏观PC</strong>：M级</p>
+<p><strong>受害PC</strong>： 发生错误的PC</p>
+<p>首先从<strong>测试</strong>出发</p>
+<ul>
+<li>没有<strong>外部中断</strong>的tb文件同p6</li>
+<li>有<strong>外部中断</strong>（中断发生器）的tb文件可以实现：在PC第一次到某个地方的时候interrupt信号置1直到宏观PC跳转到异常处理程序才置0</li>
+</ul>
+<p>我们的程序需要能够：</p>
+<ul>
+<li>通过外部端口接受外部中断信号</li>
+<li>通过访问地址 <code>0x7F20</code> 的 <code>store</code> 类指令，改变对应的微系统输出信号（<code>m_int_addr</code>，<code>m_int_byteen</code>），即系统桥实现正确。</li>
+</ul>
+<p>对于<strong>中断</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">概念</th>
+<th style="text-align:left">定义</th>
+<th style="text-align:left">举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">内部异常</td>
+<td style="text-align:left">由于指令执行错误导致的“事件”</td>
+<td style="text-align:left">加法溢出，除法除零等</td>
+</tr>
+<tr>
+<td style="text-align:left">外部中断</td>
+<td style="text-align:left">由于外部设备信号导致的“事件”</td>
+<td style="text-align:left">计时器信号，键盘输入等</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>相应异常会跳转到指定地址，进行异常处理。具体如何处理不包括MIPS微体系内。</p>
+<p>对于<strong>CP0 协处理器</strong></p>
+<p>需要完成：</p>
+<ul>
+<li>对异常进行配置</li>
+<li>记录异常的信息</li>
+</ul>
+<p>而异常信息来源：</p>
+<ul>
+<li>HWInt：外部中断请求</li>
+<li>ExcCode：异常代码</li>
+</ul>
+<p>如何判断指令异常？</p>
+<p>具体指令异常类型见教程，而检测发生在每个流水级。<strong>故最好将不同的异常按照发生级别分类</strong></p>
+<p>ExcCode也参与到流水中，直到达到<code>CP0</code>所在流水级（本设计中放在W级）</p>
+<p><strong>系统桥</strong></p>
+<p>CPU传来的地址写入相应的外设</p>
+<p><strong>mips.v</strong></p>
+<ul>
+<li><code>interrupt</code>：外部中断信号。由中断发生器产生，每次中断信号会持续到处理器响应该信号。请注意，处理该中断信号的方式应和处理 Timer 产生的中断不完全相同，具体见前面的教程。</li>
+<li><code>macroscopic_pc[31:0]</code>：详细概念见宏观 PC。我们保证评测过程中宏观 PC 仅用于定位指令，作为产生外部中断信号的条件。</li>
+<li><code>m_int_addr[31:0]</code>：中断发生器待写入地址。当该信号命中中断发生器响应地址，且字节使能信号有效时，视为响应外部中断。</li>
+<li><code>m_int_byteen[3:0]</code>：中断发生器字节使能信号，当该信号任意一位置位时视为有效。</li>
+</ul>
+<p>还有一些功能处理：</p>
+<p><code>eret</code>保证其后不实行：检测到该指令为eret后阻塞一个周期</p>
+<p>要处理的冲突：</p>
+<ul>
+<li>eret需要用cp0值但mtc0未写入</li>
+</ul>
+<p>构想一些其他情况：</p>
+<ul>
+<li>mtc0写入EPC同时有外部中断产生</li>
+<li>指令被阻塞在D级，上一条指令在W级时下中断</li>
+<li>mult beq mflo 其中mflo在延时槽里，但是实际情况会是， mult beq nop nop nop mflo,这时，在nop下中断</li>
+<li>eret返回后，会系统增加nop ，即 eret, nop, xxx， 在eret返回后的nop中下中断</li>
+</ul>
+<h2 id="中断测试"><a href="#中断测试" class="headerlink" title="中断测试"></a>中断测试</h2><h3 id="构想的中断情况"><a href="#构想的中断情况" class="headerlink" title="构想的中断情况"></a>构想的中断情况</h3><ul>
+<li>常规指令：阻塞一周期、阻塞两周期</li>
+<li>sw</li>
+<li>跳转延迟槽：跳转、未跳转</li>
+<li>eret后一条指令</li>
+<li>乘除指令</li>
+<li>乘除槽</li>
+<li>乘除槽内的延迟槽</li>
+<li>指令异常</li>
+<li>指令异常且处于延迟槽</li>
+</ul>
+<h3 id="对应的-asm"><a href="#对应的-asm" class="headerlink" title="对应的.asm"></a>对应的<code>.asm</code></h3><p><strong>注：</strong>以下测试代码仅针对本人结构编写，即乘除模块在E级，cp0在M级。例如为了测乘除指令刚到乘除模块时的情况，macroPC取乘除指令上一条。然而，如果你采用了其他的设计，还请自行调整。</p>
+<p>此代码未测试中断发生在eret后的情况，然而强烈建议自行进行测试</p>
+<p>由于水平有限，<strong>不保证对应测试代码真的起到测试的作用</strong>，还请各位大佬批评指正</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">no_jump:</span><br><span class="line">ori <span class="variable">$28</span>, <span class="variable">$28</span>, 4</span><br><span class="line">ori <span class="variable">$29</span>, <span class="variable">$29</span>, 1</span><br><span class="line"></span><br><span class="line">ori <span class="variable">$20</span>, <span class="variable">$0</span>, 0x1001</span><br><span class="line">mtc0 <span class="variable">$20</span>, <span class="variable">$12</span></span><br><span class="line"></span><br><span class="line">ori <span class="variable">$1</span>, <span class="variable">$1</span>, 246</span><br><span class="line">ori <span class="variable">$2</span>, <span class="variable">$2</span>, 135</span><br><span class="line">beq <span class="variable">$2</span>, <span class="variable">$zero</span>, no_jump</span><br><span class="line">nop</span><br><span class="line"></span><br><span class="line">sw <span class="variable">$28</span>, 0(<span class="variable">$zero</span>)</span><br><span class="line"></span><br><span class="line">lw <span class="variable">$3</span>, 0(<span class="variable">$zero</span>)</span><br><span class="line">beq <span class="variable">$3</span>, <span class="variable">$zero</span>, no_jump</span><br><span class="line">nop</span><br><span class="line"></span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$zero</span>, jump1</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$4</span>, <span class="variable">$4</span>, <span class="variable">$29</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$5</span>, <span class="variable">$5</span>, <span class="variable">$29</span></span><br><span class="line">jump1:</span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$29</span>, jump2</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$4</span>, <span class="variable">$4</span>, <span class="variable">$29</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$5</span>, <span class="variable">$5</span>, <span class="variable">$29</span></span><br><span class="line">jump2:</span><br><span class="line"></span><br><span class="line">mult <span class="variable">$1</span>, <span class="variable">$2</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line">mflo <span class="variable">$7</span></span><br><span class="line"></span><br><span class="line">mult <span class="variable">$1</span>, <span class="variable">$2</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line">mflo <span class="variable">$7</span></span><br><span class="line"></span><br><span class="line">mult <span class="variable">$7</span>, <span class="variable">$1</span></span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$29</span>, jump3</span><br><span class="line">mflo <span class="variable">$7</span></span><br><span class="line">jump3:</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line"></span><br><span class="line">lw <span class="variable">$8</span>, 1(<span class="variable">$0</span>)</span><br><span class="line"></span><br><span class="line">beq <span class="variable">$zero</span>, <span class="variable">$29</span>, no_jump</span><br><span class="line">lw <span class="variable">$8</span>, 1(<span class="variable">$0</span>)</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$6</span>, <span class="variable">$29</span>, <span class="variable">$10</span></span><br><span class="line"></span><br><span class="line">.ktext 0x4180</span><br><span class="line">mfc0 <span class="variable">$26</span>, <span class="variable">$13</span></span><br><span class="line">ori <span class="variable">$21</span>, <span class="variable">$21</span>, 0x7c</span><br><span class="line"><span class="keyword">and</span> <span class="variable">$26</span>, <span class="variable">$21</span>, <span class="variable">$26</span></span><br><span class="line">beq <span class="variable">$26</span>, <span class="variable">$zero</span>, interruption</span><br><span class="line">nop</span><br><span class="line"><span class="comment"># 对于异常程序直接忽视（未考虑pc异常）</span></span><br><span class="line">exception:</span><br><span class="line">mfc0 <span class="variable">$27</span>, <span class="variable">$14</span></span><br><span class="line"><span class="built_in">add</span> <span class="variable">$27</span>, <span class="variable">$27</span>, <span class="variable">$28</span></span><br><span class="line">mtc0 <span class="variable">$27</span>, <span class="variable">$14</span></span><br><span class="line">eret</span><br><span class="line"><span class="comment"># 对于中断让30号寄存器加一</span></span><br><span class="line">interruption:</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$30</span>, <span class="variable">$30</span>, <span class="variable">$29</span></span><br><span class="line">sw <span class="variable">$30</span>, 0x7F20(<span class="variable">$zero</span>)</span><br><span class="line">eret</span><br><span class="line"><span class="built_in">add</span> <span class="variable">$30</span>, <span class="variable">$30</span>, <span class="variable">$28</span> #eret无延迟槽</span><br></pre></td></tr></table></figure>
+<h3 id="数据导出方案"><a href="#数据导出方案" class="headerlink" title="数据导出方案"></a>数据导出方案</h3><p>在Mars所在地址打开cmd输入</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">java -jar <span class="tag">&lt;<span class="name">mars</span>&gt;</span> db nc mc CompactDataAtZero a dump 0x4180-0x6ffc HexText <span class="tag">&lt;<span class="name">xxx.txt</span>&gt;</span> <span class="tag">&lt;<span class="name">xxx.asm</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改后的tb"><a href="#修改后的tb" class="headerlink" title="修改后的tb"></a>修改后的tb</h3><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="meta">`<span class="keyword">timescale</span> 1ns/1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> mips_txt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">reg</span> clk;</span><br><span class="line">	<span class="keyword">reg</span> reset;</span><br><span class="line">	<span class="keyword">reg</span> interrupt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] macroscopic_pc;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] i_inst_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] i_inst_rdata;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_data_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_data_rdata;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_data_wdata;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">3</span> :<span class="number">0</span>] m_data_byteen;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_int_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">3</span> :<span class="number">0</span>] m_int_byteen;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] m_inst_addr;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span>		w_grf_we;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">4</span> :<span class="number">0</span>] w_grf_addr;</span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] w_grf_wdata;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] w_inst_addr;</span><br><span class="line"></span><br><span class="line">	mips uut(</span><br><span class="line">		<span class="variable">.clk</span>(clk),</span><br><span class="line">		<span class="variable">.reset</span>(reset),</span><br><span class="line">		<span class="variable">.interrupt</span>(interrupt),</span><br><span class="line">		<span class="variable">.macroscopic_pc</span>(macroscopic_pc),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.i_inst_addr</span>(i_inst_addr),</span><br><span class="line">		<span class="variable">.i_inst_rdata</span>(i_inst_rdata),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.m_data_addr</span>(m_data_addr),</span><br><span class="line">		<span class="variable">.m_data_rdata</span>(m_data_rdata),</span><br><span class="line">		<span class="variable">.m_data_wdata</span>(m_data_wdata),</span><br><span class="line">		<span class="variable">.m_data_byteen</span>(m_data_byteen),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.m_int_addr</span>(m_int_addr),</span><br><span class="line">		<span class="variable">.m_int_byteen</span>(m_int_byteen),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.m_inst_addr</span>(m_inst_addr),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.w_grf_we</span>(w_grf_we),</span><br><span class="line">		<span class="variable">.w_grf_addr</span>(w_grf_addr),</span><br><span class="line">		<span class="variable">.w_grf_wdata</span>(w_grf_wdata),</span><br><span class="line"></span><br><span class="line">		<span class="variable">.w_inst_addr</span>(w_inst_addr)</span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">		clk &lt;= <span class="number">0</span>;</span><br><span class="line">		reset &lt;= <span class="number">1</span>;</span><br><span class="line">		interrupt &lt;= <span class="number">0</span>;</span><br><span class="line">		#<span class="number">20</span> reset &lt;= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">integer</span> i;</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] fixed_addr;</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] fixed_wdata;</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] data[<span class="number">0</span>:<span class="number">4095</span>];</span><br><span class="line">	<span class="keyword">reg</span> [<span class="number">31</span>:<span class="number">0</span>] inst[<span class="number">0</span>:<span class="number">5119</span>];</span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Instructions -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">assign</span> m_data_rdata = data[(m_data_addr &gt;&gt; <span class="number">2</span>) % <span class="number">5120</span>];</span><br><span class="line">	<span class="keyword">assign</span> i_inst_rdata = inst[((i_inst_addr - <span class="number">32&#x27;h3000</span>) &gt;&gt; <span class="number">2</span>) % <span class="number">5120</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">	<span class="built_in">$dumpfile</span>(<span class="string">&quot;wave.vcd&quot;</span>);  <span class="comment">// 指定VCD文件的名字为wave.vcd，仿真信息将记录到此文件</span></span><br><span class="line">	<span class="built_in">$dumpvars</span>(<span class="number">0</span>, mips_txt);  <span class="comment">// 指定层次数为0，则tb_code 模块及其下面各层次的所有信号将被记录</span></span><br><span class="line">    #<span class="number">20000</span> <span class="built_in">$finish</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">		<span class="built_in">$readmemh</span>(<span class="string">&quot;code.txt&quot;</span>, inst);</span><br><span class="line">		<span class="built_in">$readmemh</span>(<span class="string">&quot;handlerCode.txt&quot;</span>, inst, (<span class="number">32&#x27;h4180</span>-<span class="number">32&#x27;h3000</span>)&gt;&gt;<span class="number">2</span>);</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">5120</span>; i = i + <span class="number">1</span>) data[i] &lt;= <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Data Memory -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">		fixed_wdata = data[(m_data_addr &gt;&gt; <span class="number">2</span>) &amp; <span class="number">4095</span>];</span><br><span class="line">		fixed_addr = m_data_addr &amp; <span class="number">32&#x27;hfffffffc</span>;</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">3</span>]) fixed_wdata[<span class="number">31</span>:<span class="number">24</span>] = m_data_wdata[<span class="number">31</span>:<span class="number">24</span>];</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">2</span>]) fixed_wdata[<span class="number">23</span>:<span class="number">16</span>] = m_data_wdata[<span class="number">23</span>:<span class="number">16</span>];</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">1</span>]) fixed_wdata[<span class="number">15</span>: <span class="number">8</span>] = m_data_wdata[<span class="number">15</span>: <span class="number">8</span>];</span><br><span class="line">		<span class="keyword">if</span> (m_data_byteen[<span class="number">0</span>]) fixed_wdata[<span class="number">7</span> : <span class="number">0</span>] = m_data_wdata[<span class="number">7</span> : <span class="number">0</span>];</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(<span class="keyword">posedge</span> clk) <span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> (reset) <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4096</span>; i = i + <span class="number">1</span>) data[i] &lt;= <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (|m_data_byteen &amp;&amp; fixed_addr &gt;&gt; <span class="number">2</span> &lt; <span class="number">4096</span>) <span class="keyword">begin</span></span><br><span class="line">			data[fixed_addr &gt;&gt; <span class="number">2</span>] &lt;= fixed_wdata;</span><br><span class="line">			<span class="built_in">$display</span>(<span class="string">&quot;%d@%h: *%h &lt;= %h&quot;</span>, <span class="built_in">$time</span>, m_inst_addr, fixed_addr, fixed_wdata);</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Registers -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(<span class="keyword">posedge</span> clk) <span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> (~reset) <span class="keyword">begin</span></span><br><span class="line">			<span class="keyword">if</span> (w_grf_we &amp;&amp; (w_grf_addr != <span class="number">0</span>)) <span class="keyword">begin</span></span><br><span class="line">				<span class="built_in">$display</span>(<span class="string">&quot;%d@%h: $%d &lt;= %h&quot;</span>, <span class="built_in">$time</span>, w_inst_addr, w_grf_addr, w_grf_wdata);</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// ----------- For Interrupt -----------</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">wire</span> [<span class="number">31</span>:<span class="number">0</span>] fixed_macroscopic_pc;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">assign</span> fixed_macroscopic_pc = macroscopic_pc &amp; <span class="number">32&#x27;hfffffffc</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">integer</span> cnt;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> @(<span class="keyword">negedge</span> clk) <span class="keyword">begin</span></span><br><span class="line">		<span class="keyword">if</span> (reset) <span class="keyword">begin</span></span><br><span class="line">			interrupt = <span class="number">0</span>;</span><br><span class="line">			cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">			<span class="keyword">if</span> (interrupt) <span class="keyword">begin</span></span><br><span class="line">				<span class="keyword">if</span> (|m_int_byteen &amp;&amp; (m_int_addr &amp; <span class="number">32&#x27;hfffffffc</span>) == <span class="number">32&#x27;h7f20</span>) <span class="keyword">begin</span></span><br><span class="line">					interrupt = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//阻塞一个周期</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3014</span> &amp;&amp; cnt == <span class="number">0</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//sw同时中断（需停止写入）</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3020</span> &amp;&amp; cnt == <span class="number">1</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//阻塞两个周期</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3028</span> &amp;&amp; cnt == <span class="number">2</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//延迟槽</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3034</span> &amp;&amp; cnt == <span class="number">3</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3040</span> &amp;&amp; cnt == <span class="number">4</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//乘除指令</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3044</span> &amp;&amp; cnt == <span class="number">5</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3060</span> &amp;&amp; cnt == <span class="number">6</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h306c</span> &amp;&amp; cnt == <span class="number">7</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="comment">//指令异常</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h3074</span> &amp;&amp; cnt == <span class="number">8</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (fixed_macroscopic_pc == <span class="number">32&#x27;h307c</span> &amp;&amp; cnt == <span class="number">9</span>) <span class="keyword">begin</span></span><br><span class="line">				interrupt = <span class="number">1</span>;</span><br><span class="line">				cnt = cnt + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">always</span> #<span class="number">2</span> clk &lt;= ~clk;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h3 id="对应易错点"><a href="#对应易错点" class="headerlink" title="对应易错点"></a>对应易错点</h3><ul>
+<li>跳转指令无论是否跳转，接下来一条指令都应视为延迟槽</li>
+<li>cp0设计在w级则需要检查<code>store</code>类指令在w时被下中断写使能信号是否关闭</li>
+<li>如果设计eret后清空延迟槽则需要考虑优先级问题（阻塞&gt;清空）</li>
+<li>更进一步，如果设计了清空延迟槽需要考虑<strong>在<code>eret</code>后的<code>nop</code>下中断</strong>的情况</li>
+</ul>
+<h2 id="注意要点"><a href="#注意要点" class="headerlink" title="注意要点"></a>注意要点</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/12/%E3%80%90CO%E3%80%91P5&P6/" rel="prev" title="【CO】P5&P6">
+                  <i class="fa fa-angle-left"></i> 【CO】P5&P6
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/12/15/%E3%80%90DM%E3%80%91set,%20relation,%20function/" rel="next" title="【DM】set, relation, function">
+                  【DM】set, relation, function <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="WARNING:本博客内容大多为考前猜测而非考后总结，未经实践验证，或许会存在错误。 课上如果急着考试建议好好研读Hyggge学长的博客 三条指令：计算+跳转+存储  计算指令应该不会出的很难 跳转指令提前到D级的Bjudge处理，但如果同时需要写入一个新的值（指非来源ExtRes或寄存器的值）可能会需要在流水线寄存器中多传递一个值，并且转发出去的数据中也要多一个选项（或者在ALU中再算一次从AL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【CO】P5&amp;P6">
+<meta property="og:url" content="http://example.com/2023/11/12/%E3%80%90CO%E3%80%91P5&P6/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="WARNING:本博客内容大多为考前猜测而非考后总结，未经实践验证，或许会存在错误。 课上如果急着考试建议好好研读Hyggge学长的博客 三条指令：计算+跳转+存储  计算指令应该不会出的很难 跳转指令提前到D级的Bjudge处理，但如果同时需要写入一个新的值（指非来源ExtRes或寄存器的值）可能会需要在流水线寄存器中多传递一个值，并且转发出去的数据中也要多一个选项（或者在ALU中再算一次从AL">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-15T09:03:50.470Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/11/12/%E3%80%90CO%E3%80%91P5&P6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/11/12/%E3%80%90CO%E3%80%91P5&P6/","path":"2023/11/12/【CO】P5&P6/","title":"【CO】P5&P6"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【CO】P5&P6 | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BE%E4%B8%8A"><span class="nav-number">1.</span> <span class="nav-text">课上</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E7%A9%BA%E5%BB%B6%E8%BF%9F%E6%A7%BD"><span class="nav-number">1.1.</span> <span class="nav-text">清空延迟槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%AE%9A%E6%80%81"><span class="nav-number">1.2.</span> <span class="nav-text">不定态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E5%8F%91%E9%80%BB%E8%BE%91"><span class="nav-number">1.3.</span> <span class="nav-text">转发逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D"><span class="nav-number">1.4.</span> <span class="nav-text">循环移位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E8%BF%90%E7%AE%97"><span class="nav-number">1.5.</span> <span class="nav-text">符号运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VScode%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">VScode配置</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/12/%E3%80%90CO%E3%80%91P5&P6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【CO】P5&P6 | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【CO】P5&P6
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-12 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-12T00:00:00+08:00">2023-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-15 17:03:50" itemprop="dateModified" datetime="2023-12-15T17:03:50+08:00">2023-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><strong>WARNING:</strong>本博客内容大多为考前猜测而<strong>非</strong>考后总结，未经实践验证，或许会存在错误。</p>
+<h2 id="课上"><a href="#课上" class="headerlink" title="课上"></a>课上</h2><p><em>如果急着考试建议好好研读<a target="_blank" rel="noopener" href="http://hyggge.github.io/2021/12/06/co/co-p5-p6-ke-shang-ce-shi-zong-jie/">Hyggge</a>学长的博客</em></p>
+<p>三条指令：计算+跳转+存储</p>
+<ul>
+<li>计算指令应该不会出的很难</li>
+<li>跳转指令提前到D级的<code>Bjudge</code>处理，但如果同时需要写入一个<strong>新的值</strong>（指非来源<code>ExtRes</code>或寄存器的值）可能会需要在流水线寄存器中多传递一个值，并且转发出去的数据中也要多一个选项（或者在ALU中再算一次从<code>ALUres</code>传出）。另外跳转指令要确认是否跳对了位置，如判断放在D级，而PC取的为F，其实已经在<strong>当前</strong>基础上PC+4了。</li>
+<li>条件存储关键在于写入值生成的位置和写入判断生成的位置。<strong>可能写入</strong>是一个相对讨厌的事情，让我们假设他一定会写入，计算Tnew。如果写入值和写入判断在同一级流水线得到，只需要对于<code>RegWrite_W</code>新增一个MUX即可。</li>
+<li>一般存储也有相对讨厌的事情：如果写入的值即为GPR值，但写入的<strong>地址</strong>需要到M级才知道。那么此时Tnew应该取2，要让<strong>地址和值</strong>都确定了才可以。</li>
+</ul>
+<p>按照<a target="_blank" rel="noopener" href="https://hyggge.github.io/2021/12/06/co/co-p5-p6-ke-shang-ce-shi-zong-jie/#%E6%98%8E%E7%A1%AE%E6%96%B0%E6%8C%87%E4%BB%A4%E7%9A%84tuse_rstuse_rt%E4%BB%A5%E5%8F%8A%E5%9C%A8%E5%90%84%E7%BA%A7%E6%B5%81%E6%B0%B4%E7%9A%84tnew%E7%9B%B4%E6%8E%A5%E5%9C%A8%E4%B8%BB%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E4%BF%AE%E6%94%B9%E5%8D%B3%E5%8F%AF%E5%8D%83%E4%B8%87%E4%B8%8D%E8%A6%81%E5%BF%98%E8%AE%B0">Hyggge</a>的方法，可以考虑多流水一个信号<code>check</code>表示是否为新增指令，再在相应需要更改的位置。</p>
+<p>如果是条件链接，则需要在完成判断后将<code>RegWrite</code>更改（即流水<code>RegWrite_new</code>）。为了保证数据正确，默认<code>RegWrite</code>应该设为1。一般跳转判断在D级即可完成，故不需要考虑其他。如果还有可能需要也可能不用使用Rs或Rt的值，可以考虑修改传入<code>HJ</code>模块的<code>Tuse_new</code>。</p>
+<p>以<code>lwmx</code>为例，该指令将内存值和寄存器值对比，如果内存值大写入5号，否则写入4号。默认A3可以设为0，在W级A3才会更改成非0值。按照本人的设计，如果写入为0号寄存器则无视转发内容，故可减少错误信息转发问题。但需要考虑阻塞，应该将<code>check</code>也传给<code>HJ</code>模块，如果<code>check</code>信号为1，则在Tuse比较的来自转发的地址值不是A3而是4和5。</p>
+<p>对于写入地址在M级才知道的情况，以<code>lwm</code>为例，该指令计算内存地址并访存，读取结果减去rt后低五位作为写入寄存器的编号，写入值为<code>memReadData</code>。只要此时对应的check为1，则在HJ中比较地址直接置1。在确认写入地址之前依旧将A3设为默认的0值，确认写入地址后（在W级）再更改。</p>
+<p>稍微有点奇怪的是<code>jap</code>指令，本身是j指令，而需要读写29号寄存器的值。</p>
+<p>在<code>controller</code>中需要将<code>rs_addr</code>手动设为29，更改<code>GRF_addr_sel</code>的值（增加一个串口），而写入的值（也就是各级<code>Fout</code>）也需要增加串口。<code>DM</code>模块控制信号按照<code>sw</code>写。由于<code>DM</code>写入默认是<code>sw</code>，需要在这个口再加一个<code>mux</code>（即将<code>check</code>和<code>PCnext</code>加入<code>FMUX</code>中）</p>
+<p><strong>搓数据在精不在多！</strong></p>
+<h3 id="清空延迟槽"><a href="#清空延迟槽" class="headerlink" title="清空延迟槽"></a>清空延迟槽</h3><p>RTL描述的I+1即下一指令。对于跳转指令，可能会要求：下一条要么跳转（更改PC），要么清空延迟槽。具体实现可考虑当该指令处于D级时将<code>Bjump</code>传给<code>FDreg</code>。注意<strong>在STALL的时候不应该清空流水线（</strong>优先级问题，reset&gt;stall&gt;Bjump）</p>
+<h3 id="不定态"><a href="#不定态" class="headerlink" title="不定态"></a>不定态</h3><ul>
+<li>如果<code>nPC</code>连加四都放在D级处理会导致卡在第一个指令</li>
+<li>如果未<strong>初始化</strong>后面流水寄存器的值会导致值判断出现不定项而卡住。似乎对于相等判断可以有<code>===</code>排除<code>x</code></li>
+</ul>
+<h3 id="转发逻辑"><a href="#转发逻辑" class="headerlink" title="转发逻辑"></a>转发逻辑</h3><ul>
+<li><code>HJ.v</code>根据地址判断需要用到什么值</li>
+<li>每个可能产生值的流水级数据通过一个<code>Fout_MUX</code>生成对应Data</li>
+<li>在需求端通过<code>FMUX</code>选择正确的值</li>
+</ul>
+<h3 id="循环移位"><a href="#循环移位" class="headerlink" title="循环移位"></a>循环移位</h3><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//以循环左移为例</span></span><br><span class="line"><span class="keyword">if</span>(B[<span class="number">4</span>:<span class="number">0</span>] == <span class="number">5&#x27;d0</span>) out = A;</span><br><span class="line"><span class="keyword">else</span> out = A &lt;&lt; B[<span class="number">4</span>:<span class="number">0</span>] | A &gt;&gt; (<span class="number">5&#x27;d31</span> - B[<span class="number">4</span>:<span class="number">0</span>] + <span class="number">5&#x27;d1</span>);</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://hyggge.github.io/2021/12/06/co/co-p5-p6-ke-shang-ce-shi-zong-jie/">参考链接</a></p>
+<h3 id="符号运算"><a href="#符号运算" class="headerlink" title="符号运算"></a>符号运算</h3><p>按照<a target="_blank" rel="noopener" href="https://roife.github.io/posts/buaa-co-lab-p6/">Roife学长</a>所说，在<code>madd</code>中，将输入的两个值作为有符号数相乘</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(rs) * <span class="built_in">$signed</span>(rt);</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(<span class="built_in">$signed</span>(rs) * <span class="built_in">$signed</span>(rt));</span><br></pre></td></tr></table></figure>
+<p>以上两种写法都是错误的</p>
+<p>（第二种是因为外面嵌套的<code>$signed()</code>将位宽信息也屏蔽了，进而导致高32位被截去）</p>
+<p>正确应该为</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(<span class="built_in">$signed</span>(<span class="number">64&#x27;d0</span>) + <span class="built_in">$signed</span>(rs) * <span class="built_in">$signed</span>(rt));</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">&#123;temp_hi, temp_lo&#125; &lt;= &#123;hi, lo&#125; + <span class="built_in">$signed</span>(<span class="built_in">$signed</span>(&#123;&#123;<span class="number">32</span>&#123;rs[<span class="number">31</span>]&#125;&#125;, rs[<span class="number">31</span>:<span class="number">0</span>]&#125;) * <span class="built_in">$signed</span>(&#123;&#123;<span class="number">32</span>&#123;rt[<span class="number">31</span>]&#125;&#125;, rt[<span class="number">31</span>:<span class="number">0</span>]&#125;)); <span class="comment">// 手动进行符号位扩展</span></span><br></pre></td></tr></table></figure>
+<h2 id="VScode配置"><a href="#VScode配置" class="headerlink" title="VScode配置"></a>VScode配置</h2><p><del>ISE太难用啦</del></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338497672?utm_id=0">参考链接</a></p>
+<p>tb文件中添加</p>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 生成vcd波形文件，用iverilog+GTKwave进行仿真所需的临时的vcd波形文件 */</span></span><br><span class="line"><span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">	<span class="built_in">$dumpfile</span>(<span class="string">&quot;wave.vcd&quot;</span>);  <span class="comment">// 指定VCD文件的名字为wave.vcd，仿真信息将记录到此文件</span></span><br><span class="line">	<span class="built_in">$dumpvars</span>(<span class="number">0</span>, tb_code );  <span class="comment">// 指定层次数为0，则tb_code 模块及其下面各层次的所有信号将被记录</span></span><br><span class="line">	#<span class="number">10000</span> <span class="built_in">$finish</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>在cmd中输入</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">iverilog -o ./a.out ./ALU.v ./ALU_In2.v ./Controller.v ./DM.v ./EXT.v ./GRF.v ./GRF_A3.v ./GRF_WD.v ./IFU.v ./mips.v ./nPC.v ./Splitter.v ./tb_mips.v</span><br><span class="line">vvp -n ./a.out &gt;ans.txt</span><br><span class="line">gtkwave ./wave.vcd</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/18/%E3%80%90CO%E3%80%91P2/" rel="prev" title="【CO】P2">
+                  <i class="fa fa-angle-left"></i> 【CO】P2
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/11/29/%E3%80%90CO%E3%80%91P7/" rel="next" title="【CO】P7">
+                  【CO】P7 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
