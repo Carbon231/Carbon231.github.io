@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前置知识模糊数学 模糊集合表示方法 模糊集运算（取大算子取小算子） 隶属函数 模糊统计法 指派法   -截矩阵、-强截矩阵    https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_29831163&#x2F;article&#x2F;details&#x2F;89892822  贴近度 海明贴近度 欧几里得贴近度 黎曼贴近度   格贴近度（给定模糊集 A ，让模糊集 B 靠近 A ，会使内积 A ⊙ B 增大而外积 A⊗ B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MCM">
+<meta property="og:url" content="http://example.com/2024/01/20/MCM/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="前置知识模糊数学 模糊集合表示方法 模糊集运算（取大算子取小算子） 隶属函数 模糊统计法 指派法   -截矩阵、-强截矩阵    https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_29831163&#x2F;article&#x2F;details&#x2F;89892822  贴近度 海明贴近度 欧几里得贴近度 黎曼贴近度   格贴近度（给定模糊集 A ，让模糊集 B 靠近 A ，会使内积 A ⊙ B 增大而外积 A⊗ B">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/01/20/images/MCM/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI5ODMxMTYz,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://example.com/2024/01/20/images/MCM/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI5ODMxMTYz,size_16,color_FFFFFF,t_70-17058376067762.png">
+<meta property="article:published_time" content="2024-01-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-21T15:45:34.077Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/01/20/images/MCM/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI5ODMxMTYz,size_16,color_FFFFFF,t_70.png">
+
+
+<link rel="canonical" href="http://example.com/2024/01/20/MCM/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/01/20/MCM/","path":"2024/01/20/MCM/","title":"MCM"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MCM | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">前置知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E7%B3%8A%E6%95%B0%E5%AD%A6"><span class="nav-number">1.1.</span> <span class="nav-text">模糊数学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">聚类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%8A%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">模型及算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">优化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.1.1.</span> <span class="nav-text">微分方程模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.1.2.</span> <span class="nav-text">数值模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92"><span class="nav-number">2.1.3.</span> <span class="nav-text">线性规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92"><span class="nav-number">2.1.4.</span> <span class="nav-text">非线性规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E8%A7%84%E5%88%92"><span class="nav-number">2.1.5.</span> <span class="nav-text">整数规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8F%91%E5%BC%8F%E7%AE%97%E6%B3%95"><span class="nav-number">2.1.6.</span> <span class="nav-text">启发式算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%EF%BC%88GA%EF%BC%89"><span class="nav-number">2.1.6.1.</span> <span class="nav-text">遗传算法（GA）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E7%BE%A4%E7%AE%97%E6%B3%95%EF%BC%88PSO%EF%BC%89"><span class="nav-number">2.1.6.2.</span> <span class="nav-text">粒子群算法（PSO）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%EF%BC%88SA%EF%BC%89"><span class="nav-number">2.1.6.3.</span> <span class="nav-text">模拟退火（SA）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B"><span class="nav-number">2.1.6.4.</span> <span class="nav-text">蒙特卡洛</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">预测模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">分类模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#K-means"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">K-means</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E8%81%9A%E7%B1%BB"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">层次聚类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%B1%E8%81%9A%E7%B1%BB"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">谱聚类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E7%B3%8A%E8%81%9A%E7%B1%BB"><span class="nav-number">2.3.1.4.</span> <span class="nav-text">模糊聚类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DBSCAN"><span class="nav-number">2.3.1.5.</span> <span class="nav-text">DBSCAN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">2.3.2.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KNN"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">KNN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%8F%90%E5%8D%87%E6%A0%91%EF%BC%88GBDT%EF%BC%89"><span class="nav-number">2.3.2.4.</span> <span class="nav-text">梯度提升树（GBDT）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%88SVM%EF%BC%89"><span class="nav-number">2.3.2.5.</span> <span class="nav-text">支持向量机（SVM）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%EF%BC%88%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%EF%BC%89"><span class="nav-number">2.3.2.6.</span> <span class="nav-text">逻辑回归（梯度下降法）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%EF%BC%88%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%EF%BC%89"><span class="nav-number">2.3.2.7.</span> <span class="nav-text">线性回归（梯度下降法）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.4.</span> <span class="nav-text">评价模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E7%B3%8A%E8%AF%84%E4%BB%B7"><span class="nav-number">2.4.1.</span> <span class="nav-text">模糊评价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E6%B3%95%EF%BC%88PCA%EF%BC%89"><span class="nav-number">2.4.2.</span> <span class="nav-text">主成分分析法（PCA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95%EF%BC%88AHP%EF%BC%89"><span class="nav-number">2.4.3.</span> <span class="nav-text">层次分析法（AHP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8A%A3%E8%A7%A3%E8%B7%9D%E7%A6%BB%E6%B3%95%EF%BC%88TOPSIS%EF%BC%89"><span class="nav-number">2.4.4.</span> <span class="nav-text">优劣解距离法（TOPSIS）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7"><span class="nav-number">3.</span> <span class="nav-text">工具</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/20/MCM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MCM | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MCM
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-01-20 00:00:00" itemprop="dateCreated datePublished" datetime="2024-01-20T00:00:00+08:00">2024-01-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-21 23:45:34" itemprop="dateModified" datetime="2024-01-21T23:45:34+08:00">2024-01-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="模糊数学"><a href="#模糊数学" class="headerlink" title="模糊数学"></a>模糊数学</h2><ul>
+<li>模糊集合表示方法</li>
+<li>模糊集运算（取大算子<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.149ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1392 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext" fill="red" stroke="red"><path data-c="5C" d="M56 731Q56 740 62 745T75 750Q85 750 92 740Q96 733 270 255T444 -231Q444 -239 438 -244T424 -250Q414 -250 407 -240Q404 -236 230 242T56 731Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(500,0)"></path><path data-c="72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z" transform="translate(1000,0)"></path></g></g></g></svg></mjx-container>取小算子<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.778ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2112 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext" fill="red" stroke="red"><path data-c="5C" d="M56 731Q56 740 62 745T75 750Q85 750 92 740Q96 733 270 255T444 -231Q444 -239 438 -244T424 -250Q414 -250 407 -240Q404 -236 230 242T56 731Z"></path><path data-c="61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z" transform="translate(500,0)"></path><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(1000,0)"></path><path data-c="64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z" transform="translate(1556,0)"></path></g></g></g></svg></mjx-container>）</li>
+<li>隶属函数<ul>
+<li>模糊统计法</li>
+<li>指派法</li>
+</ul>
+</li>
+<li><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.027ex;" xmlns="http://www.w3.org/2000/svg" width="1.319ex" height="1.597ex" role="img" focusable="false" viewBox="0 -694 583 706"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path></g></g></g></svg></mjx-container>-截矩阵、<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.027ex;" xmlns="http://www.w3.org/2000/svg" width="1.319ex" height="1.597ex" role="img" focusable="false" viewBox="0 -694 583 706"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path></g></g></g></svg></mjx-container>-强截矩阵</li>
+</ul>
+<p><img src="../images/MCM/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI5ODMxMTYz,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+<p><img src="../images/MCM/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI5ODMxMTYz,size_16,color_FFFFFF,t_70-17058376067762.png" alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29831163/article/details/89892822">https://blog.csdn.net/qq_29831163/article/details/89892822</a></p>
+<ul>
+<li>贴近度<ul>
+<li>海明贴近度</li>
+<li>欧几里得贴近度</li>
+<li>黎曼贴近度</li>
+</ul>
+</li>
+<li>格贴近度（给定模糊集 A ，让模糊集 B 靠近 A ，会使内积 A ⊙ B 增大而外积 A⊗ B 减少。换句话说，当 A ⊙ B 较大且 A⊗ B 较少时， A 与 B 比较贴近）</li>
+<li>模糊模式识别原则<ul>
+<li>最大隶属（单模糊）</li>
+<li>择近（多模糊）</li>
+</ul>
+</li>
+</ul>
+<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p><strong>样本相似性度量</strong>：闵氏距离（绝对值距离、欧式距离、切比雪夫距离）（马氏距离）</p>
+<p><strong>类与类间相似性度量</strong>：最短距离、最长距离、重心、类平均、离差平均和</p>
+<p><strong>变量相似性度量</strong>：相关系数、夹角余弦</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29831163/article/details/89576335">https://blog.csdn.net/qq_29831163/article/details/89576335</a></p>
+<h1 id="模型及算法"><a href="#模型及算法" class="headerlink" title="模型及算法"></a>模型及算法</h1><h2 id="优化模型"><a href="#优化模型" class="headerlink" title="优化模型"></a>优化模型</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纯优化</td>
+<td>求目标函数最值的最优解</td>
+<td>线性规划：内点法、单纯形法、修正单纯形法、<br>非线性规划：下山单纯形法、改进的BFGS拟牛顿法、改进的共轭方向法、（边界）截断牛顿法、线性近似束优化方法、序贯最小二乘规划算法、信赖域算法、<br>整数规划：分支定界法、0-1规划、枚举法、<br>启发式算法：遗传算法（GA）、粒子群算法（PSO）、模拟退火算法（SA）、蒙特卡洛</td>
+</tr>
+<tr>
+<td>机理分析</td>
+<td>由物理机理转化为优化问题</td>
+<td>微分方程模型、数值模拟</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="微分方程模拟"><a href="#微分方程模拟" class="headerlink" title="微分方程模拟"></a>微分方程模拟</h3><h3 id="数值模拟"><a href="#数值模拟" class="headerlink" title="数值模拟"></a>数值模拟</h3><h3 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h3><h3 id="非线性规划"><a href="#非线性规划" class="headerlink" title="非线性规划"></a>非线性规划</h3><h3 id="整数规划"><a href="#整数规划" class="headerlink" title="整数规划"></a>整数规划</h3><h3 id="启发式算法"><a href="#启发式算法" class="headerlink" title="启发式算法"></a>启发式算法</h3><h4 id="遗传算法（GA）"><a href="#遗传算法（GA）" class="headerlink" title="遗传算法（GA）"></a>遗传算法（GA）</h4><h4 id="粒子群算法（PSO）"><a href="#粒子群算法（PSO）" class="headerlink" title="粒子群算法（PSO）"></a>粒子群算法（PSO）</h4><h4 id="模拟退火（SA）"><a href="#模拟退火（SA）" class="headerlink" title="模拟退火（SA）"></a>模拟退火（SA）</h4><h4 id="蒙特卡洛"><a href="#蒙特卡洛" class="headerlink" title="蒙特卡洛"></a>蒙特卡洛</h4><h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><p>偏向计量统计</p>
+<h2 id="分类模型"><a href="#分类模型" class="headerlink" title="分类模型"></a>分类模型</h2><h3 id="聚类-1"><a href="#聚类-1" class="headerlink" title="聚类"></a>聚类</h3><h4 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h4><p>K-means 是一种广泛使用的聚类算法，它的目标是将数据点分组到 K 个簇中，以使簇内的点尽可能相似，而簇间的点尽可能不同。它的核心思想是通过迭代优化簇中心的位置，以最小化簇内的平方误差总和。</p>
+<p>算法步骤</p>
+<ol>
+<li><strong>初始化</strong>：随机选择 K 个数据点作为初始簇中心。</li>
+<li><strong>分配</strong>：将每个数据点分配给最近的簇中心。</li>
+<li><strong>更新</strong>：重新计算每个簇的中心（即簇内所有点的均值）。</li>
+<li><strong>迭代</strong>：重复步骤 2 和 3 直到簇中心不再发生变化或达到预设的迭代次数。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/671450908">https://zhuanlan.zhihu.com/p/671450908</a></p>
+<h4 id="层次聚类"><a href="#层次聚类" class="headerlink" title="层次聚类"></a>层次聚类</h4><h4 id="谱聚类"><a href="#谱聚类" class="headerlink" title="谱聚类"></a>谱聚类</h4><h4 id="模糊聚类"><a href="#模糊聚类" class="headerlink" title="模糊聚类"></a>模糊聚类</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29831163/article/details/89893908">https://blog.csdn.net/qq_29831163/article/details/89893908</a></p>
+<h4 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h4><p>基于密度的聚类方法与其他方法的一个根本区别是：它不是基于各种各样的距离度量的，而是基于密度的。因此它能克服基于距离的算法只能发现“类圆形”的聚类的缺点。</p>
+<p>DBSCAN的指导思想是：用一个点的∈邻域内的邻居点数衡量该点所在空间的密度，只要一个区域中的点的密度大过某个阈值，就把它加到与之相近的聚类中去</p>
+<p>它可以找出形状不规则（oddly-shaped）的cluster，且聚类时不需要事先知道cluster的个数</p>
+<p>核心概念</p>
+<ul>
+<li><strong>核心点</strong>位于簇的内部，它确定无误地属于某个特定的簇</li>
+<li><strong>噪音点</strong>是数据集中的干扰数据，它不属于任何一个簇</li>
+<li><strong>边界点</strong>是一类特殊的点，它位于一个或几个簇的边缘地带，它可能属于一个簇，也可能属于另外一个簇，其簇归属并不明确</li>
+</ul>
+<p>算法步骤</p>
+<ol>
+<li>标记所有点为核心点、边界点或噪声点。</li>
+<li>删除噪声点。</li>
+<li>为剩余的核心点创建簇，如果一个核心点在另一个核心点的邻域内，则将它们放在同一个簇中。</li>
+<li>将每个边界点分配给与之关联的核心点的簇。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/LittleHann/p/6595148.html">https://www.cnblogs.com/LittleHann/p/6595148.html</a></p>
+<h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><h4 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h4><h4 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h4><h4 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h4><h4 id="梯度提升树（GBDT）"><a href="#梯度提升树（GBDT）" class="headerlink" title="梯度提升树（GBDT）"></a>梯度提升树（GBDT）</h4><h4 id="支持向量机（SVM）"><a href="#支持向量机（SVM）" class="headerlink" title="支持向量机（SVM）"></a>支持向量机（SVM）</h4><h4 id="逻辑回归（梯度下降法）"><a href="#逻辑回归（梯度下降法）" class="headerlink" title="逻辑回归（梯度下降法）"></a>逻辑回归（梯度下降法）</h4><h4 id="线性回归（梯度下降法）"><a href="#线性回归（梯度下降法）" class="headerlink" title="线性回归（梯度下降法）"></a>线性回归（梯度下降法）</h4><h2 id="评价模型"><a href="#评价模型" class="headerlink" title="评价模型"></a>评价模型</h2><h3 id="模糊评价"><a href="#模糊评价" class="headerlink" title="模糊评价"></a>模糊评价</h3><ol>
+<li>建立综合评价的因素集U，设有m个元素</li>
+<li>建立综合评价的评价集V，设有n个</li>
+<li>进行单元素模糊评价，获得评价矩阵</li>
+<li>确定因素权向量</li>
+<li>建立综合评价模型</li>
+</ol>
+<p>模糊合成算子</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算子</th>
+<th>比较</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>取小-取大</td>
+<td>主因素决定</td>
+</tr>
+<tr>
+<td>取小-取大</td>
+<td>主因素突出</td>
+</tr>
+<tr>
+<td>取小-有界（取min{sum，1}）</td>
+<td>不均衡平均</td>
+</tr>
+<tr>
+<td>乘法-有界（常用）</td>
+<td>加权平均</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29831163/article/details/89913744">https://blog.csdn.net/qq_29831163/article/details/89913744</a></p>
+<h3 id="主成分分析法（PCA）"><a href="#主成分分析法（PCA）" class="headerlink" title="主成分分析法（PCA）"></a>主成分分析法（PCA）</h3><p>PCA的主要思想是将n维特征映射到k维上，这k维是全新的正交特征也被称为主成分，是在原有n维特征的基础上重新构造出来的k维特征。PCA的工作就是从原始的空间中顺序地找一组相互正交的坐标轴，新的坐标轴的选择与数据本身是密切相关的。其中，第一个新坐标轴选择是原始数据中方差最大的方向，第二个新坐标轴选取是与第一个坐标轴正交的平面中使得方差最大的，第三个轴是与第1,2个轴正交的平面中方差最大的。依次类推，可以得到n个这样的坐标轴。通过这种方式获得的新的坐标轴，我们发现，大部分方差都包含在前面k个坐标轴中，后面的坐标轴所含的方差几乎为0。于是，我们可以忽略余下的坐标轴，只保留前面k个含有绝大部分方差的坐标轴。</p>
+<p>实现方法：通过计算数据矩阵的协方差矩阵，然后得到协方差矩阵的特征值特征向量，选择特征值最大(即方差最大)的k个特征所对应的特征向量组成的矩阵</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37777074">https://zhuanlan.zhihu.com/p/37777074</a></p>
+<h3 id="层次分析法（AHP）"><a href="#层次分析法（AHP）" class="headerlink" title="层次分析法（AHP）"></a>层次分析法（AHP）</h3><ol>
+<li>建立递阶层次结构模型；（目标层O，准则层C，措施层P）</li>
+<li>构造出各层次中的所有判断矩阵；（标度1-9）</li>
+<li>层次单排序及一致性检验；</li>
+<li>层次总排序及一致性检验。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29831163/article/details/89452567">https://blog.csdn.net/qq_29831163/article/details/89452567</a></p>
+<h3 id="优劣解距离法（TOPSIS）"><a href="#优劣解距离法（TOPSIS）" class="headerlink" title="优劣解距离法（TOPSIS）"></a>优劣解距离法（TOPSIS）</h3><p>TOPSIS法是一种理想目标相似性的顺序选优技术,在多目标决策分析中是一种非常有效的方法。它通过归一化（去量纲化）后的数据规范化矩阵,找出多个目标中最优目标和最劣目标(分别用理想解和反理想解表示) ,分别计算各评价目标与理想解和反理想解的距离,获得各目标与理想解的贴近度,按理想解贴近度的大小排序,以此作为评价目标优劣的依据。贴近度取值在0～1之间,该值愈接近1,表示相应的评价目标越接近最优水平;反之,该值愈接近0,表示评价目标越接近最劣水平。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266689519">https://zhuanlan.zhihu.com/p/266689519</a></p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul>
+<li>ArcGIS：地图</li>
+<li>SPSS：数据分析</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/12/20/%E3%80%90DM%E3%80%91cardinality,%20graph/" rel="prev" title="【DM】cardinality, graph">
+                  <i class="fa fa-angle-left"></i> 【DM】cardinality, graph
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/02/29/%E3%80%90OO%E3%80%91hw1/" rel="next" title="【OO】hw1">
+                  【OO】hw1 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
