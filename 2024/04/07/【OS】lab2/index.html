@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="lab2实验笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【OS】lab2">
+<meta property="og:url" content="http://example.com/2024/04/07/%E3%80%90OS%E3%80%91lab2/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="lab2实验笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-07T09:48:12.000Z">
+<meta property="article:modified_time" content="2024-04-12T12:24:31.055Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2024/04/07/%E3%80%90OS%E3%80%91lab2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/04/07/%E3%80%90OS%E3%80%91lab2/","path":"2024/04/07/【OS】lab2/","title":"【OS】lab2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【OS】lab2 | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page"><span class="nav-number">2.</span> <span class="nav-text">Page</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E6%98%A0%E5%B0%84"><span class="nav-number">3.</span> <span class="nav-text">自映射</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/07/%E3%80%90OS%E3%80%91lab2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【OS】lab2 | 碳罐堆积处">
+      <meta itemprop="description" content="lab2实验笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【OS】lab2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-07 17:48:12" itemprop="dateCreated datePublished" datetime="2024-04-07T17:48:12+08:00">2024-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-12 20:24:31" itemprop="dateModified" datetime="2024-04-12T20:24:31+08:00">2024-04-12</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">lab2实验笔记</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>读指导书的时候觉得写的什么东西看不懂一点，然而看完了感觉助教也是尽力了……本来想按照更加自然的逻辑顺序整理一下，还是挺困难，写的时候也是这里补一点那里改一点。本文先从使用的角度介绍一些比较关键的宏或者类型，然后是实验中的<code>Page</code>结构体和对应使用的链表，以及补充介绍了自映射机制。板块间没有很强的联系，但知识又确实是穿插杂糅的，嗯……不需要从头到尾按顺序阅读，跳着跳着看吧。</p>
+</blockquote>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p><strong>KADDR，PADDR</strong></p>
+<p>具体实现姑且忽略掉，<code>KADDR(pa)</code>是把物理地址转为虚拟地址，而<code>PADDR(kva)</code>是把虚拟地址转为物理地址。这里要求虚拟地址都是<strong>内核态</strong>虚拟地址。本次页表会用到。</p>
+<p><strong>PPN，VPN</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Page number field of an address</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PPN(pa) (((u_long)(pa)) &gt;&gt; PGSHIFT)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VPN(va) (((u_long)(va)) &gt;&gt; PGSHIFT)</span></span><br></pre></td></tr></table></figure>
+<p><strong>PDX，PTX</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PGSHIFT 12</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PDSHIFT 22 <span class="comment">// log2(PDMAP)</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PDX(va) ((((u_long)(va)) &gt;&gt; PDSHIFT) &amp; 0x03FF)  <span class="comment">//Page Directory indeX</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PTX(va) ((((u_long)(va)) &gt;&gt; PGSHIFT) &amp; 0x03FF)  <span class="comment">//Page Table indeX</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>Pde，Pte</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> u_long Pde; </span><br><span class="line"><span class="keyword">typedef</span> u_long Pte;</span><br></pre></td></tr></table></figure>
+<p>分别是一级页表项和二级页表项，一般用是建立指向某页表项的指针<code>Pde *pde</code>，解指针得到表项内容。<code>Pde *pgdir</code>指向第一个页目录项，也是页目录的地址，要得到第n项就<code>Pde *pde = pgdir + n</code>。注意页表项中存的都是<strong>物理页号和权限位</strong>。<code>*pde</code>取得的是一级页表项的值，如果需要求得对应二级页表物理地址就<code>PTE_ADDR(*pde)</code>，如果是求虚拟地址需要再套一层<code>KADDR()</code>。</p>
+<p><strong>PTE_ADDR(pte)</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PTE_ADDR(pte) (((u_long)(pte)) &amp; ~0xFFF)</span></span><br></pre></td></tr></table></figure>
+<p>该宏清空后12位权限位。二级页表是4KB对齐，故虽然说高20位存的是物理页号但清空后12位后直接得到物理地址（PPN宏函数也是这个道理）。</p>
+<p><code>Pte</code>用法类似，比如在<code>page_lookup()</code>中有：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Pte *pte;</span><br><span class="line">...</span><br><span class="line">pp = pa2page(*pte);</span><br></pre></td></tr></table></figure>
+<p>里面<code>pa2page</code>实现为：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="keyword">inline</span> <span class="keyword">struct</span> Page *<span class="title function_">pa2page</span><span class="params">(u_long pa)</span> {</span><br><span class="line">	<span class="keyword">if</span> (PPN(pa) &gt;= npage) {</span><br><span class="line">		panic(<span class="string">"pa2page called with invalid pa: %x"</span>, pa);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> &amp;pages[PPN(pa)];</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><code>*pte</code>为页表项内容（也就是物理地址），通过<code>PPN</code>转为物理页号后通过<code>pages</code>获得对应。</p>
+<p><code>pa2page</code>和<code>page2pa</code>都是Page与其对应物理页面地址的转换。</p>
+<p><strong>npage</strong></p>
+<p>注意类型为<code>u_long</code>。</p>
+<p>npage个<code>Page</code>和npage个物理页面一一对应。<code>Page</code>起始地址为<code>pages</code>，<code>pages[i]</code>获得对应物理页面。</p>
+<p><strong>LIST</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Iterate over the elements in the list named "head".</span></span><br><span class="line"><span class="comment"> * During the loop, assign the list elements to the variable "var"</span></span><br><span class="line"><span class="comment"> * and use the LIST_ENTRY structure member "field" as the link field.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LIST_FOREACH(var, head, field)   </span></span><br></pre></td></tr></table></figure>
+<h2 id="Page"><a href="#Page" class="headerlink" title="Page"></a>Page</h2><p><code>queue.h</code></p>
+<p>HEAD是链表头结点指针</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> LIST_HEAD(name, type)                                                                      \</span></span><br><span class="line"><span class="meta">	struct name {                                                                              \</span></span><br><span class="line"><span class="meta">		struct type *lh_first; <span class="comment">/* first element */</span>                                         \</span></span><br><span class="line"><span class="meta">	}</span></span><br></pre></td></tr></table></figure>
+<p>ENTRY是结点</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">#define LIST_ENTRY(<span class="keyword">type</span>)                                                                           \</span><br><span class="line">	<span class="keyword">struct</span> {                                                                                   \</span><br><span class="line">		<span class="keyword">struct</span> <span class="keyword">type</span> *le_next;  <span class="comment">/* next element */</span>                                          \</span><br><span class="line">		<span class="keyword">struct</span> <span class="keyword">type</span> **le_prev; <span class="comment">/* address of previous next element */</span>                      \</span><br><span class="line">	}</span><br></pre></td></tr></table></figure>
+<p><code>pmap.h</code></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">LIST_HEAD(Page_list, Page);</span><br><span class="line"><span class="keyword">typedef</span> <span class="title function_">LIST_ENTRY</span><span class="params">(Page)</span> Page_LIST_entry_t;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Page</span> {</span></span><br><span class="line">	Page_LIST_entry_t pp_link; <span class="comment">/* free list link */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// Ref is the count of pointers (usually in page table entries)</span></span><br><span class="line">	<span class="comment">// to this page.  This only holds for pages allocated using</span></span><br><span class="line">	<span class="comment">// page_alloc.  Pages allocated at boot time using pmap.c's "alloc"</span></span><br><span class="line">	<span class="comment">// do not have valid reference count fields.</span></span><br><span class="line"></span><br><span class="line">	u_short pp_ref;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> <span class="title">Page</span> *<span class="title">pages</span>;</span></span><br><span class="line"><span class="keyword">extern</span> <span class="class"><span class="keyword">struct</span> <span class="title">Page_list</span> <span class="title">page_free_list</span>;</span></span><br></pre></td></tr></table></figure>
+<p>加上extern是为了引用外部的变量（在<code>kern/pmap.c</code>初始化<code>page_free_list</code>）</p>
+<p>完整展开就是</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Page_list</span> {</span> </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> {</span></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> {</span>  </span><br><span class="line">                <span class="class"><span class="keyword">struct</span> <span class="title">type</span> *<span class="title">le_next</span>;</span> </span><br><span class="line">                <span class="class"><span class="keyword">struct</span> <span class="title">type</span> **<span class="title">le_prev</span>;</span></span><br><span class="line">        } pp_link;</span><br><span class="line">    	u_short pp_ref;</span><br><span class="line">    } *lh_first;                      </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>顺便提一嘴链表宏，一般是传递指针进行操作，更准确的来说更关注该页面的虚拟地址而不是页面内容。诸如在<code>page_alloc()</code>中有</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Page</span> *<span class="title">pp</span>;</span></span><br><span class="line">...</span><br><span class="line">pp = LIST_FIRST(&amp;page_free_list);</span><br><span class="line">LIST_REMOVE(pp, pp_link);</span><br></pre></td></tr></table></figure>
+<p>取得的<code>pp</code>是Page结构体指针，也就是该虚拟页面的地址。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="keyword">inline</span> u_long <span class="title function_">page2pa</span><span class="params">(<span class="keyword">struct</span> Page *pp)</span> {</span><br><span class="line">	<span class="keyword">return</span> page2ppn(pp) &lt;&lt; PGSHIFT;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>这种虚拟页面获取对应物理地址也是通过传递页面指针。</p>
+<h2 id="自映射"><a href="#自映射" class="headerlink" title="自映射"></a>自映射</h2><blockquote>
+<p> 写到这里也没全懂，可能还存在错误，欢迎批评指正。</p>
+</blockquote>
+<p>我们都知道页表的设计是建立虚拟地址和物理地址的映射，但我们访问页表也是根据其虚拟地址，为了取值同样需要经过虚拟地址到物理地址的转换。于是就有了自映射的设计，可以直接由虚拟地址定位到页表的物理地址。</p>
+<p>这一块会涉及到几个概念，或者说存在几个重要的假设前提：</p>
+<ul>
+<li><strong>页表基址</strong>：该基址需要4M对齐，高10位为该二级页表在一级页表中的偏移量。</li>
+<li><strong>页目录表基址</strong>：</li>
+<li><strong>自映射目录表项</strong>：</li>
+</ul>
+<p>PPT给出的是由页表基址可得出页目录表基址和自映射目录表项基址，不妨这样直观理解：</p>
+<p>页表基址高十位能告诉我们当前页面是所有页面中的第几项（偏移量），所以可以知道页目录这个“页表项”是当前页表中第几个页表项，进而又可以根据该“页面”内的页内偏移找到该页目录中自映射表项。</p>
+<p>由二级页表自映射可以推三级页表甚至更高级，如往年题：</p>
+<blockquote>
+<p>64位操作系统采用三级页表进行虚拟内存管理，每个页表大小为4KB，页表项需要字对齐，其余条件与二级页表管理32位操作系统相同。请问64位中最少用多少位表示虚拟地址。</p>
+</blockquote>
+<p>由页面大小可得到页内偏移应该为12位，最底层页表项是物理地址，一共有4KB/8B个页表项，所以是9位，所以虚拟地址是3*9+12=39位</p>
+<blockquote>
+<p>给定一个一级页表的指针pgdir和二级页表起始虚拟地址va，va为内核态虚拟地址。把合适的地址填写到pgdir的指定位置，使得pgdir能够完成正确的自映射。（即计算出va对应的物理地址所在一级页表项位置，并在那里填入正确的页号和权限位）</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Carbon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/04/07/%E3%80%90OS%E3%80%91lab2/" title="【OS】lab2">http://example.com/2024/04/07/【OS】lab2/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/24/%E3%80%90OS%E3%80%91lab1/" rel="prev" title="【OS】lab1">
+                  <i class="fa fa-angle-left"></i> 【OS】lab1
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
