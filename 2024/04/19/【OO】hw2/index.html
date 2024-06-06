@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="第二单元博客作业">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【OO】hw2">
+<meta property="og:url" content="http://example.com/2024/04/19/%E3%80%90OO%E3%80%91hw2/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="第二单元博客作业">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OO%E3%80%91hw2/1.1.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OO%E3%80%91hw2/1.2.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OO%E3%80%91hw2/2.1.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OO%E3%80%91hw2/2.2.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OO%E3%80%91hw2/3.1.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OO%E3%80%91hw2/3.2.png">
+<meta property="article:published_time" content="2024-04-19T02:04:53.000Z">
+<meta property="article:modified_time" content="2024-04-20T07:31:12.053Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E3%80%90OO%E3%80%91hw2/1.1.png">
+
+
+<link rel="canonical" href="http://example.com/2024/04/19/%E3%80%90OO%E3%80%91hw2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/04/19/%E3%80%90OO%E3%80%91hw2/","path":"2024/04/19/【OO】hw2/","title":"【OO】hw2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【OO】hw2 | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%9D%97%E4%B8%8E%E9%94%81"><span class="nav-number">1.</span> <span class="nav-text">同步块与锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">调度器设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-number">2.1.</span> <span class="nav-text">第一次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UML%E7%B1%BB%E5%9B%BE"><span class="nav-number">2.1.1.</span> <span class="nav-text">UML类图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E5%9B%BE"><span class="nav-number">2.1.2.</span> <span class="nav-text">时序图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bug"><span class="nav-number">2.1.3.</span> <span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-number">2.2.</span> <span class="nav-text">第二次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.2.1.</span> <span class="nav-text">架构设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UML%E7%B1%BB%E5%9B%BE-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">UML类图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E5%9B%BE-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">时序图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bug-1"><span class="nav-number">2.2.4.</span> <span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-number">2.3.</span> <span class="nav-text">第三次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">架构设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UML%E7%B1%BB%E5%9B%BE-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">UML类图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E5%9B%BE-2"><span class="nav-number">2.3.3.</span> <span class="nav-text">时序图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bug-2"><span class="nav-number">2.3.4.</span> <span class="nav-text">bug</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E8%BD%BF%E5%8E%A2"><span class="nav-number">3.</span> <span class="nav-text">双轿厢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">心得体会</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/19/%E3%80%90OO%E3%80%91hw2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【OO】hw2 | 碳罐堆积处">
+      <meta itemprop="description" content="第二单元博客作业">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【OO】hw2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-19 10:04:53" itemprop="dateCreated datePublished" datetime="2024-04-19T10:04:53+08:00">2024-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-20 15:31:12" itemprop="dateModified" datetime="2024-04-20T15:31:12+08:00">2024-04-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OO/" itemprop="url" rel="index"><span itemprop="name">OO</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">第二单元博客作业</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="同步块与锁"><a href="#同步块与锁" class="headerlink" title="同步块与锁"></a>同步块与锁</h2><p>可以选择对方法上锁，也可以选择对对象上锁。这里本人采用的是对方法上锁，在调用RequestTable对象的任意读写方法都用<code>synchronized</code>上锁，保证最多只有一个线程访问或修改读写队列。其实这个在第二次实验之后发现可以改成读写锁，但并不知道如何封装。原有的对RequestTable加锁方法对外是透明的，在其他地方不需要过多地考虑锁和同步问题，于是没改。</p>
+<h2 id="调度器设计"><a href="#调度器设计" class="headerlink" title="调度器设计"></a>调度器设计</h2><p>需要设计的策略细分下来应该有两种，一个是调度器如何将请求分配给电梯，另一个是电梯面对分配给自己的请求采用怎样的方式处理。</p>
+<p>先说第二个，这个是沿用往届的LOOK算法，具体实现如下：</p>
+<ul>
+<li>首先为电梯规定一个初始方向，然后电梯开始沿着该方向运动。</li>
+<li>到达某楼层时，首先判断是否需要开门<ul>
+<li>如果发现电梯里有人可以出电梯（到达目的地），则开门让乘客出去；</li>
+<li>如果发现该楼层中有人想上电梯，并且目的地方向和电梯方向相同，则开门让这个乘客进入。</li>
+</ul>
+</li>
+<li>接下来，进一步判断电梯里是否有人。如果电梯里还有人，则沿着当前方向移动到下一层。否则，检查请求队列中是否还有请求（目前其他楼层是否有乘客想要进电梯）——<ul>
+<li>如果请求队列不为空，且某请求的发出地是电梯”前方”的某楼层，则电梯继续沿着原来的方向运动。</li>
+<li>如果请求队列不为空，且所有请求的发出地都在电梯”后方”的楼层上，或者是在该楼层有请求但是这个请求的目的地在电梯后方（因为电梯不会开门接反方向的请求），则电梯掉头并进入”判断是否需要开门”的步骤（循环实现）。</li>
+<li>如果请求队列为空，且输入线程没有结束（即没有输入文件结束符），则电梯停在该楼层等待请求输入（wait）。</li>
+<li>如果请求队列为空，且输入线程已经结束，则电梯线程结束。</li>
+</ul>
+</li>
+</ul>
+<p>（摘自Hyggge‘s Blog<a target="_blank" rel="noopener" href="https://hyggge.github.io/2022/04/29/oo/oo-di-er-dan-yuan-zong-jie/#%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5">调度策略</a>）</p>
+<p>第一个调度器分配，其实根据题目不同会有不同的“最优”调度方法。本人调度器分配方式从调参变到均分，尝试影子电梯未遂。</p>
+<h3 id="第一次作业"><a href="#第一次作业" class="headerlink" title="第一次作业"></a>第一次作业</h3><p>第一次作业中，由于题目非常贴心地给出了电梯id，所以不存在调度器的说法，直接由<code>InputHandler</code>交给电梯即可。</p>
+<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><p><img src="/images/【OO】hw2/1.1.png" alt="1.1"></p>
+<h4 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h4><p><img src="/images/【OO】hw2/1.2.png" alt="1.2"></p>
+<p>这里RequestTable又是ArrayList又是HashMap是因为一开始用ArrayList发现RTLE了，以为是数据结构问题于是改成：处理总队列的时候按照ArrayList先进先出，在电梯处理的时候按照HashMap，人在外面则以FromFloor作索引，人在电梯里则以ToFloor为索引。</p>
+<h4 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h4><ul>
+<li>RTLE实际上并不是数据结构的问题，而是<strong>策略问题</strong>导致电梯在同一个楼层重复开门关门开门关门</li>
+<li>一开始由于对多线程理解不够深刻导致出现很多次轮询……</li>
+<li>本人自以为有效（实际完全错误）地修改了电梯策略，如果电梯是空的就不检查人的方向和电梯方向是否一致，把电梯方向改成人的方向。这样电梯跑一趟可能不能把所有人给接上，加上等待的人是用HashMap<strong>忽略了等待时间</strong>这一衡量因素，导致可能会让先来的人等很久才能被接到，所以很简单的第一次作业性能分奇低无比被分到了B房……</li>
+</ul>
+<h3 id="第二次作业"><a href="#第二次作业" class="headerlink" title="第二次作业"></a>第二次作业</h3><p>第二次作业意料之中地取消了宝宝椅，请求到来时不给指定电梯id，并且意料之外地ban掉了自由竞争，电梯必须输出Receive有明确的目标才能移动。</p>
+<h4 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h4><p>本人在该作业中采用<strong>调参策略</strong>，简单来讲就是衡量各个电梯当前所在的位置、方向和容量进行评估，分配给得分最高的电梯。</p>
+<p>主要修改及新增：</p>
+<ul>
+<li>RequestTable数据结构仅保留ArrayList。</li>
+<li>增加Person类，电梯接到Reset指令后会把人放出，此时修改Person的FromFloor属性</li>
+<li>增加Scheduler类进行调度</li>
+<li>Main中增加对电梯列表的管理</li>
+</ul>
+<h4 id="UML类图-1"><a href="#UML类图-1" class="headerlink" title="UML类图"></a>UML类图</h4><p><img src="/images/【OO】hw2/2.1.png" alt="2.1"></p>
+<h4 id="时序图-1"><a href="#时序图-1" class="headerlink" title="时序图"></a>时序图</h4><p><img src="/images/【OO】hw2/2.2.png" alt="2.2"></p>
+<h4 id="bug-1"><a href="#bug-1" class="headerlink" title="bug"></a>bug</h4><ul>
+<li>强测没有什么问题但在互测中被狠狠攻击了：如果在初始同时给大量相同请求，由于本人设计中<strong>未考虑电梯待处理队列的数目</strong>导致所有电梯得分会相同，默认分给一号电梯导致被挤爆。</li>
+<li>本人的调参电梯并没有设计过多的安全保护，可能会出现调度器查询时电梯在x楼，但实际分配时电梯已经跑了的情况。当时写的时候觉得不会出现错误，只是会对性能造成影响。再加上这种情况发生概率相对较低，于是没有进行过多处理。实际上为了安全保护，可以新增一个电梯信息类，让电梯和调度器访问和修改的操作都是不可中断的。然而电梯本身会需要查询很多次且修改很多次属性，这样设计似乎又有些愚蠢。故也放弃了。</li>
+<li>哦不对强测也有问题，没能保证先输出OUT再分配给其他电梯所以出现了WA。</li>
+</ul>
+<h3 id="第三次作业"><a href="#第三次作业" class="headerlink" title="第三次作业"></a>第三次作业</h3><p>第三次作业主要新增的就是将普通电梯改为双轿厢电梯。</p>
+<h4 id="架构设计-1"><a href="#架构设计-1" class="headerlink" title="架构设计"></a>架构设计</h4><p>本人在这次作业采用了非常神奇（yuchun）的设计，即如果电梯类收到了双轿厢重置请求，则<strong>该电梯执行调度器的功能，管理两个subElevator</strong>。这样设计的好处是对于以前的调度器而言，电梯数量始终为6，分配给双轿厢的处理方式对外不可见，起到了很好的封装作用。</p>
+<p>subElevator和普通的电梯区别主要在：</p>
+<ul>
+<li>无需考虑Reset指令</li>
+<li>移动到换层楼层需要检查伙伴电梯是否在换层楼层</li>
+<li>若在换层楼层电梯阶段性结束，即等待新处理队列，则需要及时离开换层楼层。</li>
+</ul>
+<p>上层的逻辑基本没变，并且双轿厢电梯把人放到换层楼层后并不是扔回大请求队列，而是直接由电梯调度器给伙伴电梯，结束判断条件也只需要从电梯开始调整，而<strong>不需要动上层框架</strong>（优雅但不是很优雅）。</p>
+<h4 id="UML类图-2"><a href="#UML类图-2" class="headerlink" title="UML类图"></a>UML类图</h4><p><img src="/images/【OO】hw2/3.1.png" alt="3.1"></p>
+<h4 id="时序图-2"><a href="#时序图-2" class="headerlink" title="时序图"></a>时序图</h4><p><img src="/images/【OO】hw2/3.2.png" alt="3.2"></p>
+<h4 id="bug-2"><a href="#bug-2" class="headerlink" title="bug"></a>bug</h4><p>这次作业没啥bug，毕竟均分的特点就是牺牲一些性能分，换来绝对的安全。</p>
+<p>但是从上一次的惨败中吸取了教训:sunglasses:掌握了hack技巧：</p>
+<ul>
+<li>同时Reset所有电梯，同时分配大量请求</li>
+<li>同时Reset五个电梯，留一个电梯不管（或者提前很久Reset），同时分配大量请求</li>
+<li>同时普通Reset五个再DCreset一个</li>
+<li>同时DCreset五个再Reset一个</li>
+<li>单给一个Reset指令</li>
+</ul>
+<h2 id="双轿厢"><a href="#双轿厢" class="headerlink" title="双轿厢"></a>双轿厢</h2><p>双轿厢防撞车参考了<a target="_blank" rel="noopener" href="http://oo.buaa.edu.cn/assignment/512/discussion/1548">讨论区</a>的分享，设置一个Flag类管理换乘层是否被占用。每个两个电梯共享一个Flag Occupied，但看讨论区发现不对这好像就是锁……所以其实不用自己写……？</p>
+<h2 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h2><p>三次作业成绩太精彩了，第一次自以为有效的优化实际完全错误导致性能分极低（在大家都很高的情况下），第二次终于选择照顾性能分了但又WA了一个点导致分还是低且在互测被狠狠攻击，第三次遂摆烂选择牺牲性能分换取正确性。</p>
+<p>一直采用的防御性编程导致似乎没有出现很多线性安全问题，倒是<strong>保证输出顺序正确</strong>以及<strong>正确且正常结束</strong>这两个部分让人很伤神。</p>
+<p>感觉整体架构还挺清晰的所以每次新增功能也没有更改很多代码（不像第一单元重构重构重构……）而且双轿厢的设计感觉比往届的横向电梯更合理一些，新增功能增加得很开心。</p>
+<p>但乘客能不能再灵活一些啊！都只有一层楼了就不能自己走吗！？</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Carbon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/04/19/%E3%80%90OO%E3%80%91hw2/" title="【OO】hw2">http://example.com/2024/04/19/【OO】hw2/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/04/15/%E3%80%90OS%E3%80%91memory/" rel="prev" title="【OS】memory">
+                  <i class="fa fa-angle-left"></i> 【OS】memory
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/04/21/%E3%80%90GAMES101%E3%80%91note1/" rel="next" title="【GAMES101】note1">
+                  【GAMES101】note1 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

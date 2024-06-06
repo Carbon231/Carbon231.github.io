@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="测试过程黑盒测试&amp;白盒测试​    黑盒测试是不需要了解软件系统的内部结构或实现细节，仅仅基于系统的功能规格和需求来设计测试用例和测试场景。白盒测试是基于对代码的理解验证系统的内部逻辑是否正确，是否覆盖了所有的路径和分支。 ​    本单元中最常用和最直接的测试方式仍然是黑盒测试。在初步编写完代码后，黑盒测试可以用大量数据测试代码是否能正常运作，是否在部分情况会出现bug。以往的我盲目相信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【OO】hw3">
+<meta property="og:url" content="http://example.com/2024/05/01/%E3%80%90OO%E3%80%91hw3/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="测试过程黑盒测试&amp;白盒测试​    黑盒测试是不需要了解软件系统的内部结构或实现细节，仅仅基于系统的功能规格和需求来设计测试用例和测试场景。白盒测试是基于对代码的理解验证系统的内部逻辑是否正确，是否覆盖了所有的路径和分支。 ​    本单元中最常用和最直接的测试方式仍然是黑盒测试。在初步编写完代码后，黑盒测试可以用大量数据测试代码是否能正常运作，是否在部分情况会出现bug。以往的我盲目相信">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-01T11:58:59.000Z">
+<meta property="article:modified_time" content="2024-05-16T04:00:06.131Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2024/05/01/%E3%80%90OO%E3%80%91hw3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/05/01/%E3%80%90OO%E3%80%91hw3/","path":"2024/05/01/【OO】hw3/","title":"【OO】hw3"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【OO】hw3 | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">测试过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95-amp-%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.</span> <span class="nav-text">黑盒测试&amp;白盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">1.2.</span> <span class="nav-text">单元测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">1.3.</span> <span class="nav-text">功能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95"><span class="nav-number">1.4.</span> <span class="nav-text">集成测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95"><span class="nav-number">1.5.</span> <span class="nav-text">回归测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%9E%84%E9%80%A0"><span class="nav-number">1.6.</span> <span class="nav-text">数据构造</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E6%A1%86%E6%9E%B6"><span class="nav-number">2.</span> <span class="nav-text">架构框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">3.1.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">图的管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CoupleSum"><span class="nav-number">3.3.</span> <span class="nav-text">CoupleSum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ValueSum"><span class="nav-number">3.4.</span> <span class="nav-text">ValueSum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EmojiMessages"><span class="nav-number">3.5.</span> <span class="nav-text">EmojiMessages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JUnit"><span class="nav-number">4.</span> <span class="nav-text">JUnit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">心得体会</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/01/%E3%80%90OO%E3%80%91hw3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【OO】hw3 | 碳罐堆积处">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【OO】hw3
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-05-01 19:58:59" itemprop="dateCreated datePublished" datetime="2024-05-01T19:58:59+08:00">2024-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-16 12:00:06" itemprop="dateModified" datetime="2024-05-16T12:00:06+08:00">2024-05-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="测试过程"><a href="#测试过程" class="headerlink" title="测试过程"></a>测试过程</h2><h3 id="黑盒测试-amp-白盒测试"><a href="#黑盒测试-amp-白盒测试" class="headerlink" title="黑盒测试&白盒测试"></a>黑盒测试&amp;白盒测试</h3><p>​    黑盒测试是不需要了解软件系统的内部结构或实现细节，仅仅基于系统的功能规格和需求来设计测试用例和测试场景。白盒测试是基于对代码的理解验证系统的内部逻辑是否正确，是否覆盖了所有的路径和分支。</p>
+<p>​    本单元中最常用和最直接的测试方式仍然是黑盒测试。在初步编写完代码后，黑盒测试可以用大量数据测试代码是否能正常运作，是否在部分情况会出现bug。以往的我盲目相信黑盒测试，以至于认为通过了评测机的考验就大概率是没有bug的。这样忽略了两点，其一，评测机也是人造的，如果搭建评测机的人没有意识到某个可能出现bug的点，或者根本理解错误，那么该评测机也是错的。其二，评测机大多是通过随机生成数据，其中会有很多指令是触发异常的无效指令，即使在大量数据的倾倒下真正有用的信息也不多，针对本次复杂的关系网络，很难保证已经测试到所有的情况。</p>
+<p>​    我对白盒测试比较直观的理解是人脑构造数据尽可能覆盖所有情况。构造数据已经很麻烦了，还要绞尽脑汁覆盖所有情况，这显然是工作量很大的事情。对于一些逻辑简单的代码，白盒测试似乎就没有很必要。而对于一些过于复杂的情况，比如计算<code>blockSum</code>，该怎样才算是“覆盖了所有情况”呢？也难以界定。所以，白盒测试（至少在这样小规格项目中）适用情况并不多。但有一种情况尤其适合白盒测试，即涉及到很多隐性的<code>if...else</code>判断的方法。比如本单元中<code>coupleSum</code>的计算，其值只可能在增加或者修改关系的时候变化，这时候就尤其适合进行白盒测试，检查每一种情况是否检测到了变化并正确记录，以及是否有效的修改。</p>
+<h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><p>单元测试是最小级别的测试，通常由开发者编写和执行，用于验证代码中的最小可测试单元（如函数、方法、类等）的行为是否符合预期。</p>
+<h3 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h3><p>功能测试验证软件系统是否按照需求规格说明书的规定正常实现，关注于软件系统的功能是否完整、正确，以及是否满足用户需求。</p>
+<h3 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h3><p>集成测试在单元测试之后进行，旨在验证软件系统中不同模块之间的接口和交互是否正常，关注于模块之间的集成和交互，确保它们能够协同工作并产生正确的结果。这个主要是可以发现模块之间的接口问题、数据传递问题以及功能冲突。在本单元中JML已经规定好一切，故不涉及集成测试，然而该方法在其他面向对象编程是非常重要的测试方法。</p>
+<h3 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a>回归测试</h3><p>回归测试是在软件开发生命周期的后期阶段进行的，用于验证之前已经通过测试的代码在修改后是否仍然保持原有的功能和性能。当开发者修复了软件中的一个缺陷或增加了新的功能后，需要执行回归测试来确保这些修改没有引入新的问题或导致旧的问题重新出现。回归测试在协作项目中应该有很大的帮助，对于我们而言即是测试本次作业的修改是否会导致之前作业某项功能错误或无法正常实现。</p>
+<h3 id="数据构造"><a href="#数据构造" class="headerlink" title="数据构造"></a>数据构造</h3><ul>
+<li>基于需求构造，模拟正常情况和异常情况</li>
+<li>根据指定的规则或范围生成大量随机数据</li>
+<li>针对输入数据的边界值进行测试，如负数、范围边缘</li>
+<li>构建不同情况的数据，如稀疏图和稠密图</li>
+</ul>
+<h2 id="架构框架"><a href="#架构框架" class="headerlink" title="架构框架"></a>架构框架</h2><p>总体来说按照JML固定的架构完成，对于异常情况设置了一个<code>Counter</code>类完成计数，对于<code>Network</code>中图模型设置了一个<code>Dsu</code>类使用存储图结构并使用并查集算法管理连通性问题。</p>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>本次作业尝试了多种容器管理，以<code>MyPerson</code>类为例</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通常使用PersonId查找Person或判断是否相识，故使用HashMap	</span></span><br><span class="line"><span class="keyword">private</span> HashMap&lt;Integer, Person&gt; acquaintance;</span><br><span class="line"><span class="comment">//需要按照Value的大小对Person进行排序，主要服务于判断bestAcquaintance</span></span><br><span class="line"><span class="comment">//同时需要不断增加、修改和删除元素，PriorityQueue难以满足需求，故使用TreeSet</span></span><br><span class="line"><span class="keyword">private</span> TreeSet&lt;Person&gt; acquaintanceByValue;</span><br><span class="line"><span class="comment">//message需要按照顺序存储，并且涉及取出最新的五条消息、将新增消息插入至队首的操作，故使用LinkedList</span></span><br><span class="line"><span class="keyword">private</span> LinkedList&lt;Message&gt; messages;</span><br></pre></td></tr></table></figure>
+<p>值得一提的是<code>TreeSet</code>需要重写<code>CompareTo</code>方法，如果相减可能会超<code>int</code>范围，当然也可以这样写，不是最简洁但比较稳妥</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="built_in">this</span>.acquaintanceByValue = <span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(((o1, o2) -&gt; {</span><br><span class="line">            <span class="type">int</span> <span class="variable">id1</span> <span class="operator">=</span> o1.getId();</span><br><span class="line">            <span class="type">int</span> <span class="variable">id2</span> <span class="operator">=</span> o2.getId();</span><br><span class="line">            <span class="type">int</span> <span class="variable">vc</span> <span class="operator">=</span> Integer.compare(values.get(id1), values.get(id2));</span><br><span class="line">            <span class="keyword">if</span> (vc != <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">return</span> -vc;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> {</span><br><span class="line">                <span class="keyword">return</span> Integer.compare(o1.getId(), o2.getId());</span><br><span class="line">            }</span><br><span class="line">        }));</span><br></pre></td></tr></table></figure>
+<h3 id="图的管理"><a href="#图的管理" class="headerlink" title="图的管理"></a>图的管理</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> HashMap&lt;Integer, Integer&gt; parent;  <span class="comment">//节点的父节点</span></span><br><span class="line">   <span class="keyword">private</span> HashMap&lt;Integer, Integer&gt; rank;  <span class="comment">//方便按秩合并</span></span><br><span class="line">   <span class="keyword">private</span> HashMap&lt;Integer, HashSet&lt;Integer&gt;&gt; graph;  <span class="comment">//图的原始结构</span></span><br><span class="line">   <span class="keyword">private</span> HashMap&lt;Integer, HashMap&lt;Integer, Integer&gt;&gt; counted;  <span class="comment">//计算过的两点之间的ShortestPath</span></span><br><span class="line">   <span class="keyword">private</span> <span class="type">boolean</span> countedDirty;  <span class="comment">//若Dirty则需要将counted清零重新计算</span></span><br><span class="line">   <span class="keyword">private</span> <span class="type">int</span> blockCnt;</span><br><span class="line">   <span class="keyword">private</span> <span class="type">int</span> tripleCnt;</span><br></pre></td></tr></table></figure>
+<p><code>Dsu</code>类只存了连通性而没有存值，所以在<code>Network</code>中需要更改的只有</p>
+<ul>
+<li><code>addPerson</code>中<code>add</code>结点</li>
+<li><code>addRelation</code>中<code>union</code></li>
+<li><code>modifyRelation</code>中若为断关系则<code>breakup</code></li>
+</ul>
+<p><code>blockCnt</code>连通块个数</p>
+<ul>
+<li>加人的时候++</li>
+<li>加关系时若导致两块连通—</li>
+<li>删关系时若导致分裂成两块++</li>
+</ul>
+<p><code>tripleCnt</code>三元闭包个数</p>
+<ul>
+<li>加关系的时候先加再查</li>
+<li>删关系的时候先查再减</li>
+</ul>
+<h3 id="CoupleSum"><a href="#CoupleSum" class="headerlink" title="CoupleSum"></a>CoupleSum</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="variable">coupleSum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="variable">coupleDirty</span> <span class="operator">=</span> <span class="literal">true</span>;  <span class="comment">//由checkBefore()和checkAfter()比对判断是否需要设置脏位</span></span><br><span class="line"><span class="keyword">private</span> HashSet&lt;Person&gt; noMatch = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<h3 id="ValueSum"><a href="#ValueSum" class="headerlink" title="ValueSum"></a>ValueSum</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//间接管理</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">modifyValueSum</span><span class="params">(Person p1, Person p2, <span class="type">int</span> oldValue, <span class="type">int</span> newValue)</span> {</span><br><span class="line">        <span class="keyword">for</span> (Person person : ((MyPerson) p1).getAcquaintance()) {</span><br><span class="line">            <span class="keyword">if</span> (person.getId() != p2.getId() &amp;&amp; person.isLinked(p2)) {</span><br><span class="line">                <span class="keyword">for</span> (Tag tag : ((MyPerson) person).getTags()) {</span><br><span class="line">                    <span class="keyword">if</span> (tag.hasPerson(p1) &amp;&amp; tag.hasPerson(p2)) {</span><br><span class="line">                        ((MyTag) tag).modifyValueSum(oldValue, newValue); } } } }</span><br><span class="line">        <span class="keyword">if</span> (delete) {</span><br><span class="line">            submodify(p1, p2);</span><br><span class="line">            submodify(p2, p1); }</span><br><span class="line">        delete = <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接管理</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">submodify</span><span class="params">(Person p1, Person p2)</span> {</span><br><span class="line">        <span class="keyword">for</span> (Tag tag : ((MyPerson) p1).getTags()) {</span><br><span class="line">            <span class="keyword">if</span> (tag.hasPerson(p2)) {</span><br><span class="line">                <span class="keyword">for</span> (Person p : ((MyTag) tag).getPersons()) {</span><br><span class="line">                    <span class="keyword">if</span> (p.getId() != p2.getId() &amp;&amp; p.isLinked(p2)) {</span><br><span class="line">                        ((MyTag) tag).modifyValueSum(p2.queryValue(p), <span class="number">0</span>); } } } } }</span><br></pre></td></tr></table></figure>
+<h3 id="EmojiMessages"><a href="#EmojiMessages" class="headerlink" title="EmojiMessages"></a>EmojiMessages</h3><p>考虑到信息数量可以非常多，所以也加上了一点点优化，可以省去对<code>message</code>的遍历</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> HashMap&lt;Integer, Message&gt; messages = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">private</span> HashMap&lt;Integer, Integer&gt; emojis = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">private</span> HashMap&lt;Integer, HashSet&lt;Integer&gt;&gt; emojiMessages = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">deleteColdEmoji</span><span class="params">(<span class="type">int</span> limit)</span> {</span><br><span class="line">        emojis.entrySet().removeIf(entry -&gt; entry.getValue() &lt; limit);</span><br><span class="line">        Iterator&lt;Integer&gt; iterator = emojiMessages.keySet().iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext()) {</span><br><span class="line">            <span class="type">int</span> <span class="variable">eid</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">            <span class="keyword">if</span> (!emojis.containsKey(eid)) {</span><br><span class="line">                <span class="keyword">for</span> (Integer mid : emojiMessages.get(eid)) { messages.remove(mid); }</span><br><span class="line">                iterator.remove(); } }</span><br><span class="line">        <span class="keyword">return</span> emojis.size();</span><br><span class="line">    }</span><br></pre></td></tr></table></figure>
+<h2 id="JUnit"><a href="#JUnit" class="headerlink" title="JUnit"></a>JUnit</h2><p>在编写测试时，我们可以将JML规格视为一种模板或蓝图，然后根据这些规格来编写代码和测试。这种直白的“翻译”过程确保了代码和测试与规格保持一致，从而提高了代码的质量和可维护性。</p>
+<p>总体而言测试可以分为这样几步：</p>
+<ul>
+<li>实例化对象构造数据</li>
+<li>调用方法得到结果</li>
+<li>（异常）判断异常是否能被正常捕获</li>
+<li>（正常）逐行判断ensures是否满足</li>
+</ul>
+<h2 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h2><p>JML描述的前置条件、后置条件和副作用，可以使得代码更容易被程序员理解和维护，也便于我们编写测试来验证代码的正确性。理论来讲，本单元最大的收获应该是学习如何编写更清晰、更可靠、更易于维护的代码。然而实际上，由于测评形式原因，感觉本单元更多的精力还是用在优化算法上了，虽然也是学习指标中的一环，但似乎有点本末倒置？？总归来讲有学长学姐博客助力实现压力已经小很多了，课程组也对JML进行合理的优化减少不必要的困扰，还是很好的。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Carbon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/05/01/%E3%80%90OO%E3%80%91hw3/" title="【OO】hw3">http://example.com/2024/05/01/【OO】hw3/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/04/21/%E3%80%90GAMES101%E3%80%91note1/" rel="prev" title="【GAMES101】note1">
+                  <i class="fa fa-angle-left"></i> 【GAMES101】note1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/05/07/%E3%80%90OS%E3%80%91lab4/" rel="next" title="【OS】lab4">
+                  【OS】lab4 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

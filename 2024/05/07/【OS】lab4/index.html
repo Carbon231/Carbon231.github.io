@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="lab4实验笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【OS】lab4">
+<meta property="og:url" content="http://example.com/2024/05/07/%E3%80%90OS%E3%80%91lab4/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="lab4实验笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab4/image-20240507142848372.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab4/image-20240508154210242.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab4/image-20240508004919945.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab4/image-20240508004557123.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab4/image-20240508004607582.png">
+<meta property="article:published_time" content="2024-05-07T06:26:05.000Z">
+<meta property="article:modified_time" content="2024-05-29T08:07:12.968Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab4/image-20240507142848372.png">
+
+
+<link rel="canonical" href="http://example.com/2024/05/07/%E3%80%90OS%E3%80%91lab4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/05/07/%E3%80%90OS%E3%80%91lab4/","path":"2024/05/07/【OS】lab4/","title":"【OS】lab4"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【OS】lab4 | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">系统调用流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">基础系统调用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#envid2env"><span class="nav-number">2.1.</span> <span class="nav-text">envid2env</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-mem-alloc"><span class="nav-number">2.2.</span> <span class="nav-text">sys_mem_alloc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-mem-map"><span class="nav-number">2.3.</span> <span class="nav-text">sys_mem_map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-mem-unmap"><span class="nav-number">2.4.</span> <span class="nav-text">sys_mem_unmap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-yield"><span class="nav-number">2.5.</span> <span class="nav-text">sys_yield</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPC"><span class="nav-number">3.</span> <span class="nav-text">IPC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-ipc-recv"><span class="nav-number">3.1.</span> <span class="nav-text">sys_ipc_recv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-ipc-try-send"><span class="nav-number">3.2.</span> <span class="nav-text">sys_ipc_try_send</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fork"><span class="nav-number">4.</span> <span class="nav-text">Fork</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6"><span class="nav-number">4.1.</span> <span class="nav-text">写时复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fork"><span class="nav-number">4.2.</span> <span class="nav-text">fork</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-exofork"><span class="nav-number">4.3.</span> <span class="nav-text">sys_exofork</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#duppage"><span class="nav-number">4.4.</span> <span class="nav-text">duppage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-set-tlb-mod-entry"><span class="nav-number">4.5.</span> <span class="nav-text">sys_set_tlb_mod_entry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-set-env-status"><span class="nav-number">4.6.</span> <span class="nav-text">sys_set_env_status</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/07/%E3%80%90OS%E3%80%91lab4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【OS】lab4 | 碳罐堆积处">
+      <meta itemprop="description" content="lab4实验笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【OS】lab4
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-05-07 14:26:05" itemprop="dateCreated datePublished" datetime="2024-05-07T14:26:05+08:00">2024-05-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-29 16:07:12" itemprop="dateModified" datetime="2024-05-29T16:07:12+08:00">2024-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OS/" itemprop="url" rel="index"><span itemprop="name">OS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">lab4实验笔记</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="系统调用流程"><a href="#系统调用流程" class="headerlink" title="系统调用流程"></a>系统调用流程</h2><p><img src="/images/【OS】lab4/image-20240507142848372.png" alt="image-20240507142848372" style="zoom:67%;"></p>
+<p><code>user/lib/syscall_wrap.S : msyscall</code>：叶函数没有返回值，并且没有局部变量不需要分配栈帧。仅是通过执行自陷函数<code>syscall</code>陷入内核态并在处理后返回。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LEAF(msyscall)</span><br><span class="line">	// Just use 'syscall' instruction and return.</span><br><span class="line"></span><br><span class="line">	/* Exercise 4.1: Your code here. */</span><br><span class="line">	syscall</span><br><span class="line">	jr ra</span><br><span class="line">END(msyscall)</span><br></pre></td></tr></table></figure>
+<p>lab3里讲过陷入内核会先在<code>kern/entry.S</code>中通过<code>SAVE_ALL</code>来保存现场，之后栈指针指向保存的<code>Trapframe</code>，然后才跳转到<code>kern/genex.S : handle_</code>中进行异常处理。<code>kern/genex.S : handle_sys</code>是对<code>do_syscall</code>的封装。要调用该C函数进行异常处理会将栈指针传给该函数，进而可以通过<code>struct Trapframe *</code>来获取参数。</p>
+<p><code>kern/syscall_all.c : do_syscall</code>进行一个取参和传参的工作，调用<code>func</code>指向的C函数。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">do_syscall</span><span class="params">(<span class="keyword">struct</span> Trapframe *tf)</span> {</span><br><span class="line">	<span class="type">int</span> (*func)(u_int, u_int, u_int, u_int, u_int);</span><br><span class="line">	<span class="type">int</span> sysno = tf-&gt;regs[<span class="number">4</span>];</span><br><span class="line">	<span class="keyword">if</span> (sysno &lt; <span class="number">0</span> || sysno &gt;= MAX_SYSNO) {</span><br><span class="line">		tf-&gt;regs[<span class="number">2</span>] = -E_NO_SYS;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Add the EPC in 'tf' by a word (size of an instruction). */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.2: Your code here. (1/4) */</span></span><br><span class="line">	tf-&gt;cp0_epc += <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Use 'sysno' to get 'func' from 'syscall_table'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.2: Your code here. (2/4) */</span></span><br><span class="line">	func = syscall_table[sysno];</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: First 3 args are stored in $a1, $a2, $a3. */</span></span><br><span class="line">	u_int arg1 = tf-&gt;regs[<span class="number">5</span>];</span><br><span class="line">	u_int arg2 = tf-&gt;regs[<span class="number">6</span>];</span><br><span class="line">	u_int arg3 = tf-&gt;regs[<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 4: Last 2 args are stored in stack at [$sp + 16 bytes], [$sp + 20 bytes]. */</span></span><br><span class="line">	u_int arg4, arg5;</span><br><span class="line">	<span class="comment">/* Exercise 4.2: Your code here. (3/4) */</span></span><br><span class="line">	arg4 = *(u_long *)(tf-&gt;regs[<span class="number">29</span>] + <span class="number">16</span>);</span><br><span class="line">	arg5 = *(u_long *)(tf-&gt;regs[<span class="number">29</span>] + <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 5: Invoke 'func' with retrieved arguments and store its return value to $v0 in 'tf'.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.2: Your code here. (4/4) */</span></span><br><span class="line">	tf-&gt;regs[<span class="number">2</span>] = func(arg1, arg2, arg3, arg4, arg5);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>寄存器的声明在<code>include\asm\regdef.h</code>中</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> zero $0 <span class="comment">/* wired zero */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AT $1	<span class="comment">/* assembler temp  - uppercase because of ".set at" */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> v0 $2	<span class="comment">/* return value */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> v1 $3</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> a0 $4 <span class="comment">/* argument registers */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> a1 $5</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> a2 $6</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> a3 $7</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> t0 $8 <span class="comment">/* caller saved */</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> gp $28 <span class="comment">/* global pointer */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sp $29 <span class="comment">/* stack pointer */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fp $30 <span class="comment">/* frame pointer */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> s8 $30 <span class="comment">/* same like fp! */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ra $31 <span class="comment">/* return address */</span></span></span><br></pre></td></tr></table></figure>
+<p>所以确实是4-7传参，并且这里不能直接取当前寄存器，而是要通过tf保存的现场取。</p>
+<p><img src="/images/【OS】lab4/image-20240508154210242.png" alt="image-20240508154210242"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rfhits/Operating-System-BUAA-2021/blob/main/4-lab4/%E7%AC%94%E8%AE%B0.md">图源</a></p>
+<p>重复一下lab3的内容</p>
+<p><code>traps.c</code>中</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">handle_sys</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line">...</span><br><span class="line"><span class="type">void</span> (*exception_handlers[<span class="number">32</span>])(<span class="type">void</span>) = {</span><br><span class="line">    [<span class="number">0</span> ... <span class="number">31</span>] = handle_reserved,</span><br><span class="line">    [<span class="number">0</span>] = handle_int,</span><br><span class="line">    [<span class="number">2</span> ... <span class="number">3</span>] = handle_tlb,</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> !defined(LAB) || LAB &gt;= 4</span></span><br><span class="line">    [<span class="number">1</span>] = handle_mod,</span><br><span class="line">    [<span class="number">8</span>] = handle_sys,</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<p><code>genex.S</code>中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.macro BUILD_HANDLER exception handler</span><br><span class="line">NESTED(handle_\exception, TF_SIZE + 8, zero)</span><br><span class="line">	move    a0, sp</span><br><span class="line">	addiu   sp, sp, -8</span><br><span class="line">	jal     \handler</span><br><span class="line">	addiu   sp, sp, 8</span><br><span class="line">	j       ret_from_exception</span><br><span class="line">END(handle_\exception)</span><br><span class="line">.endm</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">BUILD_HANDLER sys do_syscall</span><br></pre></td></tr></table></figure>
+<p><em>2021届似乎有一个<code>lib/syscall.S</code>，用<code>NESTED(handle_sys, TF_SIZE, sp)</code>实现的，所以他们exam里有更改该文件实现多参数传递的题。</em></p>
+<h2 id="基础系统调用函数"><a href="#基础系统调用函数" class="headerlink" title="基础系统调用函数"></a>基础系统调用函数</h2><h3 id="envid2env"><a href="#envid2env" class="headerlink" title="envid2env"></a>envid2env</h3><p>通过一个进程id获取该进程控制块。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">envid2env</span><span class="params">(u_int envid, <span class="keyword">struct</span> Env **penv, <span class="type">int</span> checkperm)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">e</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Assign value to 'e' using 'envid'. */</span></span><br><span class="line">	<span class="comment">/* Hint:</span></span><br><span class="line"><span class="comment">	 *   If envid is zero, set 'penv' to 'curenv' and return 0.</span></span><br><span class="line"><span class="comment">	 *   You may want to use 'ENVX'.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.3: Your code here. (1/2) */</span></span><br><span class="line">	<span class="keyword">if</span> (envid == <span class="number">0</span>) {</span><br><span class="line">		*penv = curenv;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line">	e = &amp;envs[ENVX(envid)];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (e-&gt;env_status == ENV_FREE || e-&gt;env_id != envid) {</span><br><span class="line">		<span class="keyword">return</span> -E_BAD_ENV;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Check when 'checkperm' is non-zero. */</span></span><br><span class="line">	<span class="comment">/* Hints:</span></span><br><span class="line"><span class="comment">	 *   Check whether the calling env has sufficient permissions to manipulate the</span></span><br><span class="line"><span class="comment">	 *   specified env, i.e. 'e' is either 'curenv' or its immediate child.</span></span><br><span class="line"><span class="comment">	 *   If violated, return '-E_BAD_ENV'.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.3: Your code here. (2/2) */</span></span><br><span class="line">	<span class="keyword">if</span> (checkperm &amp;&amp; e-&gt;env_id != curenv-&gt;env_id &amp;&amp; e-&gt;env_parent_id != curenv-&gt;env_id) {</span><br><span class="line">		<span class="keyword">return</span> -E_BAD_ENV;</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">/* Step 3: Assign 'e' to '*penv'. */</span></span><br><span class="line">	*penv = e;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>第一个检查是思考题里给出的<code>e-&gt;env_id != envid</code>。第二个检查是当<code>checkperm</code>设为1检查当前进程是否有权限操作查找的进程（需要<code>e</code>是当前进程或为当前进程的子进程）</p>
+<h3 id="sys-mem-alloc"><a href="#sys-mem-alloc" class="headerlink" title="sys_mem_alloc"></a>sys_mem_alloc</h3><p>用户通过该系统调用给程序允许的虚拟内存空间显式分配物理内存。对程序员而言类似于<code>memset</code>，在程序里申请了一片内存空间；对内核而言，是进程请求将某段地址与实际物理地址进行映射，从而允许通过虚拟页面对物理内存进行存取访问。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sys_mem_alloc</span><span class="params">(u_int envid, u_int va, u_int perm)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">env</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Page</span> *<span class="title">pp</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Check if 'va' is a legal user virtual address using 'is_illegal_va'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.4: Your code here. (1/3) */</span></span><br><span class="line">	<span class="keyword">if</span> (is_illegal_va(va)) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">/* Step 2: Convert the envid to its corresponding 'struct Env *' using 'envid2env'. */</span></span><br><span class="line">	<span class="comment">/* Hint: **Always** validate the permission in syscalls! */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.4: Your code here. (2/3) */</span></span><br><span class="line">	try(envid2env(envid, &amp;env, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Allocate a physical page using 'page_alloc'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.4: Your code here. (3/3) */</span></span><br><span class="line">	try(page_alloc(&amp;pp));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 4: Map the allocated page at 'va' with permission 'perm' using 'page_insert'. */</span></span><br><span class="line">	<span class="keyword">return</span> page_insert(env-&gt;env_pgdir, env-&gt;env_asid, pp, va, perm);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="sys-mem-map"><a href="#sys-mem-map" class="headerlink" title="sys_mem_map"></a>sys_mem_map</h3><p>将源进程地址空间中的相应内存映射到目标进程的相应地址空间的相应虚拟内存中去，也即两者共享一页物理内存。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sys_mem_map</span><span class="params">(u_int srcid, u_int srcva, u_int dstid, u_int dstva, u_int perm)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">srcenv</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">dstenv</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Page</span> *<span class="title">pp</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Check if 'srcva' and 'dstva' are legal user virtual addresses using</span></span><br><span class="line"><span class="comment">	 * 'is_illegal_va'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.5: Your code here. (1/4) */</span></span><br><span class="line">	<span class="keyword">if</span> (is_illegal_va(srcva) || is_illegal_va(dstva)) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Convert the 'srcid' to its corresponding 'struct Env *' using 'envid2env'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.5: Your code here. (2/4) */</span></span><br><span class="line">	try(envid2env(srcid, &amp;srcenv, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Convert the 'dstid' to its corresponding 'struct Env *' using 'envid2env'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.5: Your code here. (3/4) */</span></span><br><span class="line">	try(envid2env(dstid, &amp;dstenv, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 4: Find the physical page mapped at 'srcva' in the address space of 'srcid'. */</span></span><br><span class="line">	<span class="comment">/* Return -E_INVAL if 'srcva' is not mapped. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.5: Your code here. (4/4) */</span></span><br><span class="line">	<span class="keyword">if</span> (!(pp = page_lookup(srcenv -&gt; env_pgdir, srcva, <span class="literal">NULL</span>))) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 5: Map the physical page at 'dstva' in the address space of 'dstid'. */</span></span><br><span class="line">	<span class="keyword">return</span> page_insert(dstenv-&gt;env_pgdir, dstenv-&gt;env_asid, pp, dstva, perm);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="sys-mem-unmap"><a href="#sys-mem-unmap" class="headerlink" title="sys_mem_unmap"></a>sys_mem_unmap</h3><p>解除某个进程空间虚拟内存和物理内存之间的映射关系</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sys_mem_unmap</span><span class="params">(u_int envid, u_int va)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">e</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Check if 'va' is a legal user virtual address using 'is_illegal_va'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.6: Your code here. (1/2) */</span></span><br><span class="line">	<span class="keyword">if</span> (is_illegal_va(va)) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Convert the envid to its corresponding 'struct Env *' using 'envid2env'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.6: Your code here. (2/2) */</span></span><br><span class="line">	try(envid2env(envid, &amp;e, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Unmap the physical page at 'va' in the address space of 'envid'. */</span></span><br><span class="line">	page_remove(e-&gt;env_pgdir, e-&gt;env_asid, va);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="sys-yield"><a href="#sys-yield" class="headerlink" title="sys_yield"></a>sys_yield</h3><p>用户进程放弃CPU，就是<code>schedule(1)</code></p>
+<h2 id="IPC"><a href="#IPC" class="headerlink" title="IPC"></a>IPC</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Env</span>{</span></span><br><span class="line">    <span class="comment">//lab4 IPC</span></span><br><span class="line">    u_int env_ipc_value;   <span class="comment">// the value sent to us</span></span><br><span class="line">	u_int env_ipc_from;    <span class="comment">// envid of the sender</span></span><br><span class="line">	u_int env_ipc_recving; <span class="comment">// whether this env is blocked receiving</span></span><br><span class="line">	u_int env_ipc_dstva;   <span class="comment">// va at which the received page should be mapped</span></span><br><span class="line">	u_int env_ipc_perm;    <span class="comment">// perm in which the received page should be mapped</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><img src="/images/【OS】lab4/image-20240508004919945.png" alt="image-20240508004919945"></p>
+<p>指导书强调当<code>srcva</code>不为0时才建立两个进程的页面映射关系，所以在send的时候需要额外检查。</p>
+<h3 id="sys-ipc-recv"><a href="#sys-ipc-recv" class="headerlink" title="sys_ipc_recv"></a>sys_ipc_recv</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Overview:</span></span><br><span class="line"><span class="comment"> *   Wait for a message (a value, together with a page if 'dstva' is not 0) from other envs.</span></span><br><span class="line"><span class="comment"> *   'curenv' is blocked until a message is sent.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Post-Condition:</span></span><br><span class="line"><span class="comment"> *   Return 0 on success.</span></span><br><span class="line"><span class="comment"> *   Return -E_INVAL: 'dstva' is neither 0 nor a legal address.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">sys_ipc_recv</span><span class="params">(u_int dstva)</span> {</span><br><span class="line">	<span class="comment">/* Step 1: Check if 'dstva' is either zero or a legal address. */</span></span><br><span class="line">	<span class="keyword">if</span> (dstva != <span class="number">0</span> &amp;&amp; is_illegal_va(dstva)) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Set 'curenv-&gt;env_ipc_recving' to 1. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.8: Your code here. (1/8) */</span></span><br><span class="line">	curenv-&gt;env_ipc_recving = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Set the value of 'curenv-&gt;env_ipc_dstva'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.8: Your code here. (2/8) */</span></span><br><span class="line">	curenv-&gt;env_ipc_dstva = dstva;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 4: Set the status of 'curenv' to 'ENV_NOT_RUNNABLE' and remove it from</span></span><br><span class="line"><span class="comment">	 * 'env_sched_list'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.8: Your code here. (3/8) */</span></span><br><span class="line">	curenv-&gt;env_status = ENV_NOT_RUNNABLE;</span><br><span class="line">	TAILQ_REMOVE(&amp;env_sched_list, curenv, env_sched_link);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/* Step 5: Give up the CPU and block until a message is received. */</span></span><br><span class="line">	((<span class="keyword">struct</span> Trapframe *)KSTACKTOP - <span class="number">1</span>)-&gt;regs[<span class="number">2</span>] = <span class="number">0</span>;</span><br><span class="line">	schedule(<span class="number">1</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="sys-ipc-try-send"><a href="#sys-ipc-try-send" class="headerlink" title="sys_ipc_try_send"></a>sys_ipc_try_send</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* Overview:</span></span><br><span class="line"><span class="comment"> *   Try to send a 'value' (together with a page if 'srcva' is not 0) to the target env 'envid'.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Post-Condition:</span></span><br><span class="line"><span class="comment"> *   Return 0 on success, and the target env is updated as follows:</span></span><br><span class="line"><span class="comment"> *   - 'env_ipc_recving' is set to 0 to block future sends.</span></span><br><span class="line"><span class="comment"> *   - 'env_ipc_from' is set to the sender's envid.</span></span><br><span class="line"><span class="comment"> *   - 'env_ipc_value' is set to the 'value'.</span></span><br><span class="line"><span class="comment"> *   - 'env_status' is set to 'ENV_RUNNABLE' again to recover from 'ipc_recv'.</span></span><br><span class="line"><span class="comment"> *   - if 'srcva' is not NULL, map 'env_ipc_dstva' to the same page mapped at 'srcva' in 'curenv'</span></span><br><span class="line"><span class="comment"> *     with 'perm'.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *   Return -E_IPC_NOT_RECV if the target has not been waiting for an IPC message with</span></span><br><span class="line"><span class="comment"> *   'sys_ipc_recv'.</span></span><br><span class="line"><span class="comment"> *   Return the original error when underlying calls fail.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">sys_ipc_try_send</span><span class="params">(u_int envid, u_int value, u_int srcva, u_int perm)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">e</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Page</span> *<span class="title">p</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Check if 'srcva' is either zero or a legal address. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.8: Your code here. (4/8) */</span></span><br><span class="line">	<span class="keyword">if</span> (srcva != <span class="number">0</span> &amp;&amp; is_illegal_va(srcva)) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Convert 'envid' to 'struct Env *e'. */</span></span><br><span class="line">	<span class="comment">/* This is the only syscall where the 'envid2env' should be used with 'checkperm' UNSET,</span></span><br><span class="line"><span class="comment">	 * because the target env is not restricted to 'curenv''s children. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.8: Your code here. (5/8) */</span></span><br><span class="line">	try(envid2env(envid, &amp;e, <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Check if the target is waiting for a message. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.8: Your code here. (6/8) */</span></span><br><span class="line">	<span class="keyword">if</span> (e-&gt;env_ipc_recving==<span class="number">0</span> || e-&gt;env_status != ENV_NOT_RUNNABLE) {</span><br><span class="line">		<span class="keyword">return</span> -E_IPC_NOT_RECV;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 4: Set the target's ipc fields. */</span></span><br><span class="line">	e-&gt;env_ipc_value = value;</span><br><span class="line">	e-&gt;env_ipc_from = curenv-&gt;env_id;</span><br><span class="line">	e-&gt;env_ipc_perm = PTE_V | perm;</span><br><span class="line">	e-&gt;env_ipc_recving = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 5: Set the target's status to 'ENV_RUNNABLE' again and insert it to the tail of</span></span><br><span class="line"><span class="comment">	 * 'env_sched_list'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.8: Your code here. (7/8) */</span></span><br><span class="line">	e-&gt;env_status = ENV_RUNNABLE;</span><br><span class="line">	TAILQ_INSERT_TAIL(&amp;env_sched_list, e, env_sched_link);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 6: If 'srcva' is not zero, map the page at 'srcva' in 'curenv' to 'e-&gt;env_ipc_dstva'</span></span><br><span class="line"><span class="comment">	 * in 'e'. */</span></span><br><span class="line">	<span class="comment">/* Return -E_INVAL if 'srcva' is not zero and not mapped in 'curenv'. */</span></span><br><span class="line">	<span class="keyword">if</span> (srcva != <span class="number">0</span>) {</span><br><span class="line">		<span class="comment">/* Exercise 4.8: Your code here. (8/8) */</span></span><br><span class="line">		<span class="keyword">if</span> (!(p = page_lookup(curenv-&gt;env_pgdir, srcva, <span class="literal">NULL</span>))) {</span><br><span class="line">			<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">		}</span><br><span class="line">		try(page_insert(e-&gt;env_pgdir, e-&gt;env_asid, p, e-&gt;env_ipc_dstva, perm));</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="Fork"><a href="#Fork" class="headerlink" title="Fork"></a>Fork</h2><h3 id="写时复制"><a href="#写时复制" class="headerlink" title="写时复制"></a>写时复制</h3><p>写时复制是为了节约地址空间引入的机制。地址空间中所有可写页都被标记为写时复制页面，当父进程或子进程要写入时产生异常。操作系统会为试图写入的虚拟地址分配新的物理页面，复制原页面的内容，最后返回用户程序，对新分配的物理页面进行写入。</p>
+<p>写时复制页面的<code>PTE_D</code>设为0，区别于只读页面还有一个<code>PTE_COW</code>位设为1。</p>
+<p>在进程调用<code>fork</code>时通过<code>duppage</code>函数实现页面映射，特别注意是对于可写页面会在父进程和子进程的页表项中都使用<code>PTE_COW</code>进行保护，这样就可以在逻辑上认为父进程中内存的状态被完整复制到了子进程中。</p>
+<p>当用户程序试图写入一个被TLB标记为不可写入（<code>PTE_D==0</code>）的页面时，MIPS会陷入页写入异常<code>TLB Mod</code>，由<code>handle_mod</code>跳转到<code>do_tlb_mod</code>函数。对于COW的页面，在MOS中页面复制交给用户态实现，内核态的<code>do_tlb_mod</code>负责取消<code>PTE_D</code>的标记，保存现场至<strong>异常处理栈</strong>，设置<code>a0</code>和<code>EPC</code>寄存器的值，然后跳转到<code>env_user_tlb_mod_entry</code>域存储的用户异常处理函数的地址（由<code>syscall_set_tlb_mod_entry</code>注册）。本次实验注册的处理函数是<code>fork.c</code>中的<code>cow_entry</code>函数，该函数处理结束后通过系统调用<code>syscall_set_trapframe</code>恢复现场（以及sp和PC的值）。</p>
+<p><img src="/images/【OS】lab4/image-20240508004557123.png" alt="image-20240508004557123"></p>
+<p><img src="/images/【OS】lab4/image-20240508004607582.png" alt="image-20240508004607582"></p>
+<p><del>（图太大分成两张截 原谅一下）</del></p>
+<h3 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fork</span><span class="params">(<span class="type">void</span>)</span> {</span><br><span class="line">	u_int child;</span><br><span class="line">	u_int i;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Set our TLB Mod user exception entry to 'cow_entry' if not done yet. */</span></span><br><span class="line">	<span class="keyword">if</span> (env-&gt;env_user_tlb_mod_entry != (u_int)cow_entry) {</span><br><span class="line">		try(syscall_set_tlb_mod_entry(<span class="number">0</span>, cow_entry));</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Create a child env that's not ready to be scheduled. */</span></span><br><span class="line">	<span class="comment">// Hint: 'env' should always point to the current env itself, so we should fix it to the</span></span><br><span class="line">	<span class="comment">// correct value.</span></span><br><span class="line">	child = syscall_exofork();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (child == <span class="number">0</span>) {</span><br><span class="line">		env = envs + ENVX(syscall_getenvid());</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Map all mapped pages below 'USTACKTOP' into the child's address space. */</span></span><br><span class="line">	<span class="comment">// Hint: You should use 'duppage'.</span></span><br><span class="line">	<span class="comment">/* Exercise 4.15: Your code here. (1/2) */</span></span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;VPN(USTACKTOP); i++) {</span><br><span class="line">		<span class="keyword">if</span> ((vpd[i&gt;&gt;<span class="number">10</span>] &amp; PTE_V) &amp;&amp; (vpt[i] &amp; PTE_V)) {</span><br><span class="line">			duppage(child, i);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">/* Step 4: Set up the child's tlb mod handler and set child's 'env_status' to</span></span><br><span class="line"><span class="comment">	 * 'ENV_RUNNABLE'. */</span></span><br><span class="line">	<span class="comment">/* Hint:</span></span><br><span class="line"><span class="comment">	 *   You may use 'syscall_set_tlb_mod_entry' and 'syscall_set_env_status'</span></span><br><span class="line"><span class="comment">	 *   Child's TLB Mod user exception entry should handle COW, so set it to 'cow_entry'</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.15: Your code here. (2/2) */</span></span><br><span class="line">	syscall_set_tlb_mod_entry(child, cow_entry);</span><br><span class="line">	syscall_set_env_status(child, ENV_RUNNABLE);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> child;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="sys-exofork"><a href="#sys-exofork" class="headerlink" title="sys_exofork"></a>sys_exofork</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sys_exofork</span><span class="params">(<span class="type">void</span>)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">e</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Allocate a new env using 'env_alloc'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.9: Your code here. (1/4) */</span></span><br><span class="line">	try(env_alloc(&amp;e, curenv-&gt;env_id));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Copy the current Trapframe below 'KSTACKTOP' to the new env's 'env_tf'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.9: Your code here. (2/4) */</span></span><br><span class="line">	e-&gt;env_tf = *((<span class="keyword">struct</span> Trapframe*)KSTACKTOP - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Set the new env's 'env_tf.regs[2]' to 0 to indicate the return value in child. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.9: Your code here. (3/4) */</span></span><br><span class="line">	e-&gt;env_tf.regs[<span class="number">2</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 4: Set up the new env's 'env_status' and 'env_pri'.  */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.9: Your code here. (4/4) */</span></span><br><span class="line">	e-&gt;env_status = ENV_NOT_RUNNABLE;</span><br><span class="line">	e-&gt;env_pri = curenv-&gt;env_pri;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> e-&gt;env_id;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="duppage"><a href="#duppage" class="headerlink" title="duppage"></a>duppage</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">duppage</span><span class="params">(u_int envid, u_int vpn)</span> {</span><br><span class="line">	<span class="type">int</span> r;</span><br><span class="line">	u_int addr;</span><br><span class="line">	u_int perm;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Get the permission of the page. */</span></span><br><span class="line">	<span class="comment">/* Hint: Use 'vpt' to find the page table entry. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.10: Your code here. (1/2) */</span></span><br><span class="line">	addr = vpn &lt;&lt; PGSHIFT;</span><br><span class="line">	perm = vpt[vpn] &amp; <span class="number">0xfff</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: If the page is writable, and not shared with children, and not marked as COW yet,</span></span><br><span class="line"><span class="comment">	 * then map it as copy-on-write, both in the parent (0) and the child (envid). */</span></span><br><span class="line">	<span class="comment">/* Hint: The page should be first mapped to the child before remapped in the parent. (Why?)</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.10: Your code here. (2/2) */</span></span><br><span class="line">	<span class="keyword">if</span> (!(perm &amp; PTE_D) || (perm &amp; PTE_LIBRARY)) {</span><br><span class="line">		syscall_mem_map(<span class="number">0</span>, (<span class="type">void</span> *)addr, envid, (<span class="type">void</span> *)addr, perm);</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">else</span> {</span><br><span class="line">		perm = (perm &amp; ~PTE_D) | PTE_COW;</span><br><span class="line">		syscall_mem_map(<span class="number">0</span>, (<span class="type">void</span> *)addr, envid, (<span class="type">void</span> *)addr, perm);</span><br><span class="line">		syscall_mem_map(<span class="number">0</span>, (<span class="type">void</span> *)addr, <span class="number">0</span>, (<span class="type">void</span> *)addr, perm);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="sys-set-tlb-mod-entry"><a href="#sys-set-tlb-mod-entry" class="headerlink" title="sys_set_tlb_mod_entry"></a>sys_set_tlb_mod_entry</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sys_set_tlb_mod_entry</span><span class="params">(u_int envid, u_int func)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">env</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Convert the envid to its corresponding 'struct Env *' using 'envid2env'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.12: Your code here. (1/2) */</span></span><br><span class="line">	try(envid2env(envid, &amp;env, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 2: Set its 'env_user_tlb_mod_entry' to 'func'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.12: Your code here. (2/2) */</span></span><br><span class="line">	env-&gt;env_user_tlb_mod_entry = func;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="sys-set-env-status"><a href="#sys-set-env-status" class="headerlink" title="sys_set_env_status"></a>sys_set_env_status</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sys_set_env_status</span><span class="params">(u_int envid, u_int status)</span> {</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Env</span> *<span class="title">env</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 1: Check if 'status' is valid. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.14: Your code here. (1/3) */</span></span><br><span class="line">	<span class="keyword">if</span> (status != ENV_RUNNABLE &amp;&amp; status != ENV_NOT_RUNNABLE) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">/* Step 2: Convert the envid to its corresponding 'struct Env *' using 'envid2env'. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.14: Your code here. (2/3) */</span></span><br><span class="line">	try(envid2env(envid, &amp;env, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Step 3: Update 'env_sched_list' if the 'env_status' of 'env' is being changed. */</span></span><br><span class="line">	<span class="comment">/* Exercise 4.14: Your code here. (3/3) */</span></span><br><span class="line">	<span class="keyword">if</span> (env-&gt;env_status != status) {</span><br><span class="line">		<span class="keyword">if</span> (status == ENV_RUNNABLE) {</span><br><span class="line">			TAILQ_INSERT_TAIL(&amp;env_sched_list, env, env_sched_link);</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> {</span><br><span class="line">			TAILQ_REMOVE(&amp;env_sched_list, env, env_sched_link);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">/* Step 4: Set the 'env_status' of 'env'. */</span></span><br><span class="line">	env-&gt;env_status = status;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Carbon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/05/07/%E3%80%90OS%E3%80%91lab4/" title="【OS】lab4">http://example.com/2024/05/07/【OS】lab4/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/05/01/%E3%80%90OO%E3%80%91hw3/" rel="prev" title="【OO】hw3">
+                  <i class="fa fa-angle-left"></i> 【OO】hw3
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/05/19/%E3%80%90OS%E3%80%91lab5/" rel="next" title="【OS】lab5">
+                  【OS】lab5 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="lab5实验笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【OS】lab5">
+<meta property="og:url" content="http://example.com/2024/05/19/%E3%80%90OS%E3%80%91lab5/index.html">
+<meta property="og:site_name" content="碳罐堆积处">
+<meta property="og:description" content="lab5实验笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab5/guide-book%20(1)-130.jpg">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab5/image-20240526131533868.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab5/image-20240526142903384.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab5/image-20240526144523147.png">
+<meta property="og:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab5/image-20240526144601078.png">
+<meta property="article:published_time" content="2024-05-19T13:27:53.000Z">
+<meta property="article:modified_time" content="2024-05-29T09:55:01.835Z">
+<meta property="article:author" content="Carbon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/%E3%80%90OS%E3%80%91lab5/guide-book%20(1)-130.jpg">
+
+
+<link rel="canonical" href="http://example.com/2024/05/19/%E3%80%90OS%E3%80%91lab5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/05/19/%E3%80%90OS%E3%80%91lab5/","path":"2024/05/19/【OS】lab5/","title":"【OS】lab5"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【OS】lab5 | 碳罐堆积处</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">碳罐堆积处</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dictionary"><span class="nav-number">2.</span> <span class="nav-text">dictionary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercise"><span class="nav-number">2.1.</span> <span class="nav-text">Exercise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ipc%E7%9B%B8%E5%85%B3"><span class="nav-number">2.2.</span> <span class="nav-text">ipc相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kern-syscall-all-c"><span class="nav-number">2.3.</span> <span class="nav-text">kern&#x2F;syscall_all.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fs-ide-c"><span class="nav-number">2.4.</span> <span class="nav-text">fs&#x2F;ide.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fs-fs-c"><span class="nav-number">2.5.</span> <span class="nav-text">fs&#x2F;fs.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fs-serv-c"><span class="nav-number">2.6.</span> <span class="nav-text">fs&#x2F;serv.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-lib-fd-c"><span class="nav-number">2.7.</span> <span class="nav-text">user&#x2F;lib&#x2F;fd.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-lib-file-c"><span class="nav-number">2.8.</span> <span class="nav-text">user&#x2F;lib&#x2F;file.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-lib-fsipc-c"><span class="nav-number">2.9.</span> <span class="nav-text">user&#x2F;lib&#x2F;fsipc.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-lib-syscall-lib-c"><span class="nav-number">2.10.</span> <span class="nav-text">user&#x2F;lib&#x2F;syscall_lib.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-include-fs-h"><span class="nav-number">2.11.</span> <span class="nav-text">user&#x2F;include&#x2F;fs.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-include-fd-h"><span class="nav-number">2.12.</span> <span class="nav-text">user&#x2F;include&#x2F;fd.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tools-fsformat-c"><span class="nav-number">2.13.</span> <span class="nav-text">tools&#x2F;fsformat.c</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E9%A9%B1%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">磁盘驱动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ide-c"><span class="nav-number">3.1.</span> <span class="nav-text">ide.c</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#wait-ide-ready"><span class="nav-number">3.1.1.</span> <span class="nav-text">wait_ide_ready</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ide-read"><span class="nav-number">3.1.2.</span> <span class="nav-text">ide_read</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fsformat-c"><span class="nav-number">3.2.</span> <span class="nav-text">fsformat.c</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.</span> <span class="nav-text">文件系统服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fs-c"><span class="nav-number">4.1.</span> <span class="nav-text">fs.c</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fs-init"><span class="nav-number">4.1.1.</span> <span class="nav-text">fs_init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#va-is-mapped%E3%80%81block-is-mapped"><span class="nav-number">4.1.2.</span> <span class="nav-text">va_is_mapped、block_is_mapped</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map-block%E3%80%81unmap-block"><span class="nav-number">4.1.3.</span> <span class="nav-text">map_block、unmap_block</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dir-lookup"><span class="nav-number">4.1.4.</span> <span class="nav-text">dir_lookup</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#service-c"><span class="nav-number">4.2.</span> <span class="nav-text">service.c</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3"><span class="nav-number">5.</span> <span class="nav-text">用户接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fd-c"><span class="nav-number">5.1.</span> <span class="nav-text">fd.c</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fd-alloc"><span class="nav-number">5.1.1.</span> <span class="nav-text">fd_alloc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#write"><span class="nav-number">5.1.2.</span> <span class="nav-text">write</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fsipc-c"><span class="nav-number">5.2.</span> <span class="nav-text">fsipc.c</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fsipc"><span class="nav-number">5.2.1.</span> <span class="nav-text">fsipc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fsipc-open"><span class="nav-number">5.2.2.</span> <span class="nav-text">fsipc_open</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fsipc-map"><span class="nav-number">5.2.3.</span> <span class="nav-text">fsipc_map</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file-c"><span class="nav-number">5.3.</span> <span class="nav-text">file.c</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#open"><span class="nav-number">5.3.1.</span> <span class="nav-text">open</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2023"><span class="nav-number">6.</span> <span class="nav-text">2023</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lab5-1-Exam"><span class="nav-number">6.1.</span> <span class="nav-text">lab5-1-Exam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lab5-2-Exam"><span class="nav-number">6.2.</span> <span class="nav-text">lab5-2-Exam</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021"><span class="nav-number">7.</span> <span class="nav-text">2021</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-exam"><span class="nav-number">7.1.</span> <span class="nav-text">1-exam</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC1%E9%83%A8%E5%88%86%EF%BC%9Asyscall-get-time"><span class="nav-number">7.1.1.</span> <span class="nav-text">第1部分：syscall_get_time</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC2%E9%83%A8%E5%88%86%EF%BC%9Asyscall-read-str"><span class="nav-number">7.1.2.</span> <span class="nav-text">第2部分：syscall_read_str</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-number">7.1.3.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-exam"><span class="nav-number">7.2.</span> <span class="nav-text">2-exam</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carbon</p>
+  <div class="site-description" itemprop="description">还没想出高级的博客名；出现问题欢迎交流指正喵。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/19/%E3%80%90OS%E3%80%91lab5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Carbon">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碳罐堆积处">
+      <meta itemprop="description" content="还没想出高级的博客名；出现问题欢迎交流指正喵。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【OS】lab5 | 碳罐堆积处">
+      <meta itemprop="description" content="lab5实验笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【OS】lab5
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-05-19 21:27:53" itemprop="dateCreated datePublished" datetime="2024-05-19T21:27:53+08:00">2024-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-29 17:55:01" itemprop="dateModified" datetime="2024-05-29T17:55:01+08:00">2024-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OS/" itemprop="url" rel="index"><span itemprop="name">OS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">lab5实验笔记</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>构建一个磁盘镜像：涉及的文件是 <code>fsformat.c</code> ，在<code>tools</code>目录下存放。<code>tools</code>目录下的代码仅用于MOS的构建，在Linux环境而非MIPS模拟器中运行，也不会被编译进MOS的内核、用户库或用户程序中。该函数可以将多个文件按照内核所定义的文件系统 写入到磁盘镜像中，磁盘镜像就是我们要挂载到模拟器上的镜像。</li>
+<li>实现一个文件系统服务进程：涉及的文件是 <code>serve.c, ide.c, fs.c</code>。其中 <code>ide.c</code> 用于实现与磁盘沟通的接口，<code>fs.c</code> 相当于服务进程的库，里面有各种服务函数。<code>servc.c</code> 是服务进程的实现函数，它组织 <code>fs.c</code> 中的函数，根据普通用户进程发来的不同请求，调用不同的函数，提供不同的服务。</li>
+<li>在普通用户程序处实现请求服务接口：涉及的文件是 <code>file.c, fd.c, fsip.c</code> 。其中 <code>fsip.c</code> 实现了与服务进程的沟通，<code>fd.c</code> 实现了对于“文件”的文件描述符封装（直接接触文件操作对于用户进程而言过于繁琐），<code>file.c</code> 利用 <code>fd.c</code> 提供的封装函数，完成了功能的集成。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://thysrael.github.io/posts/c8a10fd9/">参考</a></p>
+<p><img src="/images/【OS】lab5/guide-book (1)-130.jpg"></p>
+<h2 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h2><h3 id="Exercise"><a href="#Exercise" class="headerlink" title="Exercise"></a>Exercise</h3><ul>
+<li><code>kern/syscall_all.c</code>: sys_write_dev和sys_read_dev。</li>
+<li><code>user/lib/syscall_lib.c</code>: 用户态系统调用接口</li>
+<li><code>fs/ide.c</code>: 使用系统调用实现用户态下对磁盘的读写操作ide_read和ide_write</li>
+<li><code>fs/fs.c</code>: free_block文件系统维护磁盘块的申请和释放</li>
+<li><code>tools/fsformat.c</code>create_file</li>
+<li><code>fs/fs.c</code>disk_addr</li>
+<li><code>fs/fs.c</code>map_block和unmap_block</li>
+<li><code>fs/fs.c</code>dir_lookup</li>
+<li><code>user/lib/file.c</code>open</li>
+<li><code>user/lib/fd.c</code>read</li>
+<li><code>fs/serv.c</code>serve_remove</li>
+<li><code>user/lib/fsipc.c</code>fsipc_remove</li>
+<li><code>user/lib/file.c</code>remove</li>
+</ul>
+<h3 id="ipc相关"><a href="#ipc相关" class="headerlink" title="ipc相关"></a>ipc相关</h3><p>用户使用：</p>
+<ul>
+<li><code>void ipc_send(u_int whom, u_int val, const void *srcva, u_int perm)</code>把val内容发送给envid为whom的进程    </li>
+<li><code>u_int ipc_recv(u_int *whom, void *dstva, u_int *perm)</code>接受消息并在whom需要设置（<code>if(whom)</code>）时设置消息发送者为whom，返回值为接受的消息</li>
+</ul>
+<p>库函数：</p>
+<ul>
+<li><code>int syscall_ipc_try_send(u_int envid, u_int value, const void *srcva, u_int perm)</code></li>
+<li><code>int syscall_ipc_recv(void *dstva)</code></li>
+</ul>
+<h3 id="kern-syscall-all-c"><a href="#kern-syscall-all-c" class="headerlink" title="kern/syscall_all.c"></a>kern/syscall_all.c</h3><ul>
+<li><code>int sys_write_dev(u_int va, u_int pa, u_int len)</code>MMIO 使用不同的物理内存地址 为设备寄存器编址，将一部分对物理内存的访问 “重定向” 到设备地址空间中。CPU 对这部分物理内存的访问 等同于对相应设备的访问。由于 kseg1 段只能在内核态读写，因此需要操作系统提供系统调用来实现在用户态读写设备。</li>
+<li><code>int sys_read_dev(u_int va, u_int pa, u_int len)</code></li>
+</ul>
+<h3 id="fs-ide-c"><a href="#fs-ide-c" class="headerlink" title="fs/ide.c"></a>fs/ide.c</h3><ul>
+<li><code>static uint8_t wait_ide_ready()</code>内核态函数wait_ide在用户态下的版本</li>
+<li><code>void ide_read(u_int diskno, u_int secno, void *dst, u_int nsecs)</code>用户态下读diskno块磁盘的secno扇区nsecs长度数据至dst地址</li>
+<li><code>void ide_write(u_int diskno, u_int secno, void *src, u_int nsecs)</code></li>
+</ul>
+<h3 id="fs-fs-c"><a href="#fs-fs-c" class="headerlink" title="fs/fs.c"></a>fs/fs.c</h3><ul>
+<li><code>void *disk_addr(u_int blockno)</code>根据磁盘块号返回内存中的地址（由于连续分配其实也是基地址<code>DISKMAP</code>加上<code>BLOCK_SIZE * blockno</code>）</li>
+<li><code>int va_is_mapped(void *va)</code>检查内存虚拟地址是否被映射到一个磁盘块</li>
+<li><code>void *block_is_mapped(u_int blockno)</code>检查特定磁盘块是否有映射到内存</li>
+<li><code>int read_block(u_int blockno, void **blk, u_int *isnew)</code>读块号为blockno的磁盘块到blk（<code>*blk=va</code>），如果需要检查该磁盘块之前是否在内存中（<code>isnew!=0</code>），则通过<code>block_is_mapped(blockno)</code>判断。</li>
+<li><code>void free_block(u_int blockno)</code>更改位图中的标记位即可</li>
+<li><code>int dir_lookup(struct File *dir, char *name, struct File **file)</code>在目录dir下查找名字为name 的文件</li>
+<li><code>int file_get_block(struct File *f, u_int filebno, void **blk)</code>获取文件f第filebno个数据块的数据至blk</li>
+<li><code>int file_open(char *path, struct File **file)</code>打开文件（调用walk_path）</li>
+<li><code>int walk_path(char *path, struct File **pdir, struct File **pfile, char *lastelem)</code>查找path下的</li>
+<li><code>int map_block(u_int blockno)</code>分配映射磁盘块需要的物理页面</li>
+<li><code>void unmap_block(u_int blockno)</code>释放物理页面</li>
+</ul>
+<h3 id="fs-serv-c"><a href="#fs-serv-c" class="headerlink" title="fs/serv.c"></a>fs/serv.c</h3><ul>
+<li><code>void serve_init(void)</code>设置open file table</li>
+<li><code>void serve(void)</code>文件系统服务进程入口。死循环，调用ipc_resv不断接受其他进程发来的请求，通过serve_table转发到不同处理函数。待处理结束后，调用ipc_send返回调用结果。</li>
+<li><code>void serve_remove(u_int envid, struct Fsreq_remove *rq)</code></li>
+<li><code>void serve_close(u_int envid, struct Fsreq_close *rq)</code></li>
+</ul>
+<h3 id="user-lib-fd-c"><a href="#user-lib-fd-c" class="headerlink" title="user/lib/fd.c"></a>user/lib/fd.c</h3><p>文件描述符相关操作</p>
+<ul>
+<li><code>int fd_lookup(int fdnum, struct Fd **fd)</code>根据fdnum找Fd所在的页面</li>
+<li><code>void *fd2data(struct Fd *fd)</code>获取文件描述符对应的数据缓存页地址（你管这叫data？）</li>
+<li><code>int read(int fdnum, void *buf, u_int n)</code>从当前文件指针（fd-&gt;fd_offset）开始在fd中读n个字节</li>
+<li><code>int write(int fdnum, const void *buf, u_int n)</code></li>
+</ul>
+<h3 id="user-lib-file-c"><a href="#user-lib-file-c" class="headerlink" title="user/lib/file.c"></a>user/lib/file.c</h3><p>在fsipc的基础上继续封装，实现文件系统的用户接口</p>
+<ul>
+<li><code>int open(const char *path, int mode)</code></li>
+</ul>
+<h3 id="user-lib-fsipc-c"><a href="#user-lib-fsipc-c" class="headerlink" title="user/lib/fsipc.c"></a>user/lib/fsipc.c</h3><p>与文件系统服务进程的交互</p>
+<ul>
+<li><code>static int fsipc(u_int type, void *fsreq, void *dstva, u_int *perm)</code>发送一个请求给文件服务系统并等待回复。type为<code>FSREQ_</code>开头的宏，fsreq指向<code>Fsreq_</code>开头的结构体，这些定义在<code>fsreq.h</code>里，dstva指向Fd类型的结构体，perm直接传</li>
+<li><p><code>int fsipc_open(const char *path, u_int omode, struct Fd *fd)</code>用omode方式打开路径path下的文件</p>
+</li>
+<li><p><code>int fsipc_map(u_int fileid, u_int offset, void *dstva)</code>为文件内容分配内存并映射。这个是因为open后fd内容仍然是空的，</p>
+</li>
+</ul>
+<h3 id="user-lib-syscall-lib-c"><a href="#user-lib-syscall-lib-c" class="headerlink" title="user/lib/syscall_lib.c"></a>user/lib/syscall_lib.c</h3><ul>
+<li><code>int syscall_write_dev(void *va, u_int dev, u_int size)</code></li>
+<li><code>int syscall_read_dev(void *va, u_int dev, u_int size)</code></li>
+</ul>
+<h3 id="user-include-fs-h"><a href="#user-include-fs-h" class="headerlink" title="user/include/fs.h"></a>user/include/fs.h</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> BLOCK_SIZE PAGE_SIZE</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NDIRECT 10</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NINDIRECT (BLOCK_SIZE / 4)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXFILESIZE (NINDIRECT * BLOCK_SIZE)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> FILE_STRUCT_SIZE 256</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">File</span> {</span></span><br><span class="line">	<span class="type">char</span> f_name[MAXNAMELEN]; <span class="comment">// filename</span></span><br><span class="line">	<span class="type">uint32_t</span> f_size;	 <span class="comment">// file size in bytes</span></span><br><span class="line">	<span class="type">uint32_t</span> f_type;	 <span class="comment">// file type</span></span><br><span class="line">	<span class="type">uint32_t</span> f_direct[NDIRECT];</span><br><span class="line">	<span class="type">uint32_t</span> f_indirect;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">File</span> *<span class="title">f_dir</span>;</span> <span class="comment">// the pointer to the dir where this file is in, valid only in memory.</span></span><br><span class="line">	<span class="type">char</span> f_pad[FILE_STRUCT_SIZE - MAXNAMELEN - (<span class="number">3</span> + NDIRECT) * <span class="number">4</span> - <span class="keyword">sizeof</span>(<span class="type">void</span> *)];</span><br><span class="line">} __attribute__((aligned(<span class="number">4</span>), packed));</span><br></pre></td></tr></table></figure>
+<p>PAGE_SIZE 为4096</p>
+<h3 id="user-include-fd-h"><a href="#user-include-fd-h" class="headerlink" title="user/include/fd.h"></a>user/include/fd.h</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// file descriptor</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> {</span></span><br><span class="line">	u_int fd_dev_id;</span><br><span class="line">	u_int fd_offset;</span><br><span class="line">	u_int fd_omode;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="comment">// file descriptor + file</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Filefd</span> {</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> <span class="title">f_fd</span>;</span></span><br><span class="line">	u_int f_fileid;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">File</span> <span class="title">f_file</span>;</span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="comment">// Device struct:</span></span><br><span class="line"><span class="comment">// It is used to read and write data from corresponding device.</span></span><br><span class="line"><span class="comment">// We can use the five functions to handle data.</span></span><br><span class="line"><span class="comment">// There are three devices in this OS: file, console and pipe.</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Dev</span> {</span></span><br><span class="line">	<span class="type">int</span> dev_id;</span><br><span class="line">	<span class="type">char</span> *dev_name;</span><br><span class="line">	<span class="type">int</span> (*dev_read)(<span class="keyword">struct</span> Fd *, <span class="type">void</span> *, u_int, u_int);</span><br><span class="line">	<span class="type">int</span> (*dev_write)(<span class="keyword">struct</span> Fd *, <span class="type">const</span> <span class="type">void</span> *, u_int, u_int);</span><br><span class="line">	<span class="type">int</span> (*dev_close)(<span class="keyword">struct</span> Fd *);</span><br><span class="line">	<span class="type">int</span> (*dev_stat)(<span class="keyword">struct</span> Fd *, <span class="keyword">struct</span> Stat *);</span><br><span class="line">	<span class="type">int</span> (*dev_seek)(<span class="keyword">struct</span> Fd *, u_int);</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<p>对于文件服务进程而言使用的是<code>Filefd</code>，但暴露给普通用户进程的只有<code>Fd</code>部分，用户要知道File里的信息需要将Fd转换为Filefd后才能从f_file中取得。</p>
+<h3 id="tools-fsformat-c"><a href="#tools-fsformat-c" class="headerlink" title="tools/fsformat.c"></a>tools/fsformat.c</h3><p>构建磁盘镜像</p>
+<ul>
+<li><code>void write_directory(struct File *dirf, char *path)</code>: 将宿主机上路径为path的目录及目录下所有目录和文件写入磁盘镜像中dirf指向的文件控制块代表的目录下</li>
+<li><p><code>void write_file(struct File *dirf, const char *path)</code>: 将宿主机上路径为path的文件写入磁盘镜像中dirf指向的文件控制块代表的目录下</p>
+</li>
+<li><p><code>struct File *create_file(struct File *dirf)</code>: 在制定目录下分配新的文件控制块。</p>
+</li>
+</ul>
+<h2 id="磁盘驱动"><a href="#磁盘驱动" class="headerlink" title="磁盘驱动"></a>磁盘驱动</h2><p>之前MOS已经有了在<code>kern/machine.c</code>中实现了控制台驱动程序，在内核态下使用内存映射I/O（MMIO）技术，通过控制台实现字符的输入输出。对于磁盘而言，同样采用MMIO技术，即需要将物理地址转换为内核虚拟地址，且这里让驱动程序运行在用户空间（即对应的文件系统服务进程），用户进程需要读写内核虚拟地址通过<code>sys_write_dev、sys_read_dev</code>系统调用完成。本次实现的驱动程序为<code>ide.c</code>，供文件系统服务进程完成与磁盘的输入输出<code>ide_read()、ide_write()</code>。有这样的设计是因为MOS采用了一个磁盘缓存的机制，（）在磁盘缓存没有对应块需从磁盘块读取或者修改文件后需写回磁盘块。</p>
+<p>磁盘基本结构有扇区、磁道、柱面和磁头。扇区是读写的基本单位。一般寻址是按照CHS方式，即柱面-磁头-扇区定位，在本次实验中采用的是LBA模式，即采用逻辑块寻址，将磁盘看成线性字节序列，每个扇区对应唯一编号，按照编号寻找扇区。</p>
+<p><img src="/images/【OS】lab5/image-20240526131533868.png" alt="image-20240526131533868"></p>
+<p>读写操作在内核态通过<code>read_sector、write_sector</code>方法，设备基地址对应的kseg1内核虚拟地址为<code>0xB80001F0</code>，以及一个辅助方法<code>wait_ide_ready</code>。在用户态下有<code>ide_read、ide_write、wait_ide_ready</code></p>
+<p>虽然读写单位是扇区，但操作系统和磁盘交互的最小单位是磁盘块（Block）。磁盘块是相邻的扇区组合在一起形成的许你改了，减少寻址的困难。第一个磁盘块作为引导扇区和分区表，第二个作为超级块（SuperBlock），接下来作为位图Bitmap标记空闲磁盘资源。</p>
+<p>在创造磁盘镜像<code>tools/fsformat.c</code>时已经标记好位图。在使用时<code>fs/fs.c</code>的<code>block_is_free</code>函数检查位图中特定位判断磁盘块是否被占用。</p>
+<p>操作系统管理文件是使用文件控制块<code>File</code>。对普通的文件，指向的磁盘块中存储文件的内容，对目录文件而言，指向的磁盘块存储着该目录下各个文件对应的文件控制块。当我们要查找某个文件时，首先从超级块中读取根目录的文件控制块，然后沿着目标路径，挨个查看当前目录所包含的文件是否与下一级目标文件同名，如此便能查找到最终的目标文件。</p>
+<p>块缓存指借助虚拟内存实现磁盘块缓存的设计。磁盘读入到内存时映射到固定的虚拟页（地址在DISKMAP到DISKMAP+DISKMAX）<code>fs/fs.c</code>中<code>disk_addr</code>用于计算制定磁盘块对应的虚拟地址。磁盘块载入内存需要为之分配物理内存，结束使用需要释放物理内存，此由<code>fs/fs.c</code>中的<code>map_block、unmap_block</code>函数实现。内存与磁盘之间的读写是<code>read_block、write_block</code>实现，再封装得到<code>file_get_block</code>是将制定文件指向的磁盘块读入内存。</p>
+<p><img src="/images/【OS】lab5/image-20240526142903384.png" alt="image-20240526142903384" style="zoom:67%;"></p>
+<h3 id="ide-c"><a href="#ide-c" class="headerlink" title="ide.c"></a>ide.c</h3><h4 id="wait-ide-ready"><a href="#wait-ide-ready" class="headerlink" title="wait_ide_ready"></a>wait_ide_ready</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">uint8_t</span> <span class="title function_">wait_ide_ready</span><span class="params">()</span> {</span><br><span class="line">	<span class="type">uint8_t</span> flag;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) {</span><br><span class="line">		panic_on(syscall_read_dev(&amp;flag, MALTA_IDE_STATUS, <span class="number">1</span>));</span><br><span class="line">		<span class="keyword">if</span> ((flag &amp; MALTA_IDE_BUSY) == <span class="number">0</span>) {</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		}</span><br><span class="line">		syscall_yield();</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> flag;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="ide-read"><a href="#ide-read" class="headerlink" title="ide_read"></a>ide_read</h4><p>先检查设备状态，然后设置好控制寄存器，才能调用<code>syscall_read_dev</code>读取数据。然后也可以看出每个扇区都有其对应的控制寄存器。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">ide_read</span><span class="params">(u_int diskno, u_int secno, <span class="type">void</span> *dst, u_int nsecs)</span> {</span><br><span class="line">	<span class="type">uint8_t</span> temp;  <span class="comment">//参考一下这里的写法，因为只需要值所以新建一个变量设定值，在调用函数的时候传地址即可</span></span><br><span class="line">	u_int offset = <span class="number">0</span>, max = nsecs + secno;</span><br><span class="line">	panic_on(diskno &gt;= <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Read the sector in turn</span></span><br><span class="line">    <span class="comment">//按扇区读</span></span><br><span class="line">	<span class="keyword">while</span> (secno &lt; max) {</span><br><span class="line">		temp = wait_ide_ready();</span><br><span class="line">		<span class="comment">// Step 1: Write the number of operating sectors to NSECT register</span></span><br><span class="line">		<span class="comment">//写入向物理地址MALTA_IDE_NSECT处写入单字节1，表示设置操作扇区数目为1</span></span><br><span class="line">        <span class="comment">//MALTA_IDE_开头的都是控制寄存器宏</span></span><br><span class="line">        temp = <span class="number">1</span>;</span><br><span class="line">		panic_on(syscall_write_dev(&amp;temp, MALTA_IDE_NSECT, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置目标扇区就是由四个一字节的寄存器构成，且最后一个还只允许写到目标扇号的27位，故需要分四次设置扇区号，并在最后一次一同设置扇区寻址模式和磁盘编号。</span></span><br><span class="line">		<span class="comment">// Step 2: Write the 7:0 bits of sector number to LBAL register</span></span><br><span class="line">		temp = secno &amp; <span class="number">0xff</span>;</span><br><span class="line">		panic_on(syscall_write_dev(&amp;temp, MALTA_IDE_LBAL, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Step 3: Write the 15:8 bits of sector number to LBAM register</span></span><br><span class="line">		<span class="comment">/* Exercise 5.3: Your code here. (1/9) */</span></span><br><span class="line">		temp = (secno &gt;&gt; <span class="number">8</span>) &amp; <span class="number">0xff</span>;</span><br><span class="line">		panic_on(syscall_write_dev(&amp;temp, MALTA_IDE_LBAM, <span class="number">1</span>));</span><br><span class="line">		<span class="comment">// Step 4: Write the 23:16 bits of sector number to LBAH register</span></span><br><span class="line">		<span class="comment">/* Exercise 5.3: Your code here. (2/9) */</span></span><br><span class="line">		temp = (secno &gt;&gt; <span class="number">16</span>) &amp; <span class="number">0xff</span>;</span><br><span class="line">		panic_on(syscall_write_dev(&amp;temp, MALTA_IDE_LBAH, <span class="number">1</span>));</span><br><span class="line">		<span class="comment">// Step 5: Write the 27:24 bits of sector number, addressing mode</span></span><br><span class="line">		<span class="comment">// and diskno to DEVICE register</span></span><br><span class="line">		temp = ((secno &gt;&gt; <span class="number">24</span>) &amp; <span class="number">0x0f</span>) | MALTA_IDE_LBA | (diskno &lt;&lt; <span class="number">4</span>);</span><br><span class="line">		panic_on(syscall_write_dev(&amp;temp, MALTA_IDE_DEVICE, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Step 6: Write the working mode to STATUS register</span></span><br><span class="line">		temp = MALTA_IDE_CMD_PIO_READ;</span><br><span class="line">		panic_on(syscall_write_dev(&amp;temp, MALTA_IDE_STATUS, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Step 7: Wait until the IDE is ready</span></span><br><span class="line">		temp = wait_ide_ready();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Step 8: Read the data from device</span></span><br><span class="line">        <span class="comment">//数据也是四个字节为单位地读</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; SECT_SIZE / <span class="number">4</span>; i++) {</span><br><span class="line">			panic_on(syscall_read_dev(dst + offset + i * <span class="number">4</span>, MALTA_IDE_DATA, <span class="number">4</span>));</span><br><span class="line">		}</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Step 9: Check IDE status</span></span><br><span class="line">		panic_on(syscall_read_dev(&amp;temp, MALTA_IDE_STATUS, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">		offset += SECT_SIZE;</span><br><span class="line">		secno += <span class="number">1</span>;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="fsformat-c"><a href="#fsformat-c" class="headerlink" title="fsformat.c"></a>fsformat.c</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> File *<span class="title function_">create_file</span><span class="params">(<span class="keyword">struct</span> File *dirf)</span> {</span><br><span class="line">	<span class="type">int</span> nblk = dirf-&gt;f_size / BLOCK_SIZE;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Step 1: Iterate through all existing blocks in the directory.</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nblk; ++i) {</span><br><span class="line">		<span class="type">int</span> bno; <span class="comment">// the block number</span></span><br><span class="line">		<span class="comment">// If the block number is in the range of direct pointers (NDIRECT), get the 'bno'</span></span><br><span class="line">		<span class="comment">// directly from 'f_direct'. Otherwise, access the indirect block on 'disk' and get</span></span><br><span class="line">		<span class="comment">// the 'bno' at the index.</span></span><br><span class="line">		<span class="comment">/* Exercise 5.5: Your code here. (1/3) */</span></span><br><span class="line">		<span class="keyword">if</span> (i &lt; NDIRECT) {</span><br><span class="line">			bno = dirf-&gt;f_direct[i];</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">else</span> {</span><br><span class="line">			bno = ((<span class="type">uint32_t</span> *)disk[dirf-&gt;f_indirect].data)[i];</span><br><span class="line">		}</span><br><span class="line">		<span class="comment">// Get the directory block using the block number.</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">File</span> *<span class="title">blk</span> =</span> (<span class="keyword">struct</span> File *)(disk[bno].data);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Iterate through all 'File's in the directory block.</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">struct</span> File *f = blk; f &lt; blk + FILE2BLK; ++f) {</span><br><span class="line">			<span class="comment">// If the first byte of the file name is null, the 'File' is unused.</span></span><br><span class="line">			<span class="comment">// Return a pointer to the unused 'File'.</span></span><br><span class="line">			<span class="comment">/* Exercise 5.5: Your code here. (2/3) */</span></span><br><span class="line">			<span class="keyword">if</span> (f-&gt;f_name[<span class="number">0</span>] == <span class="literal">NULL</span>) {</span><br><span class="line">				<span class="keyword">return</span> f;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Step 2: If no unused file is found, allocate a new block using 'make_link_block' function</span></span><br><span class="line">	<span class="comment">// and return a pointer to the new block on 'disk'.</span></span><br><span class="line">	<span class="comment">/* Exercise 5.5: Your code here. (3/3) */</span></span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">struct</span> File *)(disk[make_link_block(dirf, nblk)].data);</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>先遍历dirf代表的目录所指向的所有磁盘块，对于每个磁盘块，再遍历其所有文件控制块，找到第一个未被使用的文件控制块并返回该指针。</p>
+<h2 id="文件系统服务"><a href="#文件系统服务" class="headerlink" title="文件系统服务"></a>文件系统服务</h2><p>文件系统服务进程使用文件描述符（Fd、Filefd）存储文件的基本信息和用户进程中关于文件的状态，并且描述用户对于文件操作的作用。磁盘也是外设，<code>fd.c</code>将外设都是用文件描述符进行抽象，进而将读写之类的函数在<code>file.c</code>中实现。操作系统使用的<code>File</code>结构体普通的用户进程看不到，他们只知道<code>Fd\Filefd</code>的存在。</p>
+<h3 id="fs-c"><a href="#fs-c" class="headerlink" title="fs.c"></a>fs.c</h3><h4 id="fs-init"><a href="#fs-init" class="headerlink" title="fs_init"></a>fs_init</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">fs_init</span><span class="params">(<span class="type">void</span>)</span> {</span><br><span class="line">	read_super();  <span class="comment">//大多数都是检查，还包括使用read_block函数读取superBlock</span></span><br><span class="line">	check_write_block();</span><br><span class="line">	read_bitmap();  <span class="comment">//将管理磁盘块分配的位图读取到内存中</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="va-is-mapped、block-is-mapped"><a href="#va-is-mapped、block-is-mapped" class="headerlink" title="va_is_mapped、block_is_mapped"></a>va_is_mapped、block_is_mapped</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Overview:</span></span><br><span class="line"><span class="comment">//  Check if this virtual address is mapped to a block. (check PTE_V bit)</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">va_is_mapped</span><span class="params">(<span class="type">void</span> *va)</span> {</span><br><span class="line">	<span class="keyword">return</span> (vpd[PDX(va)] &amp; PTE_V) &amp;&amp; (vpt[VPN(va)] &amp; PTE_V);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// Overview:</span></span><br><span class="line"><span class="comment">//  Check if this disk block is mapped in cache.</span></span><br><span class="line"><span class="comment">//  Returns the virtual address of the cache page if mapped, 0 otherwise.</span></span><br><span class="line"><span class="type">void</span> *<span class="title function_">block_is_mapped</span><span class="params">(u_int blockno)</span> {</span><br><span class="line">	<span class="type">void</span> *va = disk_addr(blockno);</span><br><span class="line">	<span class="keyword">if</span> (va_is_mapped(va)) {</span><br><span class="line">		<span class="keyword">return</span> va;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="map-block、unmap-block"><a href="#map-block、unmap-block" class="headerlink" title="map_block、unmap_block"></a>map_block、unmap_block</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Overview:</span></span><br><span class="line"><span class="comment">//  Allocate a page to cache the disk block.</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">map_block</span><span class="params">(u_int blockno)</span> {</span><br><span class="line">	<span class="comment">// Step 1: If the block is already mapped in cache, return 0.</span></span><br><span class="line">	<span class="comment">// Hint: Use 'block_is_mapped'.</span></span><br><span class="line">	<span class="comment">/* Exercise 5.7: Your code here. (1/5) */</span></span><br><span class="line">	<span class="keyword">if</span> (block_is_mapped(blockno)) {</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">// Step 2: Alloc a page in permission 'PTE_D' via syscall.</span></span><br><span class="line">	<span class="comment">// Hint: Use 'disk_addr' for the virtual address.</span></span><br><span class="line">	<span class="comment">/* Exercise 5.7: Your code here. (2/5) */</span></span><br><span class="line">	try(syscall_mem_alloc(env-&gt;env_id, disk_addr(blockno), PTE_D));</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// Overview:</span></span><br><span class="line"><span class="comment">//  Unmap a disk block in cache.</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">unmap_block</span><span class="params">(u_int blockno)</span> {</span><br><span class="line">	<span class="comment">// Step 1: Get the mapped address of the cache page of this block using 'block_is_mapped'.</span></span><br><span class="line">	<span class="type">void</span> *va;</span><br><span class="line">	<span class="comment">/* Exercise 5.7: Your code here. (3/5) */</span></span><br><span class="line">	va = block_is_mapped(blockno);</span><br><span class="line">	<span class="comment">// Step 2: If this block is used (not free) and dirty in cache, write it back to the disk</span></span><br><span class="line">	<span class="comment">// first.</span></span><br><span class="line">	<span class="comment">// Hint: Use 'block_is_free', 'block_is_dirty' to check, and 'write_block' to sync.</span></span><br><span class="line">	<span class="comment">/* Exercise 5.7: Your code here. (4/5) */</span></span><br><span class="line">	<span class="keyword">if</span> (!block_is_free(blockno) &amp;&amp; block_is_dirty(blockno)) {</span><br><span class="line">		write_block(blockno);</span><br><span class="line">	}</span><br><span class="line">	<span class="comment">// Step 3: Unmap the virtual address via syscall.</span></span><br><span class="line">	<span class="comment">/* Exercise 5.7: Your code here. (5/5) */</span></span><br><span class="line">	syscall_mem_unmap(env-&gt;env_id, disk_addr(blockno));</span><br><span class="line"></span><br><span class="line">	user_assert(!block_is_mapped(blockno));</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="dir-lookup"><a href="#dir-lookup" class="headerlink" title="dir_lookup"></a>dir_lookup</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">dir_lookup</span><span class="params">(<span class="keyword">struct</span> File *dir, <span class="type">char</span> *name, <span class="keyword">struct</span> File **file)</span> {</span><br><span class="line">	<span class="comment">// Step 1: Calculate the number of blocks in 'dir' via its size.</span></span><br><span class="line">	u_int nblock;</span><br><span class="line">	<span class="comment">/* Exercise 5.8: Your code here. (1/3) */</span></span><br><span class="line">	nblock = dir-&gt;f_size / BLOCK_SIZE;</span><br><span class="line">	<span class="comment">// Step 2: Iterate through all blocks in the directory.</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nblock; i++) {</span><br><span class="line">		<span class="comment">// Read the i'th block of 'dir' and get its address in 'blk' using 'file_get_block'.</span></span><br><span class="line">		<span class="type">void</span> *blk;</span><br><span class="line">		<span class="comment">/* Exercise 5.8: Your code here. (2/3) */</span></span><br><span class="line">		try(file_get_block(dir, i, &amp;blk));</span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">File</span> *<span class="title">files</span> =</span> (<span class="keyword">struct</span> File *)blk;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Find the target among all 'File's in this block.</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">struct</span> File *f = files; f &lt; files + FILE2BLK; ++f) {</span><br><span class="line">			<span class="comment">// Compare the file name against 'name' using 'strcmp'.</span></span><br><span class="line">			<span class="comment">// If we find the target file, set '*file' to it and set up its 'f_dir'</span></span><br><span class="line">			<span class="comment">// field.</span></span><br><span class="line">			<span class="comment">/* Exercise 5.8: Your code here. (3/3) */</span></span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">strcmp</span>(name, f-&gt;f_name) == <span class="number">0</span>) {</span><br><span class="line">				*file = f;</span><br><span class="line">				f-&gt;f_dir = dir;</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> -E_NOT_FOUND;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>该函数先遍历了dir中的每一个磁盘数据块，然后遍历磁盘数据块中保存的所有文件控制块，比对该文件控制块的<code>f_name</code>字段和当前<code>name</code>是否相同。</p>
+<h3 id="service-c"><a href="#service-c" class="headerlink" title="service.c"></a>service.c</h3><h2 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h2><p>在内核开始运行的时候文件系统服务进程就被启动了<code>ENV_CREATE(fs_serv)</code>。<code>fs/serv.c</code>中服务进程主函数调用<code>serve_init</code>准备全局文件打开记录表<code>opentab</code>，调用<code>fs_init</code>函数初始化文件系统。</p>
+<p>用户进程要进行文件操作，需要使用<code>ipc_send、ipc_recv、fs_serv</code>进行交互。</p>
+<p><img src="/images/【OS】lab5/image-20240526144523147.png" alt="image-20240526144523147" style="zoom:67%;"></p>
+<p><img src="/images/【OS】lab5/image-20240526144601078.png" alt="image-20240526144601078" style="zoom:67%;"></p>
+<h3 id="fd-c"><a href="#fd-c" class="headerlink" title="fd.c"></a>fd.c</h3><p>空间从<code>FILEBASE</code>开始，向下一个PDMAP大小的空间存储<code>FILEBASE</code>。虽然文件描述符不表现文件的物理结构，但是每个文件描述符仍需要占据一个<code>PAGE_SIZE</code>。</p>
+<h4 id="fd-alloc"><a href="#fd-alloc" class="headerlink" title="fd_alloc"></a>fd_alloc</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fd_alloc</span><span class="params">(<span class="keyword">struct</span> Fd **fd)</span> {</span><br><span class="line">	u_int va;</span><br><span class="line">	u_int fdno;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (fdno = <span class="number">0</span>; fdno &lt; MAXFD - <span class="number">1</span>; fdno++) {</span><br><span class="line">		va = INDEX2FD(fdno);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> ((vpd[va / PDMAP] &amp; PTE_V) == <span class="number">0</span>) {</span><br><span class="line">			*fd = (<span class="keyword">struct</span> Fd *)va;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		}</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> ((vpt[va / PTMAP] &amp; PTE_V) == <span class="number">0</span>) { <span class="comment">// the fd is not used</span></span><br><span class="line">			*fd = (<span class="keyword">struct</span> Fd *)va;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> -E_MAX_OPEN;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>alloc只是返回了可以作为文件描述符的地址，但并没有存储数据。</p>
+<h4 id="write"><a href="#write" class="headerlink" title="write"></a>write</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> fdnum, <span class="type">const</span> <span class="type">void</span> *buf, u_int n)</span> {</span><br><span class="line">	<span class="type">int</span> r;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Dev</span> *<span class="title">dev</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> *<span class="title">fd</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ((r = fd_lookup(fdnum, &amp;fd)) &lt; <span class="number">0</span> || (r = dev_lookup(fd-&gt;fd_dev_id, &amp;dev)) &lt; <span class="number">0</span>) {</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ((fd-&gt;fd_omode &amp; O_ACCMODE) == O_RDONLY) {</span><br><span class="line">		<span class="keyword">return</span> -E_INVAL;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	r = dev-&gt;dev_write(fd, buf, n, fd-&gt;fd_offset);</span><br><span class="line">	<span class="keyword">if</span> (r &gt; <span class="number">0</span>) {</span><br><span class="line">		fd-&gt;fd_offset += r;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="fsipc-c"><a href="#fsipc-c" class="headerlink" title="fsipc.c"></a>fsipc.c</h3><h4 id="fsipc"><a href="#fsipc" class="headerlink" title="fsipc"></a>fsipc</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">fsipc</span><span class="params">(u_int type, <span class="type">void</span> *fsreq, <span class="type">void</span> *dstva, u_int *perm)</span> {</span><br><span class="line">	u_int whom;</span><br><span class="line">	<span class="comment">// Our file system server must be the 2nd env.</span></span><br><span class="line">	ipc_send(envs[<span class="number">1</span>].env_id, type, fsreq, PTE_D);</span><br><span class="line">	<span class="keyword">return</span> ipc_recv(&amp;whom, dstva, perm);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="fsipc-open"><a href="#fsipc-open" class="headerlink" title="fsipc_open"></a>fsipc_open</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fsipc_open</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *path, u_int omode, <span class="keyword">struct</span> Fd *fd)</span> {</span><br><span class="line">	u_int perm;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Fsreq_open</span> *<span class="title">req</span>;</span></span><br><span class="line"></span><br><span class="line">	req = (<span class="keyword">struct</span> Fsreq_open *)fsipcbuf;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// The path is too long.</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">strlen</span>(path) &gt;= MAXPATHLEN) {</span><br><span class="line">		<span class="keyword">return</span> -E_BAD_PATH;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="built_in">strcpy</span>((<span class="type">char</span> *)req-&gt;req_path, path);</span><br><span class="line">	req-&gt;req_omode = omode;</span><br><span class="line">	<span class="keyword">return</span> fsipc(FSREQ_OPEN, req, fd, &amp;perm);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>在这里开了一个页面的大小<code>fsipcbuf</code>作为缓存区，写入文件地址和打开方式，然后使用<code>fsipc</code>函数向服务进程发送消息，并接收服务进程返回的消息。</p>
+<h4 id="fsipc-map"><a href="#fsipc-map" class="headerlink" title="fsipc_map"></a>fsipc_map</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fsipc_map</span><span class="params">(u_int fileid, u_int offset, <span class="type">void</span> *dstva)</span> {</span><br><span class="line">	<span class="type">int</span> r;</span><br><span class="line">	u_int perm;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Fsreq_map</span> *<span class="title">req</span>;</span></span><br><span class="line"></span><br><span class="line">	req = (<span class="keyword">struct</span> Fsreq_map *)fsipcbuf;</span><br><span class="line">	req-&gt;req_fileid = fileid;</span><br><span class="line">	req-&gt;req_offset = offset;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ((r = fsipc(FSREQ_MAP, req, dstva, &amp;perm)) &lt; <span class="number">0</span>) {</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ((perm &amp; ~(PTE_D | PTE_LIBRARY)) != (PTE_V)) {</span><br><span class="line">		user_panic(<span class="string">"fsipc_map: unexpected permissions %08x for dstva %08x"</span>, perm, dstva);</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="file-c"><a href="#file-c" class="headerlink" title="file.c"></a>file.c</h3><h4 id="open"><a href="#open" class="headerlink" title="open"></a>open</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">open</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *path, <span class="type">int</span> mode)</span> {</span><br><span class="line">	<span class="type">int</span> r;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Step 1: Alloc a new 'Fd' using 'fd_alloc' in fd.c.</span></span><br><span class="line">	<span class="comment">// Hint: return the error code if failed.</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Fd</span> *<span class="title">fd</span>;</span></span><br><span class="line">	<span class="comment">/* Exercise 5.9: Your code here. (1/5) */</span></span><br><span class="line">	try(fd_alloc(&amp;fd));  <span class="comment">//分配一个文件控制符</span></span><br><span class="line">	<span class="comment">// Step 2: Prepare the 'fd' using 'fsipc_open' in fsipc.c.</span></span><br><span class="line">	<span class="comment">/* Exercise 5.9: Your code here. (2/5) */</span></span><br><span class="line">	try(fsipc_open(path, mode, fd));  <span class="comment">//向文件服务系统申请用fd以mode方式打开path路径的文件</span></span><br><span class="line">	<span class="comment">// Step 3: Set 'va' to the address of the page where the 'fd''s data is cached, using</span></span><br><span class="line">	<span class="comment">// 'fd2data'. Set 'size' and 'fileid' correctly with the value in 'fd' as a 'Filefd'.</span></span><br><span class="line">	<span class="type">char</span> *va;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Filefd</span> *<span class="title">ffd</span>;</span></span><br><span class="line">	u_int size, fileid;</span><br><span class="line">	<span class="comment">/* Exercise 5.9: Your code here. (3/5) */</span></span><br><span class="line">	va = fd2data(fd);  <span class="comment">//获取文件描述符fd对应的数据缓存页地址</span></span><br><span class="line">	ffd = (<span class="keyword">struct</span> Filefd *)fd;</span><br><span class="line">	size = ffd-&gt;f_file.f_size;</span><br><span class="line">	fileid = ffd-&gt;f_fileid;</span><br><span class="line">    <span class="comment">//到这里只共享了文件描述符，而未共享文件内容。</span></span><br><span class="line">	<span class="comment">// Step 4: Map the file content using 'fsipc_map'.</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; i += PTMAP) {</span><br><span class="line">		<span class="comment">/* Exercise 5.9: Your code here. (4/5) */</span></span><br><span class="line">		try(fsipc_map(fileid, i, va + i));</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Step 5: Return the number of file descriptor using 'fd2num'.</span></span><br><span class="line">	<span class="comment">/* Exercise 5.9: Your code here. (5/5) */</span></span><br><span class="line">	<span class="keyword">return</span> fd2num(fd);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2023"><a href="#2023" class="headerlink" title="2023"></a>2023</h2><h3 id="lab5-1-Exam"><a href="#lab5-1-Exam" class="headerlink" title="lab5-1-Exam"></a>lab5-1-Exam</h3><p>考察类似于 ide_read() 仿写，题目给的步骤很清晰，一步一步使用 syscall_read_dev() 或 syscall_write_dev() 系统调用实现即可。</p>
+<h3 id="lab5-2-Exam"><a href="#lab5-2-Exam" class="headerlink" title="lab5-2-Exam"></a>lab5-2-Exam</h3><p>我们在课下已经实现了函数 int open(const char *path, int mode) ，利用绝对路径（相对于根目录的路径）path 定位文件。在实际的用户程序中，完成同一任务时打开的多个文件往往存储在同一目录下，然而系统每次打开文件时都需要从根目录开始查找路径，从而重复访问相同的目录。</p>
+<p>在本次题中，要求实现 int openat(int dirfd, const char *path, int mode) 函数，利用相对于目录 dirfd 的相对路径 path 定位并打开文件，其中文件描述符 dirfd 指向已通过 open() 打开的目录。相对路径 path 也可能包含路径分隔符 /，表示查找目录 dirfd 下嵌套的目录中的文件。</p>
+<p>实现思路：</p>
+<ul>
+<li>在 user/include/fsreq.h 中增加一个对于文件系统的请求类型 #define FSREQ_OPENAT 8 和请求结构体：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Fsreq_openat</span> {</span></span><br><span class="line">  	u_int dir_fileid;</span><br><span class="line">  	<span class="type">char</span> req_path[MAXPATHLEN];</span><br><span class="line">  	u_int req_omode;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在 user/lib/fsipc.c 中仿照 fsipc_open 实现 <code>int fsipc_openat(u_int dir_fileid, const char *path, u_int omode, struct Fd *fd)</code>，完成对 Fsreq_openat 各个字段的赋值，并与文件系统服务进程进行通信。</p>
+</li>
+<li><p>在 user/lib/file.c 中仿照 open 函数实现 <code>int openat(int dirfd, const char *path, int mode)</code>，实现这一函数的相关提示：</p>
+<ul>
+<li>调用 fd_lookup 利用 dirfd 查找 dirfd 的文件描述符 struct Fd *dir</li>
+<li>将 struct Fd *dir 指向的类型转换为 struct Filefd 后获得 dirfd 对应的 filei</li>
+<li>调用 fsipc_openat 打开文件并完成对指针 fd 的赋值。</li>
+</ul>
+</li>
+<li><p>在 fs/fs.c 中，仿照 walk_path 实现 <code>int walk_path_at(struct File *par_dir, char *path, struct File **pdir, struct File **pfile, char *lastelem)</code>；区别在<code>file = &amp;super-&gt;s_root;</code>变成<code>file = par_dir;</code></p>
+</li>
+<li><p>在 par_dir 目录下按相对路径 path 查找文件，并仿照 file_open 实现 <code>int file_openat(struct File *dir, char *path, struct File **file)</code> 调用 walk_path_at 函数。</p>
+</li>
+<li><p>在 fs/serv.c 中仿照 serve_open 实现 serve_openat 函数，并在 serve 函数中增加关于 openat 请求的判断。</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Open</span> *<span class="title">pOpen</span>;</span></span><br><span class="line"><span class="keyword">if</span> ((r = open_lookup(envid, rq-&gt;dir_fileid, &amp;pOpen)) &lt; <span class="number">0</span>) {</span><br><span class="line">	ipc_send(envid, r, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">}</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">File</span> *<span class="title">dir</span> =</span> pOpen-&gt;o_file;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上述函数中，需要在 user/include/lib.h 中增加 <code>int openat(int dirfd, const char *path, int mode) 、 int fsipc_openat(u_int, const char *, u_int, struct Fd *)</code> 函数声明，在 fs/serv.h 中增加 <code>int file_openat(struct File *dir, char *path, struct File **pfile)</code> 函数声明。</li>
+</ul>
+<h2 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h2><h3 id="1-exam"><a href="#1-exam" class="headerlink" title="1-exam"></a>1-exam</h3><blockquote>
+<p>新建系统调用来完成外设的读写</p>
+</blockquote>
+<p>实验背景：</p>
+<p>系统调用的一个重要作用就在于，它为用户进程提供了一种访问外部设备的途径。在完成实验的过程中你已经使用了syscall_read_dev等系统调用来访问磁盘设备，在这里希望你使用系统调用为用户进程提供更加丰富的功能。</p>
+<h4 id="第1部分：syscall-get-time"><a href="#第1部分：syscall-get-time" class="headerlink" title="第1部分：syscall_get_time"></a>第1部分：syscall_get_time</h4><p>• 添加新的系统调用 int syscall_get_time();（在user/lib.h中添加定义并在已有文件中进行实现）。</p>
+<p>该系统调用的返回值是当前的UNIX标准时间（1970年1月1日至今的时间），单位为秒。<br>• 注意：获取UNIX标准时间需要直接对gxemul进行读取，用其他方式获得时间无法通过评测，对<br>gxemul设备的具体信息需要参考gxemul文档节选。<br>提示：</p>
+<ol>
+<li>当前UNIX标准时间是一个10位整数，且前三位数为162</li>
+<li>当系统调用输出一直为0时，请仔细阅读gxemul的设备规范！！！</li>
+</ol>
+<h4 id="第2部分：syscall-read-str"><a href="#第2部分：syscall-read-str" class="headerlink" title="第2部分：syscall_read_str"></a>第2部分：syscall_read_str</h4><p>添加新的系统调用 int syscall_read_str(char *buf, int secno); （在user/lib.h中添加定义并在已有文件中进行实现）</p>
+<p>功能：系统调用从控制台中读取一个以换行(‘\r’)结尾的字符串，并将读取的字符串写入0号磁盘的secno号扇区中。<br>系统调用的返回值为读取的字符串的长度，该系统调用需要将读取的字符串存入buf中（buf和写入磁盘的字符串都不包括’\r’且需要以’\0’结尾）。</p>
+<p>当系统调用开始之后进入内核态并且不断读取控制台输入，直到读取到结束标志符号’\r’才从内核态返回。（提示：需要循环读取控制台地址，读取到的非零值即为控制台的输入，可参考gxemul文档节选）</p>
+<p>保证secno在合适的范围内且buf的长度小于512字节，也就是说只需要写入一个扇区。 本地测试说明：可以使用已有的文件系统进程进行测试</p>
+<h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>添加系统调用挺烦的，os上机一个难点就是细节非常多，稍不注意，轻则编译错误，重则debug困难。</p>
+<p>添加系统调用的流程：</p>
+<ol>
+<li>include/unistd.h 添加系统调用号</li>
+<li>user/lib.h 添加syscall</li>
+<li>user/syscall_lib.c 实现syscall，jump into msyscall</li>
+<li>lib/syscall.S 在结尾添加系统调用偏移</li>
+<li>lib/syscall_all.c 实现具体系统调用的操作</li>
+</ol>
+<p>最重要的是，trigger别忘了。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sys_get_time</span><span class="params">(<span class="type">int</span> sysno)</span> {</span><br><span class="line">	u_int temp = <span class="number">0</span>;</span><br><span class="line">	bcopy(&amp;temp, <span class="number">0xB5000000</span>, <span class="number">4</span>);</span><br><span class="line">	bcopy(<span class="number">0xB5000010</span>, &amp;temp, <span class="number">4</span>);</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">}</span><br><span class="line"><span class="type">int</span> <span class="title function_">sys_read_str</span><span class="params">(<span class="type">int</span> sysno, u_int buf, u_int secno)</span> {</span><br><span class="line">	<span class="type">char</span> *mybuf = (<span class="type">char</span> *)buf;</span><br><span class="line">	<span class="type">int</span> len = <span class="number">0</span>;</span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) {</span><br><span class="line">		sys_read_dev(<span class="number">0</span>, &amp;ch, <span class="number">0x10000000</span>, <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (ch == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span> (ch == <span class="string">'\r'</span>) {</span><br><span class="line">			mybuf[len] = <span class="string">'\0'</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		}</span><br><span class="line">		mybuf[len++] = ch;</span><br><span class="line">	}</span><br><span class="line">	<span class="type">int</span> offset_begin = secno * <span class="number">0x200</span>;</span><br><span class="line">	sys_write_dev(<span class="number">0</span>, buf, <span class="number">0x13004000</span>, len);</span><br><span class="line">	<span class="comment">// select id/</span></span><br><span class="line">	u_int tmp = <span class="number">0</span>;</span><br><span class="line">	sys_write_dev(<span class="number">0</span>, &amp;tmp, <span class="number">0x13000010</span>, <span class="number">4</span>);</span><br><span class="line">	<span class="comment">// offset.</span></span><br><span class="line">	tmp = offset_begin;</span><br><span class="line">	sys_write_dev(<span class="number">0</span>, &amp;tmp, <span class="number">0x13000000</span>, <span class="number">4</span>);</span><br><span class="line">	<span class="comment">// start to write</span></span><br><span class="line">	tmp = <span class="number">1</span>;</span><br><span class="line">	sys_write_dev(<span class="number">0</span>, &amp;tmp, <span class="number">0x13000020</span>, <span class="number">4</span>);</span><br><span class="line">	<span class="comment">// get status.</span></span><br><span class="line">	sys_read_dev(<span class="number">0</span>, &amp;tmp, <span class="number">0x13000030</span>, <span class="number">4</span>);</span><br><span class="line">	<span class="keyword">return</span> len;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">syscall_get_time</span><span class="params">()</span></span><br><span class="line">{</span><br><span class="line">	<span class="keyword">return</span> msyscall(SYS_get_time, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">}</span><br><span class="line"><span class="type">int</span></span><br><span class="line"><span class="title function_">syscall_read_str</span><span class="params">(<span class="type">char</span> *buf, <span class="type">int</span> secno)</span></span><br><span class="line">{</span><br><span class="line">	<span class="keyword">return</span> msyscall(SYS_read_str, (u_int)buf, secno, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="2-exam"><a href="#2-exam" class="headerlink" title="2-exam"></a>2-exam</h3><p>实验背景：在阅读文件系统源代码时你可能已经发现，操作系统中并没有提供创建文件的用户接口，这令人感到有些遗憾。因此我们希望你使用文件系统IPC机制给用户提供一个接口，用于对文件的创建。</p>
+<p>实现函数 <code>int user_create(char* path, int isdir);</code></p>
+<p>其中path表示当前文件相对于根目录的路径，isdir规定了需要创建的类型，当isdir为0时，表示需要创建一个普通文件；当isdir为1时，表示需要创建一个目录。</p>
+<p>你需要在user/lib.h中添加相应的定义语句，并在user/file.c中进行实现。</p>
+<p>样例说明：</p>
+<ul>
+<li>使用user_create(“/myfile”, 0)可以在根目录下创建一个名为myfile的文件。</li>
+<li>使用user_create(“/mydir”, 1)可以在根目录下创建一个名为mydir的目录。</li>
+<li>使用user_create(“/mydir/myfile”, 0)可以在mydir目录下创建一个名为myfile的文件，当mydir目录不存在时该函数出错。</li>
+</ul>
+<p>当创建成功时你需要返回0，其他情况需要返回一个负值代表出错。错误情况如下所示：</p>
+<ol>
+<li>同一个目录下不能出现同名文件（大小写敏感），也不能出现同名目录（同上）。当出现同名文件或同名目录时需要返回<code>-E_FILE_EXISTS</code>。</li>
+<li>当你需要在非根目录下创建文件/目录时，可能出现指定目录不存在的情况，此时需要返回<code>-E_DIR_NOT_EXIST</code>（请你在include/mmu.h对这个新的错误类型进行定义，值为13）。</li>
+<li>其他错误情况不进行要求，可以返回任意负值。</li>
+</ol>
+<p>注意：用户创建时必须使用IPC机制，使用其他方式无法得分！</p>
+<p>为了降低实现难度，我们保证在exam测试中，一个目录下不会出现一个文件和一个文件夹同名的情况。</p>
+<p>提示：使用文件系统IPC机制需要改动的文件有：include/fs.h    fs/serv.c    user/fsipc.c</p>
+<p>本地测试说明：建议使用文件已有的文件系统测试进程进行测试。首先检查init/init.c中是否存在创建user_fstest进程和fs_serv进程的语句，之后可以在user/fstest.c中添加测试语句，对你的函数进行测试。</p>
+<p>测试时需要运行的命令：gxemul -E testmips -C R3000 -M 64 -d gxemul/fs.img gxemul/vmlinux</p>
+<p>fs/serv.c</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span></span><br><span class="line"><span class="title function_">serve_create</span><span class="params">(u_int envid, <span class="keyword">struct</span> Fsreq_create *rq)</span> {</span><br><span class="line">	u_char path[MAXPATHLEN];</span><br><span class="line">	<span class="type">int</span> isdir = rq-&gt;req_isdir;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">File</span> *<span class="title">f</span>;</span></span><br><span class="line">	<span class="type">int</span> fileid;</span><br><span class="line">	<span class="type">int</span> r;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Copy in the path, making sure it's null-terminated</span></span><br><span class="line">	user_bcopy(rq-&gt;req_path, path, MAXPATHLEN);</span><br><span class="line">	path[MAXPATHLEN - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Open the file.</span></span><br><span class="line">	<span class="keyword">if</span> ((r = file_create((<span class="type">char</span> *)path, &amp;f)) &lt; <span class="number">0</span>) {</span><br><span class="line">	<span class="comment">//	user_panic("file_open failed: %d, invalid path: %s", r, path);</span></span><br><span class="line">		ipc_send(envid, r, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	f-&gt;f_type = isdir;</span><br><span class="line"></span><br><span class="line">	ipc_send(envid, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">serve</span><span class="params">(<span class="type">void</span>)</span> {</span><br><span class="line">    ...</span><br><span class="line">        		<span class="keyword">case</span> FSREQ_CREATE:</span><br><span class="line">				serve_create(whom, (<span class="keyword">struct</span> Fsreq_create *)REQVA);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">...</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>include/fs.h</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> FSREQ_CREATE	8</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Fsreq_create</span> {</span></span><br><span class="line">	<span class="type">char</span> req_path[MAXPATHLEN];</span><br><span class="line">	<span class="type">int</span>  req_isdir;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<p>user/file.c</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">user_create</span><span class="params">(<span class="type">char</span>* path, <span class="type">int</span> isdir)</span> {</span><br><span class="line">	<span class="type">int</span> r = fsipc_create(path, isdir);</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>user/fsipc.c</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fsipc_create</span><span class="params">(<span class="type">char</span>* path, <span class="type">int</span> isdir)</span> {</span><br><span class="line">	u_int perm;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Fsreq_create</span> *<span class="title">req</span>;</span></span><br><span class="line"></span><br><span class="line">	req = (<span class="keyword">struct</span> Fsreq_create *)fsipcbuf;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// The path is too long.</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">strlen</span>(path) &gt;= MAXPATHLEN) {</span><br><span class="line">		<span class="keyword">return</span> -E_BAD_PATH;</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">	<span class="built_in">strcpy</span>((<span class="type">char</span> *)req-&gt;req_path, path);</span><br><span class="line">	req-&gt;req_isdir = isdir;</span><br><span class="line">	<span class="keyword">return</span> fsipc(FSREQ_CREATE, req, <span class="number">0</span>, &amp;perm);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>user/lib.h</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">user_create</span><span class="params">(<span class="type">char</span>* path, <span class="type">int</span> isdir)</span>;</span><br></pre></td></tr></table></figure>
+<p>其他增加</p>
+<p>fs/fs.c</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">-<span class="keyword">if</span> (r != -E_NOT_FOUND || dir == <span class="number">0</span>) {</span><br><span class="line">+	<span class="keyword">if</span> (dir == <span class="number">0</span>) {</span><br><span class="line">+		<span class="keyword">return</span> -E_DIR_NOT_EXIST;</span><br><span class="line">+	}</span><br><span class="line"></span><br><span class="line">+	<span class="keyword">if</span> (r != -E_NOT_FOUND) {</span><br><span class="line">+		<span class="keyword">return</span> r;</span><br><span class="line">+	}</span><br></pre></td></tr></table></figure>
+<p>include/error.h</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> E_DIR_NOT_EXIST	13s</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Carbon
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/05/19/%E3%80%90OS%E3%80%91lab5/" title="【OS】lab5">http://example.com/2024/05/19/【OS】lab5/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/05/07/%E3%80%90OS%E3%80%91lab4/" rel="prev" title="【OS】lab4">
+                  <i class="fa fa-angle-left"></i> 【OS】lab4
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/05/27/%E3%80%90OS%E3%80%91file/" rel="next" title="【OS】file">
+                  【OS】file <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Carbon</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
