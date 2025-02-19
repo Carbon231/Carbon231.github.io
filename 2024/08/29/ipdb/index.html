@@ -19,27 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="更新中orz先占个坑  Task1赛题解析背景：RNA干扰（RNAi）是一种基因表达调控机制，通过小干扰RNA（siRNA）等分子沉默特定基因表达。具体而言，就是siRNA与靶mRNA结合，诱导RNA诱导沉默复合物（RISC）切割mRNA，导致mRNA降解和基因沉默。通过向siRNA中引入化学修饰，可以增强其稳定性靶向性和有效性。 目标：利用机器学习与深度学习相关技术，通过化学修饰后的siRNA">
+    <meta name="description" content="（ai生成）ipdb调试手册">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Datawhale】24SummerNote1">
-<meta property="og:url" content="http://example.com/2024/07/28/%E3%80%90Datawhale%E3%80%9124SummerNote1/index.html">
+<meta property="og:title" content="ipdb">
+<meta property="og:url" content="http://example.com/2024/08/29/ipdb/index.html">
 <meta property="og:site_name" content="碳罐堆积处">
-<meta property="og:description" content="更新中orz先占个坑  Task1赛题解析背景：RNA干扰（RNAi）是一种基因表达调控机制，通过小干扰RNA（siRNA）等分子沉默特定基因表达。具体而言，就是siRNA与靶mRNA结合，诱导RNA诱导沉默复合物（RISC）切割mRNA，导致mRNA降解和基因沉默。通过向siRNA中引入化学修饰，可以增强其稳定性靶向性和有效性。 目标：利用机器学习与深度学习相关技术，通过化学修饰后的siRNA">
+<meta property="og:description" content="（ai生成）ipdb调试手册">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-28T08:52:59.000Z">
-<meta property="article:modified_time" content="2024-07-28T09:15:01.850Z">
+<meta property="article:published_time" content="2024-08-29T07:01:24.000Z">
+<meta property="article:modified_time" content="2025-02-19T08:26:56.348Z">
 <meta property="article:author" content="Carbon">
+<meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2024/07/28/%E3%80%90Datawhale%E3%80%9124SummerNote1/">
+<link rel="canonical" href="http://example.com/2024/08/29/ipdb/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/07/28/%E3%80%90Datawhale%E3%80%9124SummerNote1/","path":"2024/07/28/【Datawhale】24SummerNote1/","title":"【Datawhale】24SummerNote1"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/08/29/ipdb/","path":"2024/08/29/ipdb/","title":"ipdb"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>【Datawhale】24SummerNote1 | 碳罐堆积处</title>
+<title>ipdb | 碳罐堆积处</title>
   
 
 
@@ -223,7 +224,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Task1"><span class="nav-number">1.</span> <span class="nav-text">Task1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%9B%E9%A2%98%E8%A7%A3%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">赛题解析</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="nav-number">1.</span> <span class="nav-text">快速上手</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -246,7 +247,7 @@ mjx-container[display="true"] + br {
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -276,7 +277,7 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/28/%E3%80%90Datawhale%E3%80%9124SummerNote1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/08/29/ipdb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -289,12 +290,12 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="【Datawhale】24SummerNote1 | 碳罐堆积处">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="ipdb | 碳罐堆积处">
+      <meta itemprop="description" content="（ai生成）ipdb调试手册">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【Datawhale】24SummerNote1
+          ipdb
         </h1>
 
         <div class="post-meta-container">
@@ -304,29 +305,78 @@ mjx-container[display="true"] + br {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-07-28 16:52:59 / 修改时间：17:15:01" itemprop="dateCreated datePublished" datetime="2024-07-28T16:52:59+08:00">2024-07-28</time>
+      <time title="创建时间：2024-08-29 15:01:24" itemprop="dateCreated datePublished" datetime="2024-08-29T15:01:24+08:00">2024-08-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-02-19 16:26:56" itemprop="dateModified" datetime="2025-02-19T16:26:56+08:00">2025-02-19</time>
     </span>
 
   
 </div>
 
+            <div class="post-description">（ai生成）ipdb调试手册</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><blockquote>
-<p>更新中orz先占个坑</p>
-</blockquote>
-<h2 id="Task1"><a href="#Task1" class="headerlink" title="Task1"></a>Task1</h2><h3 id="赛题解析"><a href="#赛题解析" class="headerlink" title="赛题解析"></a>赛题解析</h3><p>背景：<strong>RNA干扰（RNAi）</strong>是一种基因表达调控机制，通过<strong>小干扰RNA（siRNA）</strong>等分子沉默特定基因表达。具体而言，就是siRNA与靶mRNA结合，诱导<strong>RNA诱导沉默复合物（RISC）</strong>切割mRNA，导致mRNA降解和基因沉默。通过向siRNA中引入<strong>化学修饰</strong>，可以增强其稳定性靶向性和有效性。</p>
-<p>目标：利用机器学习与深度学习相关技术，通过化学修饰后的siRNA序列预测RNAi机制下对靶基因的沉默效率。</p>
-<p>模型选择：baseline提供RNN模型，可尝试不同的深度学习模型（LSTM, Transformer）或传统机器学习模型（随机森林、XGBoost）</p>
-<p>词汇表与序列编码：基于3-gram，每三个连续的核苷酸组合成为一个单词。</p>
-<p>特征处理：siRNA裸序列，化学修饰后的siRNA序列，靶mRNA序列以及实验条件（药物浓度，细胞系，转染方式等）</p>
-<p>模型评估：MAE和F1分数</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>首先<code>pip install ipdb</code>，在需要的文件中<code>import ipdb</code>，需要停顿的地方塞上<code>ipdb.set_trace()</code>。正常地<code>python main.py</code>后运行到那一行就能正常进入调试。</p>
+<ol>
+<li><strong>查看当前代码位置</strong>：<ul>
+<li><code>l</code> 或 <code>list</code>：列出当前位置的代码。默认情况下，它会显示当前行前后几行代码，但你可以通过提供行号来查看特定区域的代码，例如 <code>list 10</code>。</li>
+</ul>
+</li>
+<li><strong>单步执行</strong>：<ul>
+<li><code>n</code> 或 <code>next</code>：执行下一行代码，但不进入任何函数调用。</li>
+<li><code>s</code> 或 <code>step</code>：进入当前行的函数调用（如果当前行是一个函数调用）。</li>
+</ul>
+</li>
+<li><strong>继续执行</strong>：<ul>
+<li><code>c</code> 或 <code>continue</code>：继续执行程序，直到遇到下一个断点或程序结束。</li>
+<li><code>j</code> 或 <code>jump</code>：跳转到指定的行号。</li>
+</ul>
+</li>
+<li><strong>检查变量</strong>：<ul>
+<li><code>p</code> 或 <code>print</code>：打印变量的值。例如，<code>p x</code> 会打印变量 <code>x</code> 的值，<code>p x.shape</code> 会打印 <code>x</code> 的形状。</li>
+<li><code>pp</code>：美化打印（pretty print），用于更易读的格式显示复杂数据结构。</li>
+</ul>
+</li>
+<li><strong>设置和清除断点</strong>：<ul>
+<li><code>b</code> 或 <code>break</code>：设置断点。例如，<code>break 10</code> 在第 10 行设置断点。</li>
+<li><code>cl</code> 或 <code>clear</code>：清除断点。例如，<code>clear 10</code> 清除第 10 行的断点。</li>
+</ul>
+</li>
+<li><strong>查看当前上下文</strong>：<ul>
+<li><code>f</code> 或 <code>frame</code>：显示当前栈帧的信息。</li>
+<li><code>u</code> 或 <code>up</code>：移动到更高级别的栈帧（向上查看调用栈）。</li>
+<li><code>d</code> 或 <code>down</code>：移动到更低级别的栈帧（向下查看调用栈）。</li>
+</ul>
+</li>
+<li><strong>查看和修改变量</strong>：<ul>
+<li><code>vars</code>：列出当前上下文中的所有变量。</li>
+<li>直接赋值：你可以在控制台中直接对变量进行赋值，例如 <code>x = 10</code>。</li>
+</ul>
+</li>
+<li><strong>退出调试器</strong>：<ul>
+<li><code>q</code> 或 <code>quit</code>：退出调试器并结束程序。</li>
+<li><code>exit</code>：退出调试器并结束程序。</li>
+</ul>
+</li>
+<li><strong>运行 Python 命令</strong>：<ul>
+<li>直接在 <code>ipdb</code> 提示符下输入 Python 代码：你可以执行任意 Python 表达式来检查程序状态。</li>
+</ul>
+</li>
+<li><strong>查看当前文件和行号</strong>：<ul>
+<li><code>w</code> 或 <code>where</code>：显示当前执行的栈跟踪，包括文件名和行号。</li>
+</ul>
+</li>
+</ol>
 
     </div>
 
@@ -344,7 +394,7 @@ mjx-container[display="true"] + br {
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2024/07/28/%E3%80%90Datawhale%E3%80%9124SummerNote1/" title="【Datawhale】24SummerNote1">http://example.com/2024/07/28/【Datawhale】24SummerNote1/</a>
+      <a href="http://example.com/2024/08/29/ipdb/" title="ipdb">http://example.com/2024/08/29/ipdb/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -352,6 +402,9 @@ mjx-container[display="true"] + br {
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"># 杂谈</a>
+          </div>
 
         
 
@@ -362,6 +415,9 @@ mjx-container[display="true"] + br {
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2025/01/16/%E3%80%90EEG%E3%80%91mne-lsl/" rel="next" title="【EEG】mne_lsl">
+                  【EEG】mne_lsl <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -381,7 +437,7 @@ mjx-container[display="true"] + br {
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
